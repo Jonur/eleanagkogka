@@ -15,7 +15,7 @@ const ErrorPage: React.FC = () => {
     'data' in error && 'status' in error && 'statusText' in error;
 
   return (
-    <div id="error-page">
+    <div>
       <h1>Oops!</h1>
       <p>Sorry, an unexpected error has occurred.</p>
       <p>{errorCheck(error) && <i>{error.statusText || error.message}</i>}</p>
