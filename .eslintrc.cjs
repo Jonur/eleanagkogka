@@ -89,14 +89,6 @@ const config = {
         },
         groups: ['builtin', 'external', 'internal', 'type', 'parent', 'sibling', 'index'],
         'newlines-between': 'always',
-        pathGroups: [
-          {
-            pattern: '@tractable/**',
-            group: 'external',
-            position: 'after',
-          },
-        ],
-        pathGroupsExcludedImportTypes: ['@tractable/**'],
       },
     ],
     'no-console': [

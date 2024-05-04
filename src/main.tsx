@@ -1,13 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import Root from './components/Root';
-import About from './components/About';
-import Resume from './components/Resume';
-import Work from './components/Work';
-import ErrorPage from './components/ErrorPage';
+
+import About from 'src/components/About';
+import ErrorPage from 'src/components/ErrorPage';
+import Resume from 'src/components/Resume';
+import Root from 'src/components/Root';
+import Work from 'src/components/Work';
+
+import './index.css';
 
 const router = createBrowserRouter([
   {

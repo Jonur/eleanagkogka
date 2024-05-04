@@ -3,7 +3,6 @@ import react from '@vitejs/plugin-react';
 import viteTsconfigPaths from 'vite-tsconfig-paths';
 import { createHtmlPlugin } from 'vite-plugin-html';
 
-// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
     react(),
@@ -12,4 +11,8 @@ export default defineConfig({
     }),
     createHtmlPlugin({ minify: false }),
   ],
+  server: {
+    open: true,
+    port: 5151,
+  },
 });
