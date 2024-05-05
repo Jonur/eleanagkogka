@@ -7,7 +7,7 @@ import useOnMount from './useOnMount';
 
 type UseWindowDimensionsReturnType = {
   windowDimensions: WindowDimensions;
-  onLargeScreen: () => void;
+  onLargeScreen: () => boolean;
 };
 
 const useWindowDimensions = (): UseWindowDimensionsReturnType => {
