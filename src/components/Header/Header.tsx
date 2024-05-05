@@ -7,12 +7,16 @@ import { Route } from 'src/types';
 
 import SocialMedia from './SocialMedia';
 
-const Header: React.FC = () => {
+type HeaderProps = {
+  pageHeader: string;
+};
+
+const Header: React.FC<HeaderProps> = ({ pageHeader }) => {
   const { onLargeScreen } = useWindowDimensions();
   const [menuVisible, setMenuVisible] = useState(false);
 
   return (
-    <header className="bg-light-grey pt-4 px-6 pb-8">
+    <header className="bg-light-grey pt-4 px-6 lg:px-[80px] pb-8">
       <div className="w-full flex justify-between">
         <Link to={Route.ROOT}>
           <img src="/logo.svg" className="w-10 h-10" />
@@ -29,7 +33,7 @@ const Header: React.FC = () => {
         )}
 
         {(menuVisible || onLargeScreen()) && (
-          <div className="absolute bg-dark-blue lg:bg-transparent w-full h-full left-0 top-0 pt-4 px-6 pb-16 z-10 flex flex-col justify-between items-end">
+          <div className="absolute bg-dark-blue lg:bg-transparent w-full h-full lg:h-auto left-0 top-0 pt-4 px-6 pb-16 z-10 flex flex-col justify-between items-end">
             {!onLargeScreen() && (
               <div className="w-full flex justify-between">
                 <Link to={Route.ROOT}>
@@ -65,17 +69,17 @@ const Header: React.FC = () => {
       </div>
 
       <div role="none" className="flex w-full h-[200px] items-center mb-2 relative">
-        <div className="w-[1px] h-[65%] bg-black opacity-10" />
-        <div className="w-[1px] h-[100%] bg-black opacity-10 ml-[35%]" />
-        {onLargeScreen() && <div className="w-[1px] h-[100%] bg-black opacity-10 absolute right-[23%] top-[30px]" />}
-        <div className="w-[1px] h-[85%] bg-black opacity-10 absolute right-0" />
+        <div className="w-[1px] h-[65%] bg-black opacity-10 lg:absolute lg:left-[60px]" />
+        <div className="w-[1px] h-[100%] lg:h-[320px] bg-black opacity-10 ml-[35%] lg:ml-[45%] lg:absolute lg:top-0" />
+        {onLargeScreen() && <div className="w-[1px] h-[320px] bg-black opacity-10 absolute right-[23%] top-[40px]" />}
+        <div className="w-[1px] h-[85%] lg:h-[200px] bg-black opacity-10 absolute right-0 lg:-right-[50px] lg:top-[30px]" />
       </div>
 
       <h2 className="italic text-2xl">Eleana Gkogka -</h2>
 
-      <div className="flex justify-between lg:items-baseline">
-        <h1 className="text-6xl font-bebas uppercase bg-gradient-to-r from-teal-dark to-pink inline-block text-transparent bg-clip-text">
-          Strategic product designer
+      <div className="flex justify-between lg:items-end">
+        <h1 className="text-6xl lg:text-[100px] max-w-[585px] font-bebas uppercase bg-gradient-to-r from-teal-dark to-pink inline-block text-transparent bg-clip-text">
+          {pageHeader}
         </h1>
 
         {onLargeScreen() && <SocialMedia />}
