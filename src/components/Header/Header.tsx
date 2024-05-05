@@ -33,7 +33,7 @@ const Header: React.FC<HeaderProps> = ({ pageHeader }) => {
         )}
 
         {(menuVisible || onLargeScreen()) && (
-          <div className="absolute bg-dark-blue lg:bg-transparent w-full h-full lg:h-auto left-0 top-0 pt-4 px-6 pb-16 z-10 flex flex-col justify-between items-end">
+          <div className="absolute lg:static bg-dark-blue lg:bg-transparent w-full h-full lg:h-auto left-0 top-0 pt-4 px-6 pb-16 lg:pt-0 lg:px-0 lg:pb-0 z-10 flex flex-col justify-between items-end">
             {!onLargeScreen() && (
               <div className="w-full flex justify-between">
                 <Link to={Route.ROOT}>
@@ -78,7 +78,7 @@ const Header: React.FC<HeaderProps> = ({ pageHeader }) => {
       <h2 className="italic text-2xl">Eleana Gkogka -</h2>
 
       <div className="flex justify-between lg:items-end">
-        <h1 className="text-6xl lg:text-[100px] max-w-[585px] font-bebas uppercase bg-gradient-to-r from-teal-dark to-pink inline-block text-transparent bg-clip-text">
+        <h1 className="text-6xl lg:text-[100px] max-w-[585px] leading-[48px] lg:leading-[90px] font-bebas uppercase bg-gradient-to-r from-teal-dark to-pink inline-block text-transparent bg-clip-text">
           {pageHeader}
         </h1>
 

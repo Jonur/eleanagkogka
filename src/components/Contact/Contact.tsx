@@ -1,14 +1,14 @@
 import { FatArrow } from 'src/components/Icons';
 
 const Contact: React.FC = () => (
-  <section className="p-8 text-dark-blue bg-light-grey rounded-tr-[40px] rounded-bl-[40px] max-w-[1180px] w-full flex flex-col lg:flex-row lg:items-center lg:justify-between lg:gap-8">
+  <section className="p-8 lg:p-10 text-dark-blue bg-light-grey rounded-tr-[40px] rounded-bl-[40px] max-w-[1180px] w-full flex flex-col lg:flex-row lg:items-center lg:justify-between lg:gap-8">
     <div>
-      <h2 className="text-3xl font-bebas uppercase mb-4 flex items-center gap-2">
+      <h2 className="text-3xl font-bebas uppercase flex items-center gap-2">
         <span>Contact</span>
         <FatArrow className="-mt-[3px]" />
       </h2>
 
-      <p className="italic">I am based in London and looking forward to hear from you!</p>
+      <p className="italic lg:text-lg">I am based in London and looking forward to hear from you!</p>
     </div>
 
     <div className="hidden lg:flex lg:flex-1 items-center justify-end">

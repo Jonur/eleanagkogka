@@ -9,7 +9,7 @@ type GoToProps = {
 };
 
 const GoTo: React.FC<GoToProps> = ({ to, label }) => (
-  <Link to={to} className="flex gap-2 items-center text-teal-dark">
+  <Link to={to} className="flex gap-2 items-center text-teal-dark leading-6 lg:leading-7 lg:text-lg">
     <span>{label}</span>
     <Arrow />
   </Link>
