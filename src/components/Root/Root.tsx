@@ -7,7 +7,7 @@ import Header from 'src/components/Header';
 import StarList from 'src/components/StarList';
 import { Route } from 'src/types';
 
-const Home: React.FC = () => {
+const Root: React.FC = () => {
   const [starListItems] = useState([
     { title: 'Grow', description: 'Keep learning and improving your craft', starColor: 'text-mustard' },
     {
@@ -71,4 +71,4 @@ const Home: React.FC = () => {
   );
 };
 
-export default Home;
+export default Root;
