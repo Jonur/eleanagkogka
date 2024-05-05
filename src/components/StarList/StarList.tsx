@@ -19,7 +19,7 @@ const StarList: React.FC<StarListProps> = ({ title, items }) => (
             <span className="lg:text-[32px]">{item.title}</span>
             <Star className={c('-mt-1', item.starColor)} />
           </dt>
-          <dd className="leading-6 lg:leading-7 lg:text-lg">{item.description}</dd>
+          <dd className="leading-6 lg:leading-7 lg:text-lg mt-4 lg:mt-6">{item.description}</dd>
         </div>
       ))}
     </dl>
