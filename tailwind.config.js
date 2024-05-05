@@ -30,6 +30,9 @@ export default {
         alegreya: ['"Alegreya Sans"', ...defaultTheme.fontFamily.sans],
       },
     },
+    screens: {
+      lg: '1024px',
+    },
   },
   plugins: [],
 };
