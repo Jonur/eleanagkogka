@@ -47,7 +47,7 @@ const Root: React.FC = () => {
               Interaction, Human Psychology, Multimedia, and more.
             </p>
 
-            <p className="leading-6 lg:leading-7 lg:text-lg">
+            <p className="leading-6 lg:leading-7 lg:text-lg mb-2">
               I currently work as a Staff Product Designer and have over 14 years of professional design experience. I
               specialise in strategic, growth, data-based design and product optimisation, with a rich background in
               various design disciplines such as branding, marketing and graphic design.
@@ -59,7 +59,7 @@ const Root: React.FC = () => {
 
         <StarList title="My design values" items={starListItems} />
 
-        <div className="flex justify-end mt-3 mb-[60px] max-w-[1180px] w-full">
+        <div className="flex justify-end mt-3 lg:mt-4 mb-[60px] max-w-[1180px] w-full">
           <GoTo to={Route.ABOUT} label="More about me" />
         </div>
 
