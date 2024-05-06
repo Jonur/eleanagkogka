@@ -91,7 +91,7 @@ const Header: React.FC<HeaderProps> = ({ pageHeader }) => {
         <div className="w-[1px] h-[85%] lg:h-[200px] bg-black opacity-10 absolute right-0 lg:-right-[50px] lg:top-[30px]" />
       </div>
 
-      <h2 className="italic text-2xl lg:text-3xl">Eleana Gkogka &ndash;</h2>
+      <h2 className="italic text-2xl lg:text-3xl text-dark-blue">Eleana Gkogka &ndash;</h2>
 
       <div className="flex justify-between lg:items-end">
         <h1 className="text-6xl lg:text-[100px] max-w-[585px] leading-[48px] lg:leading-[90px] font-bebas uppercase bg-gradient-to-r from-teal-dark to-pink inline-block text-transparent bg-clip-text">

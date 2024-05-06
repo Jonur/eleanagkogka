@@ -3,7 +3,6 @@ import React, { useRef, useState } from 'react';
 
 import { Arrow, Chevron } from 'src/components/Icons';
 import { useOnMount } from 'src/hooks';
-import { EventType, ScrollEvent } from 'src/types';
 
 import { BLOG_POST_GAP_PX, BLOG_POST_SIZE_PX, BLOG_POSTS, PAGINATION_COUNT } from './constants';
 
@@ -47,25 +46,29 @@ const BlogPosts: React.FC = () => {
   useOnMount(() => {
     setOffsetList();
 
-    const handleOnScroll = (event: Event) => {
-      const { scrollLeft, scrollWidth, offsetWidth } = (event as unknown as ScrollEvent).target;
-      const index =
-        scrollWidth - scrollLeft === offsetWidth
-          ? offsets.length - 1
-          : offsets.findIndex((offset, index) => {
-              return (
-                scrollLeft >= offset &&
-                (offsets[index + 1] ? scrollLeft <= offsets[index + 1] : offsets[offsets.length - 1])
-              );
-            }) || 0;
+    // const handleOnScroll = (event: Event) => {
+    //   const { scrollLeft, scrollWidth, offsetWidth } = (event as unknown as ScrollEvent).target;
+    //   console.info('Firing...', {
+    //     scrollLeft,
+    //     scrollWidth,
+    //     offsetWidth,
+    //   });
+    //   const index =
+    //     scrollWidth - scrollLeft === offsetWidth
+    //       ? offsets.length - 1
+    //       : offsets.findIndex((offset, index) => {
+    //           return (
+    //             scrollLeft >= offset &&
+    //             (offsets[index + 1] ? scrollLeft <= offsets[index + 1] : offsets[offsets.length - 1])
+    //           );
+    //         }) || 0;
+    //   setPageIndex(index);
+    // };
 
-      setPageIndex(index);
-    };
-
-    blogPostContainerRef.current?.addEventListener(EventType.SCROLL, handleOnScroll);
-    return () => {
-      blogPostContainerRef.current?.removeEventListener(EventType.SCROLL, handleOnScroll);
-    };
+    // blogPostContainerRef.current?.addEventListener('wheel', handleOnScroll);
+    // return () => {
+    //   blogPostContainerRef.current?.removeEventListener('wheel', handleOnScroll);
+    // };
   });
 
   return (

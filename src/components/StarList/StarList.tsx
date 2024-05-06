@@ -10,7 +10,7 @@ type StarListProps = {
 };
 
 const StarList: React.FC<StarListProps> = ({ title, items }) => (
-  <section className="border-t border-b border-black border-opacity-15 pt-3 lg:pt-4 pb-12 text-dark-blue max-w-[1180px] lg:w-full">
+  <section className="border-t border-b border-black border-opacity-15 pt-3 lg:pt-4 pb-12 lg:pb-[80px] text-dark-blue max-w-[1180px] lg:w-full">
     <h3 className="text-lg italic mb-12 lg:mb-[80px]">{title}</h3>
 
     <dl className="grid grid-cols-2 gap-x-5 gap-y-12 lg:px-10 lg:gap-x-0 lg:gap-y-0 lg:flex lg:justify-between">
