@@ -57,3 +57,9 @@ export const BLOG_POSTS: BlogPost[] = [
     url: 'https://medium.com/prototypr/six-things-a-childrens-story-can-teach-us-about-people-and-design-f081107cdd8f',
   },
 ];
+
+export const PAGINATION_COUNT = 3;
+
+export const BLOG_POST_SIZE_PX = 304;
+
+export const BLOG_POST_GAP_PX = 24;

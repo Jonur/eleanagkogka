@@ -1,21 +1,82 @@
 import c from 'classnames';
-import React from 'react';
+import React, { useRef, useState } from 'react';
 
 import { Arrow, Chevron } from 'src/components/Icons';
+import { useOnMount } from 'src/hooks';
+import { EventType, ScrollEvent } from 'src/types';
 
-import { BLOG_POSTS } from './constants';
+import { BLOG_POST_GAP_PX, BLOG_POST_SIZE_PX, BLOG_POSTS, PAGINATION_COUNT } from './constants';
 
 const BlogPosts: React.FC = () => {
-  const blogPostScreens = Math.ceil(BLOG_POSTS.length / 3);
+  const blogPostContainerRef = useRef<HTMLDivElement>(null);
+  const [blogPostScreens] = useState(Math.ceil(BLOG_POSTS.length / PAGINATION_COUNT));
+  const [pageIndex, setPageIndex] = useState(0);
+  const [offsets, setOffsets] = useState<number[]>([]);
+
+  const scrollToPost = (index: number) => {
+    if (blogPostContainerRef.current) {
+      setPageIndex(index);
+
+      blogPostContainerRef.current.scrollTo({
+        behavior: 'smooth',
+        left: offsets[index],
+      });
+    }
+  };
+
+  const handlePrevious = () => {
+    const index = pageIndex - 1 >= 0 ? pageIndex - 1 : 0;
+    scrollToPost(index);
+  };
+
+  const handleNext = () => {
+    const index = pageIndex + 1 <= blogPostScreens ? pageIndex + 1 : blogPostScreens - 1;
+    scrollToPost(index);
+  };
+
+  const setOffsetList = () => {
+    setOffsets(
+      Array.from({ length: blogPostScreens }).reduce((acc: number[], _, index) => {
+        const page = index === 0 ? 0 : index * PAGINATION_COUNT;
+        const size = BLOG_POST_SIZE_PX + BLOG_POST_GAP_PX;
+        return [...acc, index === 0 ? 0 : page * size + BLOG_POST_GAP_PX * index];
+      }, [])
+    );
+  };
+
+  useOnMount(() => {
+    setOffsetList();
+
+    const handleOnScroll = (event: Event) => {
+      const { scrollLeft, scrollWidth, offsetWidth } = (event as unknown as ScrollEvent).target;
+      const index =
+        scrollWidth - scrollLeft === offsetWidth
+          ? offsets.length - 1
+          : offsets.findIndex((offset, index) => {
+              return (
+                scrollLeft >= offset &&
+                (offsets[index + 1] ? scrollLeft <= offsets[index + 1] : offsets[offsets.length - 1])
+              );
+            }) || 0;
+
+      setPageIndex(index);
+    };
+
+    blogPostContainerRef.current?.addEventListener(EventType.SCROLL, handleOnScroll);
+    return () => {
+      blogPostContainerRef.current?.removeEventListener(EventType.SCROLL, handleOnScroll);
+    };
+  });
 
   return (
     <section className="border-t border-b border-black border-opacity-15 pt-3 lg:pt-4 pb-3 text-dark-blue max-w-[1180px] w-full">
       <h3 className="text-lg italic mb-12 lg:mb-[80px]">Blog posts</h3>
 
-      <div className="overflow-x-scroll">
+      <div ref={blogPostContainerRef} className="overflow-x-scroll scroll-smooth no-scrollbar">
         <div className="flex gap-x-6 lg:gap-x-8">
           {BLOG_POSTS.map((post, index) => (
             <a
+              id={`blog-post-${index}`}
               key={post.title}
               href={post.url}
               target="_blank"
@@ -39,19 +100,37 @@ const BlogPosts: React.FC = () => {
         </div>
       </div>
 
-      <footer className="w-full flex justify-end lg:justify-between mt-12 items-baseline">
+      <footer className="w-full hidden lg:flex justify-end lg:justify-between mt-12 items-baseline">
         <nav className="flex gap-x-3 h-3 items-center">
-          <button>
-            <Chevron className="text-teal-dark" />
+          <button aria-label="Previous" onClick={handlePrevious} disabled={pageIndex === 0}>
+            <Chevron
+              className={c({
+                'text-teal-dark': pageIndex !== 0,
+                'text-light-grey': pageIndex === 0,
+              })}
+            />
           </button>
-
           {Array.from({ length: blogPostScreens }).map((_, index) => {
             const key = `ctrl-${index}`;
-            return <button key={key} className={c('rounded-full w-3 h-3 bg-light-grey')} />;
+            return (
+              <button
+                disabled={pageIndex === index}
+                onClick={() => scrollToPost(index)}
+                key={key}
+                className={c('rounded-full w-3 h-3 bg-light-grey', {
+                  'bg-light-grey': pageIndex !== index,
+                  'bg-teal-dark': pageIndex === index,
+                })}
+              />
+            );
           })}
-
-          <button>
-            <Chevron className="text-teal-dark rotate-180" />
+          <button aria-label="Next" onClick={handleNext} disabled={pageIndex === blogPostScreens - 1}>
+            <Chevron
+              className={c('rotate-180', {
+                'text-teal-dark': pageIndex !== blogPostScreens - 1,
+                'text-light-grey': pageIndex === blogPostScreens - 1,
+              })}
+            />
           </button>
         </nav>
 
