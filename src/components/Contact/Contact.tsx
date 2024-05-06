@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { FatArrow } from 'src/components/Icons';
 
 const Contact: React.FC = () => (

@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { BehanceLogo, DribbleLogo, LinkedInLogo, MediumLogo } from 'src/components/Icons';
 
 const SocialMedia: React.FC = () => (

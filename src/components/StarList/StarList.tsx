@@ -1,10 +1,11 @@
 import c from 'classnames';
+import React from 'react';
 
 import { Star } from 'src/components/Icons';
+import { StarListItem } from 'src/types';
 
-type Item = { title: string; description: string; starColor: string };
 type StarListProps = {
-  items: Item[];
+  items: StarListItem[];
   title: string;
 };
 

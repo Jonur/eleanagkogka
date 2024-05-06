@@ -1,3 +1,5 @@
+import React from 'react';
+
 type StarProps = { className?: string };
 
 export const Star: React.FC<StarProps> = ({ className = '' }) => (
