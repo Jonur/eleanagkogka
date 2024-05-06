@@ -81,6 +81,7 @@ export const Arrow: React.FC<StarProps> = ({ className = '' }) => (
     />
   </svg>
 );
+
 export const FatArrow: React.FC<StarProps> = ({ className = '' }) => (
   <svg className={className} width="18" height="20" viewBox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path
@@ -100,5 +101,16 @@ export const FatArrow: React.FC<StarProps> = ({ className = '' }) => (
         <stop offset="0.94644" stopColor="#5992AA" />
       </linearGradient>
     </defs>
+  </svg>
+);
+
+export const Chevron: React.FC<StarProps> = ({ className = '' }) => (
+  <svg className={className} width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M2.82872 6.99995L7.77847 2.0502L6.36426 0.635986L0.000296891 6.99995L6.36426 13.3639L7.77847 11.9497L2.82872 6.99995Z"
+      fill="currentColor"
+    />
   </svg>
 );

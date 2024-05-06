@@ -7,6 +7,7 @@ import Header from 'src/components/Header';
 import StarList from 'src/components/StarList';
 import { Route } from 'src/types';
 
+import BlogPosts from './BlogPosts';
 import { JOY, KEY_LEARNINGS } from './constants';
 
 const About: React.FC = () => {
@@ -67,6 +68,8 @@ const About: React.FC = () => {
             <GoTo to={Route.RESUME} label="Check my resume" />
           </div>
         </article>
+
+        <BlogPosts />
 
         <article className="text-dark-blue flex flex-col lg:flex-row gap-4 max-w-[1180px] lg:w-full">
           <h2 className="text-3xl lg:text-[32px] font-bebas uppercase mb-4 lg:flex-1">About me</h2>
