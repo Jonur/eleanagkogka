@@ -5,3 +5,11 @@ export type BlogPost = {
   subtitle: string;
   url: string;
 };
+
+export type Experience = {
+  title: string;
+  where: string;
+  when: string;
+  description: string;
+  pointColor: string;
+};
