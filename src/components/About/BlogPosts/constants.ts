@@ -62,4 +62,6 @@ export const PAGINATION_COUNT = 3;
 
 export const BLOG_POST_SIZE_PX = 304;
 
+export const BLOG_POST_SIZE_LG_PX = 373;
+
 export const BLOG_POST_GAP_PX = 24;
