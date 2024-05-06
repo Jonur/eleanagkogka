@@ -86,11 +86,12 @@ const BlogPosts: React.FC = () => {
               rel="noreferrer"
               className="w-[304px] flex-shrink-0 flex flex-col justify-between"
             >
-              <div className="flex flex-col">
+              <div className="flex flex-col relative">
                 <div
                   className="w-full h-[140px] bg-cover bg-center mb-4 lg:mb-6 rounded-tl-[32px] rounded-br-[32px]"
                   style={{ backgroundImage: `url(/blog/thumb-${index}.jpg)` }}
                 />
+                <div className="absolute top-0 left-0 w-full h-[140px] mb-4 lg:mb-6 rounded-tl-[32px] rounded-br-[32px] bg-dark-blue opacity-30" />
                 <h5 className="text-base leading-[22px] lg:text-lg lg:leading-7 uppercase font-bold">{post.title}</h5>
                 {post.subtitle && <h6 className="text-base leading-6 lg:text-lg lg:leading-7 mt-1">{post.subtitle}</h6>}
               </div>
