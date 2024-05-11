@@ -7,6 +7,7 @@ import { Arrow } from 'src/components/Icons';
 
 import { EXPERIENCE } from './constants';
 import ExperienceCard from './ExperienceCard';
+import FavouriteTools from './FavouriteTools';
 
 const Resume: React.FC = () => {
   const [viewingExperienceCount, setViewingExperienceCount] = useState(EXPERIENCE.slice(0, 4));
@@ -28,26 +29,31 @@ const Resume: React.FC = () => {
               <ExperienceCard key={`${experience.where}-${experience.when}`} experience={experience} />
             ))}
 
-            <div className="border-l border-black border-opacity-15 pl-6">
-              <button
-                onClick={toggleExperienceCount}
-                className="flex gap-2 items-center text-teal-dark leading-5 lg:leading-7 lg:text-lg text-base mt-4"
-              >
-                {viewingExperienceCount.length === EXPERIENCE.length ? (
-                  <>
-                    <span>Show less</span>
-                    <Arrow className="-rotate-90 w-[12px] h-[12px]" />
-                  </>
-                ) : (
-                  <>
-                    <span>Show more</span>
-                    <Arrow className="rotate-90 w-[12px] h-[12px]" />
-                  </>
-                )}
-              </button>
+            <div className="border-l border-black border-opacity-15 lg:border-0 pl-6 lg:flex lg:justify-end">
+              <div className="hidden lg:block" />
+              <div className="lg:flex-1 lg:max-w-[700px] border-0 lg:border-l border-black border-opacity-15 lg:pl-10">
+                <button
+                  onClick={toggleExperienceCount}
+                  className="flex gap-2 items-center text-teal-dark leading-5 lg:leading-7 lg:text-lg text-base mt-4 "
+                >
+                  {viewingExperienceCount.length === EXPERIENCE.length ? (
+                    <>
+                      <span>Show less</span>
+                      <Arrow className="-rotate-90 w-[12px] h-[12px]" />
+                    </>
+                  ) : (
+                    <>
+                      <span>Show more</span>
+                      <Arrow className="rotate-90 w-[12px] h-[12px]" />
+                    </>
+                  )}
+                </button>
+              </div>
             </div>
           </div>
         </article>
+
+        <FavouriteTools />
 
         <Contact />
       </div>

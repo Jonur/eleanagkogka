@@ -29,6 +29,19 @@ export default {
         bebas: ['"Bebas Neue"', ...defaultTheme.fontFamily.sans],
         alegreya: ['"Alegreya Sans"', ...defaultTheme.fontFamily.sans],
       },
+      keyframes: {
+        marquee: {
+          '0%': {
+            transform: 'translateX(0px)',
+          },
+          '100%': {
+            transform: 'translateX(calc(-100% - 2.5rem))',
+          },
+        },
+      },
+      animation: {
+        marquee: '20s linear 0s infinite normal none running marquee',
+      },
     },
     screens: {
       lg: '1024px',
