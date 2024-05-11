@@ -8,6 +8,7 @@ import { Arrow } from 'src/components/Icons';
 import { EXPERIENCE } from './constants';
 import ExperienceCard from './ExperienceCard';
 import FavouriteTools from './FavouriteTools';
+import Testimonials from './Testimonials';
 
 const Resume: React.FC = () => {
   const [viewingExperienceCount, setViewingExperienceCount] = useState(EXPERIENCE.slice(0, 4));
@@ -54,6 +55,8 @@ const Resume: React.FC = () => {
         </article>
 
         <FavouriteTools />
+
+        <Testimonials />
 
         <Contact />
       </div>

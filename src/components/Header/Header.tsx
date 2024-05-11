@@ -20,7 +20,7 @@ const Header: React.FC<HeaderProps> = ({ pageHeader }) => {
   const isAtRoot = (): boolean => (location.pathname as Route) === Route.ROOT;
 
   return (
-    <header className="bg-light-grey pt-4 px-6 lg:px-[80px] pb-8">
+    <header className="bg-light-grey pt-4 px-6 lg:px-[80px] pb-8 lg:relative lg:z-20">
       <div className="w-full flex justify-between">
         <Link to={Route.ROOT}>
           <img src="/logo.svg" className="w-10 h-10" />

@@ -112,12 +112,10 @@ const BlogPosts: React.FC = () => {
           ))}
         </div>
 
-        {onLargeScreen() && (
-          <div
-            className="bg-gradient-to-r from-transparent from-[5%] to-white opacity-70 fixed -right-1 h-full"
-            style={{ width: `${(blogPostContainerRef.current?.offsetLeft || 0) + 40}px` }}
-          />
-        )}
+        <div
+          className="hidden lg:block bg-gradient-to-r from-transparent from-[5%] to-white opacity-70 fixed -right-1 h-full top-0"
+          style={{ width: `${(blogPostContainerRef.current?.offsetLeft || 0) + 40}px` }}
+        />
       </div>
 
       <footer className="w-full hidden lg:flex justify-end lg:justify-between mt-12 items-baseline">

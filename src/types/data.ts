@@ -13,3 +13,10 @@ export type Experience = {
   description: string;
   pointColor: string;
 };
+
+export type Testimonial = {
+  passage: string;
+  author: string;
+  jobTitle: string;
+  company: string;
+};
