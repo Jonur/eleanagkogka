@@ -20,10 +20,10 @@ const Resume: React.FC = () => {
       <Header pageHeader="Resume" />
 
       <div className="pt-[60px] lg:pt-[100px] px-6 pb-4 flex flex-col items-center gap-y-[60px] lg:gap-y-[100px]">
-        <article className="text-dark-blue flex flex-col lg:flex-row gap-4 max-w-[1180px] lg:w-full">
-          <h2 className="text-3xl lg:text-[32px] font-bebas uppercase mb-4 lg:flex-1">Experience</h2>
+        <article className="text-dark-blue flex flex-col gap-4 max-w-[1180px] lg:w-full">
+          <h2 className="text-3xl lg:text-[32px] font-bebas uppercase mb-4: lg:mb-2 lg:flex-1">Experience</h2>
 
-          <div className="flex flex-col max-w-[700px]">
+          <div className="flex flex-col max-w-[700px] lg:max-w-none">
             {viewingExperienceCount.map((experience) => (
               <ExperienceCard key={`${experience.where}-${experience.when}`} experience={experience} />
             ))}
