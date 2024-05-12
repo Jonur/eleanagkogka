@@ -74,37 +74,37 @@ export const EXPERIENCE: Experience[] = [
 export const KEY_SKILLS: KeySkill[] = [
   {
     title: 'UX Design',
-    content: 'Content',
+    content: 'Information Architecture, User Journeys & Flows, User Personas, Wireframes & Prototypes.',
     icon: 'ux-design',
   },
   {
     title: 'UI Design',
-    content: 'Content',
+    content: 'UI Design Patterns, Gestalt Principles, Accessibility Design, Interactions, Design Systems.',
     icon: 'ui-design',
   },
   {
     title: 'Research',
-    content: 'Content',
+    content: 'Data, Surveys, User Interviews, User Observations, Competitor Analysis, Customer Feedback.',
     icon: 'research',
   },
   {
     title: 'Product growth',
-    content: 'Content',
+    content: 'Data Driven Design, Hypotheses Generation, A/B Testing, Product Optimisation.',
     icon: 'product-growth',
   },
   {
     title: 'Visual design',
-    content: 'Content',
+    content: 'Layout & Hierarchy, Composition, Iconography, Colour theory, Typography, Semeiotics.',
     icon: 'visual-design',
   },
   {
     title: 'Copywriting',
-    content: 'Content',
+    content: 'Product & UX copywriting, Marketing & Microcopy.',
     icon: 'ux-copywriting',
   },
   {
     title: 'Design coaching',
-    content: 'Content',
+    content: 'Design Mentoring - Workshops, Presentations, Guides, Feedback & 1o1 Support.',
     icon: 'design-coaching',
   },
 ];
