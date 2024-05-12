@@ -130,6 +130,7 @@ export const CASE_STUDIES: Record<CaseStudy['id'], CaseStudy> = {
       },
       {
         title: 'First project<br />The onboarding question',
+        prebordered: true,
         entries: [
           {
             title:
@@ -143,6 +144,44 @@ export const CASE_STUDIES: Record<CaseStudy['id'], CaseStudy> = {
             `,
           },
           { image: '2.png' },
+          {
+            label: 'Proposal',
+            content: `
+              <p>Replace the initial question with a more relevant one: “Welcome! What’s your main reason for using StreamYard?”. Users could choose from live streaming, recording, or hosting webinars. This change will aim to help us:</p>
+              <ul>
+                <li>Understand what our users are using us for today, and measure the impact of our marketing and growth efforts on attracting different use cases in the future.</li>
+                <li>Provide a tailored to our customers's use case experience.</li>
+                <li>Inform new users about the platform’s capabilities.</li>
+              </ul>
+          `,
+          },
+          {
+            label: 'Design goals',
+            content: `
+              <ul>
+                <li>Maximize engagement with the onboarding question.</li>
+                <li>Minimize drop-offs to protect the top of the funnel.</li>
+                <li>Inject personality into the product to build trust and user affinity.</li>
+                <li>Understand the primary use cases of our customers.</li>
+              </ul>
+            `,
+          },
+          {
+            label: 'Design challenges',
+            content: `
+              <p>Given our evolving design system and non-established branding, crafting an appealing and effective interface required coordination and collaboration with the design team. I designed a new card format consistent with our existing product style, and worked closely with the brand, providing direction, to create graphics for the page. The copy was crafted to be concise, promoting quick and accurate decisions. To ensure fairness, the response options were randomised.</p>
+              <p>A bold decision was to remove the skip button, forcing people to answer the question before diving into the product. I wasn’t a fan of this approach, but I agreed to release this to 20% of new users to gauge drop-off rates.</p>
+            `,
+            image: '10.png',
+          },
+          {
+            label: 'Results and iterations',
+            content: `
+              <p>The initial test maintained our original drop-off rate while empowering us with knowledge. To reduce drop-off, we reintroduced the “Skip” button, which worked well but led to fewer answers.</p>
+              <p>In the next iteration, I replaced the “Skip” button with an “X” icon and removed the supporting copy. This adjustment resulted in 80% fewer skips, reduced the average time spent on the page and led to more users moving through the funnel.</p>
+              <p>The refined onboarding question helped segment users more effectively, revealing the detailed split between live streamers, recorders and webinar hosts. This data will measure use case swifts and trends and help us understand how different users onboard, retain or upgrade. It will also act as the foundation for delivering a tailored use case-based experience in the future.</p>
+            `,
+          },
         ],
       },
     ],

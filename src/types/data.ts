@@ -63,6 +63,7 @@ type CaseStudyEntry =
 
 type CaseStudySection = {
   title: string;
+  prebordered?: boolean;
   entries: CaseStudyEntry[];
 };
 

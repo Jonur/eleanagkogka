@@ -1,3 +1,4 @@
+import c from 'classnames';
 import React from 'react';
 import { useParams } from 'react-router-dom';
 
@@ -24,7 +25,12 @@ const CaseStudy: React.FC = () => {
         {(caseStudy.sections || []).map((section, index) => {
           const key = `${section.title}-${index}`;
           return (
-            <section key={key} className="text-dark-blue max-w-[1180px] w-full lg:flex lg:justify-between">
+            <section
+              key={key}
+              className={c('text-dark-blue max-w-[1180px] w-full lg:flex lg:justify-between', {
+                'border-t border-black border-opacity-15 pt-[80px]': section.prebordered,
+              })}
+            >
               <h2
                 className="text-3xl lg:text-[32px] font-bebas uppercase mb-4 lg:mb-8"
                 dangerouslySetInnerHTML={{
@@ -57,7 +63,7 @@ const CaseStudy: React.FC = () => {
                         )}
                         {'content' in entry && (
                           <span
-                            className="flex flex-col gap-y-2 leading-6 lg:leading-7 lg:text-lg [&_a]:text-teal-dark [&_a]:border-b [&_a]:border-teal-dark [&_a]:inline-block [&_a]:leading-[13px]"
+                            className="flex flex-col gap-y-2 leading-6 lg:leading-7 lg:text-lg [&_a]:text-teal-dark [&_a]:border-b [&_a]:border-teal-dark [&_a]:inline-block [&_a]:leading-[13px] [&_ul]:list-disc [&_ul]:ml-8"
                             dangerouslySetInnerHTML={{
                               __html: entry.content,
                             }}
