@@ -10,5 +10,19 @@ export const CASE_STUDIES: Record<CaseStudy['id'], CaseStudy> = {
     intro:
       'Delve into my design thinking process, user research strategies and team collaboration. Preview some of my design solutions, A/B tests and artefacts developed throughout this project.',
     img: 'blog/thumb-0.jpg',
+    sections: [
+      {
+        title: 'Introduction',
+        entries: [],
+      },
+      {
+        title: 'Background',
+        entries: [],
+      },
+      {
+        title: 'Getting started',
+        entries: [],
+      },
+    ],
   },
 };

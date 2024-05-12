@@ -100,7 +100,7 @@ export const KEY_SKILLS: KeySkill[] = [
   {
     title: 'Copywriting',
     content: 'Content',
-    icon: 'copywriting',
+    icon: 'ux-copywriting',
   },
   {
     title: 'Design coaching',

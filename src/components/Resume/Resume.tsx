@@ -74,7 +74,10 @@ const Resume: React.FC = () => {
               <React.Fragment key={skill.title}>
                 <li className="py-6 border-black border-opacity-15 flex flex-col gap-y-2 [&:not(:last-child)]:border-b lg:first:pt-0">
                   <div className="text-base leading-[22px] lg:text-lg lg:leading-7 uppercase font-bold flex justify-between items-center">
-                    <span>{skill.title}</span>
+                    <div className="flex items-center gap-x-2">
+                      <img src={`/icons/${skill.icon}.svg`} />
+                      <span>{skill.title}</span>
+                    </div>
                     <button
                       className="text-2xl leading-[22px] lg:leading-7 font-bold cursor-pointer"
                       onClick={() => toggleKeySkill(index)}
