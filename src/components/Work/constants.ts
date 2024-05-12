@@ -80,6 +80,69 @@ export const CASE_STUDIES: Record<CaseStudy['id'], CaseStudy> = {
               <p>An onboarding system will provide guidance and support to keep our customers engaged and motivated to explore and discover StreamYard features, reaching their content creation goals. It will help us communicate and deliver the best value for our customers’ wants and needs. This, in turn, will boost customer acquisition and reduce churn.</p>
               <p>This hypothesis will help us communicate the project value to stakeholders while serving as our north star. &ndash; <a href="#">More about on how I form a hypothesis</a>.</p>`,
           },
+          {
+            label: 'Measuring success',
+            content: `
+              <p>To gauge the impact of our efforts, I set specific metrics to monitor.</p>
+              <p><strong>Retention Rate:</strong> More users should understand the value of SY and form the habit of using it.</p>
+              <p><strong>Engagement Rate:</strong> A higher percentage of users should actively engage with the platform over time.</p>
+              <p><strong>Time to Value:</strong> The duration from sign-up to realising the product's value should decrease.</p>
+              <p><strong>Feature Adoption Rate:</strong> There should be an increase in feature usage post-onboarding.</p>
+              <p><strong>Upgrade Rate:</strong> More users should find enough value to upgrade to a paid plan.</p>
+              <p><strong>Completion Rate:</strong> More users should be about to complete onboarding without any usability issues.</p>
+              <p><strong>Support Tickets:</strong> There should be no complaints about any onboarding solutions.</p>
+            `,
+          },
+        ],
+      },
+      {
+        title: 'Diving in',
+        entries: [
+          {
+            title:
+              'With the support of my Growth PM, as the project fitted like a glove to our team and business objectives, I had to get leadership buy-in and align with all the relevant teams.',
+          },
+          {
+            label: 'Business support',
+            content:
+              'We were lucky or rather well prepared and got the leadership’s full support. We already had some insights from previous observations, to form some initial hypotheses and adjust our roadmap. I also had the green light to use our research function to interview potential new customers.',
+          },
+          {
+            label: 'Communication',
+            content:
+              'Ensuring smooth collaboration with different product teams was critical. Every project had to be communicated in detail, including the scope, timeline, expectations, potential impacts on teams’ roadmaps, and any results or learnings.',
+          },
+          {
+            label: 'Principles',
+            content:
+              'We committed to not fixing what isn’t broken, viewing onboarding as part of a holistic strategy, and adopting an iterative approach to learn and optimise continuously.',
+          },
+          {
+            label: 'Prioritisation',
+            content:
+              'We aimed to set solid foundations, get closer to our customers and achieve quick wins to build confidence and maintain momentum.',
+          },
+          {
+            content:
+              'This refined approach streamlined our processes and aligned our team efforts towards a common vision, setting the stage for this iterative, high-impact project which, spoiler alert, will enhance our company’s user-focused culture.',
+          },
+        ],
+      },
+      {
+        title: 'First project<br />The onboarding question',
+        entries: [
+          {
+            title:
+              '&ndash; Learn more about our users, and create the foundations for a tailored to their use case experience while educating them on SY capabilities.',
+          },
+          {
+            label: 'Problem',
+            content: `
+              <p><strong>Un-utilised space:</strong> Initially, new users were greeted with a generic question on how they are planning to use StreamYard, which proved irrelevant and unmonitored after talking with different teams. This step contributed to our top of funnel drop-off rate for no real value to our business.</p>
+              <p><strong>New use cases:</strong> StreamYard’s features evolved to serve streamers, podcasters, and webinar hosts, but the product user journey has been unchanged. We had to understand, why people are here to offer them a tailored to their needs experience. Looking at product surveys and user interview insights from our research team, the podcasting and webinar features weren’t apparent to our users. SY was well-known as a streaming platform and nothing more.</p>
+            `,
+          },
+          { image: '2.png' },
         ],
       },
     ],

@@ -25,7 +25,12 @@ const CaseStudy: React.FC = () => {
           const key = `${section.title}-${index}`;
           return (
             <section key={key} className="text-dark-blue max-w-[1180px] w-full lg:flex lg:justify-between">
-              <h2 className="text-3xl lg:text-[32px] font-bebas uppercase mb-4 lg:mb-8">{section.title}</h2>
+              <h2
+                className="text-3xl lg:text-[32px] font-bebas uppercase mb-4 lg:mb-8"
+                dangerouslySetInnerHTML={{
+                  __html: section.title,
+                }}
+              />
 
               <div className="flex flex-col lg:flex-1 lg:max-w-[880px] gap-y-6">
                 {section.entries.map((entry) => {
@@ -43,7 +48,12 @@ const CaseStudy: React.FC = () => {
                       )}
                       <div className="flex flex-col gap-y-4 lg:gap-y-6 lg:max-w-[700px]">
                         {'title' in entry && (
-                          <h3 className="text-2xl lg:text-[26px] italic font-light">{entry.title}</h3>
+                          <h3
+                            className="text-2xl lg:text-[26px] italic font-light"
+                            dangerouslySetInnerHTML={{
+                              __html: entry.title,
+                            }}
+                          />
                         )}
                         {'content' in entry && (
                           <span
@@ -53,7 +63,9 @@ const CaseStudy: React.FC = () => {
                             }}
                           />
                         )}
-                        {'image' in entry && <img src={entry.image} className="w-full h-auto" />}
+                        {'image' in entry && (
+                          <img src={`/case-studies/${caseStudyId}/thumb-${entry.image}`} className="w-full h-auto" />
+                        )}
                       </div>
                     </div>
                   );
