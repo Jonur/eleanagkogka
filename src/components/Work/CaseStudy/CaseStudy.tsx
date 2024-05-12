@@ -1,21 +1,23 @@
 import c from 'classnames';
-import React from 'react';
+import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 
 import Contact from 'src/components/Contact';
 import Footer from 'src/components/Footer';
 import Header from 'src/components/Header';
+import ImageModal from 'src/components/ImageModal';
 import { useWindowDimensions } from 'src/hooks';
 import { Route } from 'src/types';
 
 import { CASE_STUDIES } from '../constants';
 import SocialProfiles from '../SocialProfiles';
 
-const CaseStudy: React.FC = () => {
+export const CaseStudy: React.FC = () => {
   const { caseStudyId = '' } = useParams();
   const caseStudy = CASE_STUDIES[caseStudyId];
 
   const { onLargeScreen } = useWindowDimensions();
+  const [image, setImage] = useState('');
 
   return caseStudy ? (
     <>
@@ -75,7 +77,11 @@ const CaseStudy: React.FC = () => {
                           />
                         )}
                         {'image' in entry && (
-                          <img src={`/case-studies/${caseStudyId}/thumb-${entry.image}`} className="w-full h-auto" />
+                          <img
+                            src={`/case-studies/${caseStudyId}/thumb-${entry.image}`}
+                            onClick={() => setImage(`/case-studies/${caseStudyId}/${entry.image}`)}
+                            className="w-full h-auto cursor-pointer"
+                          />
                         )}
                       </div>
                     </div>
@@ -92,6 +98,8 @@ const CaseStudy: React.FC = () => {
       </div>
 
       <Footer />
+
+      <ImageModal image={image} setImage={setImage} />
     </>
   ) : null;
 };

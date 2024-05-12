@@ -59,3 +59,7 @@ body {
   font-family: 'Alegreya Sans';
   background-color: #fbfbfb;
 }
+
+body.ReactModal__Body--open {
+  overflow: hidden;
+}
