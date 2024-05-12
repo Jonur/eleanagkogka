@@ -7,6 +7,7 @@ import Header from 'src/components/Header';
 import { Route } from 'src/types';
 
 import { CASE_STUDIES } from '../constants';
+import SocialProfiles from '../SocialProfiles';
 
 const CaseStudy: React.FC = () => {
   const { caseStudyId = '' } = useParams();
@@ -20,6 +21,8 @@ const CaseStudy: React.FC = () => {
         <section className="text-dark-blue max-w-[1180px] w-full lg:flex lg:justify-between">
           <h2 className="text-3xl lg:text-[32px] font-bebas uppercase mb-8">{caseStudy.title}</h2>
         </section>
+
+        <SocialProfiles />
 
         <Contact />
       </div>
