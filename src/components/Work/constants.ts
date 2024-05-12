@@ -350,7 +350,7 @@ export const CASE_STUDIES: Record<CaseStudy['id'], CaseStudy> = {
           },
           {
             content:
-              '&ndash; <a href="#">More about my approach to user interviews in my article User Interviews Made Simple</a>.',
+              '<p>&ndash;&nbsp;&nbsp;<a href="#">More about my approach to user interviews in my article User Interviews Made Simple</a>.</p>',
           },
           {
             label: 'Insight synthesis',
@@ -369,7 +369,7 @@ export const CASE_STUDIES: Record<CaseStudy['id'], CaseStudy> = {
           {
             content: `
               <p>Sharing these insights with the leadership and the PMs greatly influenced the product’s vision, adding two new areas of focus, and our road map for 2024.</p>
-              <p>I will delve deeper into specific insights and test ideas in <a href="#">Part 2 of the Onboarding Project.</a></p>
+              <p>I will delve deeper into specific insights and test ideas in <a href="#">Part 2 of the Onboarding Project</a>.</p>
             `,
           },
           {
@@ -380,7 +380,7 @@ export const CASE_STUDIES: Record<CaseStudy['id'], CaseStudy> = {
           },
           {
             content:
-              '<p>&ndash; The onboarding guide turned into a Medium article which you can read <a href="#">here.</a></p>',
+              '<p>&ndash; The onboarding guide turned into a Medium article which you can read <a href="#">here</a>.</p>',
           },
         ],
       },
