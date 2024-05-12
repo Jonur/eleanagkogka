@@ -81,6 +81,14 @@ const Testimonials: React.FC = () => {
       <h3 className="text-lg italic mb-12 lg:mb-[80px]">Testimonials</h3>
 
       <div
+        className="hidden lg:block bg-gradient-to-r from-transparent from-[5%] to-white opacity-70 absolute -right-1 h-full top-0 z-10"
+        style={{
+          width: `${(sectionRef.current?.offsetLeft || 0) + 40}px`,
+          right: `-${sectionRef.current?.offsetLeft || 0}px`,
+        }}
+      />
+
+      <div
         ref={testimonialContainerRef}
         className="overflow-x-scroll scroll-smooth no-scrollbar relative"
         style={{
@@ -104,11 +112,6 @@ const Testimonials: React.FC = () => {
             </div>
           ))}
         </div>
-
-        <div
-          className="hidden lg:block bg-gradient-to-r from-transparent from-[5%] to-white opacity-70 fixed -right-1 h-full top-0"
-          style={{ width: `${(sectionRef.current?.offsetLeft || 0) + 40}px` }}
-        />
       </div>
 
       <footer className="w-full flex justify-between mt-12 items-baseline">

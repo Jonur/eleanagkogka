@@ -20,3 +20,9 @@ export type Testimonial = {
   jobTitle: string;
   company: string;
 };
+
+export type KeySkill = {
+  title: string;
+  content: string;
+  icon: string;
+};

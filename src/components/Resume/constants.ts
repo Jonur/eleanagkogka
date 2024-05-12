@@ -1,4 +1,4 @@
-import { Experience } from 'src/types';
+import { Experience, KeySkill } from 'src/types';
 
 export const EXPERIENCE: Experience[] = [
   {
@@ -68,5 +68,43 @@ export const EXPERIENCE: Experience[] = [
     when: '2008 - 2012',
     description: '<p>I designed websites, logos, branding & brand collaterals, posters, flyers, banners etc.</p>',
     pointColor: 'bg-mustard',
+  },
+];
+
+export const KEY_SKILLS: KeySkill[] = [
+  {
+    title: 'UX Design',
+    content: 'Content',
+    icon: 'ux-design',
+  },
+  {
+    title: 'UI Design',
+    content: 'Content',
+    icon: 'ui-design',
+  },
+  {
+    title: 'Research',
+    content: 'Content',
+    icon: 'research',
+  },
+  {
+    title: 'Product growth',
+    content: 'Content',
+    icon: 'product-growth',
+  },
+  {
+    title: 'Visual design',
+    content: 'Content',
+    icon: 'visual-design',
+  },
+  {
+    title: 'Copywriting',
+    content: 'Content',
+    icon: 'copywriting',
+  },
+  {
+    title: 'Design coaching',
+    content: 'Content',
+    icon: 'design-coaching',
   },
 ];
