@@ -18,30 +18,47 @@ const Work: React.FC = () => {
         <section className="text-dark-blue max-w-[1180px] w-full lg:flex lg:justify-between">
           <h2 className="text-3xl lg:text-[32px] font-bebas uppercase mb-8">Case studies</h2>
 
-          <ul className="p-0 m-0 lg:flex-1 lg:max-w-[700px] gap-y-12 lg:gap-y-[80px]">
+          <div role="list" className="p-0 m-0 lg:flex-1 lg:max-w-[700px] gap-y-12 lg:gap-y-[80px]">
             {CAST_STUDY_ORDER.map((id) => {
               const study = CASE_STUDIES[id];
 
               return (
-                <React.Fragment key={study.title}>
-                  <Link to={`${Route.WORK}/${study.id}`}>
-                    <li className="flex flex-col gap-y-4">
-                      <h3 className="text-2xl leading-[30px] lg:text-[26px] lg:leading-8 italic">{study.title}</h3>
-                      <h4 className="text-2xl leading-8 lg:leading-[0px] -mt-4 lg:mt-0 lg:mb-6 lg:text-[26px] italic font-light">
-                        {study.subtitle}
-                      </h4>
-                      <p className="leading-6 lg:leading-7 lg:text-lg">{study.intro}</p>
-                      <img src={study.img} className="rounded-tl-[32px] rounded-br-[32px] my-2" />
-                      <span className="flex gap-2 items-center text-teal-dark leading-6 lg:leading-7 lg:text-lg">
-                        Go to project
-                        <Arrow />
-                      </span>
-                    </li>
-                  </Link>
-                </React.Fragment>
+                <Link
+                  key={study.title}
+                  to={`${Route.WORK}/${study.id}`}
+                  role="listitem"
+                  className="flex flex-col gap-y-4"
+                >
+                  <h3 className="text-2xl leading-[30px] lg:text-[26px] lg:leading-8 italic">{study.title}</h3>
+                  <h4 className="text-2xl leading-8 lg:leading-[0px] -mt-4 lg:mt-0 lg:mb-6 lg:text-[26px] italic font-light">
+                    {study.subtitle}
+                  </h4>
+                  <p className="leading-6 lg:leading-7 lg:text-lg">{study.intro}</p>
+                  <img src={study.img} className="rounded-tl-[32px] rounded-br-[32px] my-2" />
+                  <span className="flex gap-2 items-center text-teal-dark leading-6 lg:leading-7 lg:text-lg">
+                    Go to project
+                    <Arrow />
+                  </span>
+                </Link>
               );
             })}
-          </ul>
+          </div>
+        </section>
+
+        <section className="w-full border-t border-b border-black border-opacity-15 pt-3 lg:pt-4 pb-12 lg:pb-[80px] text-dark-blue max-w-[1180px] lg:w-full">
+          <h3 className="text-lg italic mb-12 lg:mb-[80px]">Explore more of my work on</h3>
+
+          <div className="flex flex-col gap-y-10 lg:gap-y-0 lg:flex-row lg:justify-between lg:px-[100px]">
+            <a href="https://behance.net/EleanaG" target="_blank" rel="noreferrer" title="Behance">
+              <img src="profile-logos/behance.svg" />
+            </a>
+            <a href="https://dribbble.com/EleanaGkogka" target="_blank" rel="noreferrer" title="Dribble">
+              <img src="profile-logos/dribble.svg" />
+            </a>
+            <a href="https://medium.com/@eleana_gkogka" target="_blank" rel="noreferrer" title="Medium">
+              <img src="profile-logos/medium.svg" />
+            </a>
+          </div>
         </section>
 
         <Contact />

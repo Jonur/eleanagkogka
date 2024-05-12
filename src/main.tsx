@@ -9,24 +9,30 @@ import Root from 'src/components/Root';
 import Work from 'src/components/Work';
 
 import './index.css';
+import CaseStudy from './components/Work/CaseStudy';
+import { Route } from './types';
 
 const router = createBrowserRouter([
   {
-    path: '/',
+    path: Route.ROOT,
     element: <Root />,
     errorElement: <ErrorPage />,
   },
   {
-    path: '/about',
+    path: Route.ABOUT,
     element: <About />,
   },
   {
-    path: '/resume',
+    path: Route.RESUME,
     element: <Resume />,
   },
   {
-    path: '/work',
+    path: Route.WORK,
     element: <Work />,
+  },
+  {
+    path: `${Route.WORK}/:caseStudyId`,
+    element: <CaseStudy />,
   },
 ]);
 
