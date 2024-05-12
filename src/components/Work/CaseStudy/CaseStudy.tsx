@@ -28,7 +28,9 @@ const CaseStudy: React.FC = () => {
             <section
               key={key}
               className={c('text-dark-blue max-w-[1180px] w-full lg:flex lg:justify-between', {
-                'border-t border-black border-opacity-15 pt-[80px]': section.prebordered,
+                'border-t border-black border-opacity-15': section.prebordered,
+                'pt-[80px]': onLargeScreen() && section.prebordered,
+                'pt-[60px]': !onLargeScreen() && section.prebordered,
               })}
             >
               <h2
@@ -48,9 +50,12 @@ const CaseStudy: React.FC = () => {
                       className="flex-1 flex flex-col gap-y-4 lg:gap-y-0 lg:flex-row lg:gap-x-10"
                     >
                       {shouldAddLabel && (
-                        <div className="lg:w-[140px] lg:text-right shrink-0 text-base leading-[22px] lg:text-lg lg:leading-7 uppercase font-bold">
-                          {'label' in entry ? entry.label : ''}
-                        </div>
+                        <div
+                          className="lg:w-[140px] lg:text-right shrink-0 text-base leading-[22px] lg:text-lg lg:leading-7 uppercase font-bold"
+                          dangerouslySetInnerHTML={{
+                            __html: 'label' in entry ? entry.label : '',
+                          }}
+                        />
                       )}
                       <div className="flex flex-col gap-y-4 lg:gap-y-6 lg:max-w-[700px]">
                         {'title' in entry && (
