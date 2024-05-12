@@ -76,10 +76,10 @@ const Resume: React.FC = () => {
                   <div className="text-base leading-[22px] lg:text-lg lg:leading-7 uppercase font-bold flex justify-between items-center">
                     <span>{skill.title}</span>
                     <button
-                      className="text-2xl leading-[22px] lg:text-xl lg:leading-7 font-bold cursor-pointer"
+                      className="text-2xl leading-[22px] lg:leading-7 font-bold cursor-pointer"
                       onClick={() => toggleKeySkill(index)}
                       dangerouslySetInnerHTML={{
-                        __html: keySkillsToggleStatus[index] ? '&ndash;' : '+',
+                        __html: keySkillsToggleStatus[index] ? '&ndash;' : '&plus;',
                       }}
                     />
                   </div>

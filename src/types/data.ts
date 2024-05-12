@@ -26,3 +26,11 @@ export type KeySkill = {
   content: string;
   icon: string;
 };
+
+export type CaseStudy = {
+  id: string;
+  title: string;
+  subtitle: string;
+  intro: string;
+  img: string;
+};

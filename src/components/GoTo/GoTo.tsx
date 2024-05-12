@@ -5,7 +5,7 @@ import { Arrow } from 'src/components/Icons';
 import { Route } from 'src/types';
 
 type GoToProps = {
-  to: Route;
+  to: Route | string;
   label: string;
 };
 
