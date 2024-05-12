@@ -2,17 +2,18 @@ import c from 'classnames';
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
-import { Close, Menu } from 'src/components/Icons';
+import { Chevron, Close, Menu } from 'src/components/Icons';
 import { useWindowDimensions } from 'src/hooks';
 import { Route } from 'src/types';
 
 import SocialMedia from './SocialMedia';
 
 type HeaderProps = {
+  breadcrumb?: { to: Route; label: string };
   pageHeader: string;
 };
 
-const Header: React.FC<HeaderProps> = ({ pageHeader }) => {
+const Header: React.FC<HeaderProps> = ({ breadcrumb, pageHeader }) => {
   const { onLargeScreen } = useWindowDimensions();
   const location = useLocation();
   const [menuVisible, setMenuVisible] = useState(false);
@@ -100,6 +101,13 @@ const Header: React.FC<HeaderProps> = ({ pageHeader }) => {
 
         {onLargeScreen() && <SocialMedia />}
       </div>
+
+      {breadcrumb && (
+        <Link to={breadcrumb.to} className="flex gap-x-1 items-center leading-6 lg:leading-7 lg:text-lg mt-2">
+          <Chevron className="w-3 h-3" />
+          <span>{breadcrumb.label}</span>
+        </Link>
+      )}
     </header>
   );
 };
