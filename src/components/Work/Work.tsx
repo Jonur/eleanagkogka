@@ -28,14 +28,11 @@ const Work: React.FC = () => {
                   key={study.title}
                   to={`${Route.WORK}/${study.id}`}
                   role="listitem"
-                  className="flex flex-col gap-y-4"
+                  className="flex flex-col gap-y-4 lg:gap-y-6"
                 >
                   <h3 className="text-2xl leading-[30px] lg:text-[26px] lg:leading-8 italic">{study.title}</h3>
-                  <h4 className="text-2xl leading-8 lg:leading-[0px] -mt-4 lg:mt-0 lg:mb-6 lg:text-[26px] italic font-light">
-                    {study.subtitle}
-                  </h4>
                   <p className="leading-6 lg:leading-7 lg:text-lg">{study.intro}</p>
-                  <img src={study.img} className="rounded-tl-[32px] rounded-br-[32px] my-2" />
+                  <img src={`/case-studies/${id}/${study.img}`} className="rounded-tl-[32px] rounded-br-[32px] my-2" />
                   <span className="flex gap-2 items-center text-teal-dark leading-6 lg:leading-7 lg:text-lg">
                     Go to project
                     <Arrow />

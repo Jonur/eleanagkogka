@@ -74,7 +74,6 @@ type CaseStudySection = {
 export type CaseStudy = {
   id: string;
   title: string;
-  subtitle: string;
   intro: string;
   img: string;
   sections?: CaseStudySection[];
