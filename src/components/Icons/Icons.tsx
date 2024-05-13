@@ -21,8 +21,8 @@ export const Menu: React.FC<IconProps> = ({ className = '' }) => (
 
 export const Close: React.FC<IconProps> = ({ className = '' }) => (
   <svg className={className} width="19" height="20" viewBox="0 0 19 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M1.0293 1.51477L17.9999 18.4853" stroke="#FBFBFB" strokeWidth="2" />
-    <path d="M1.0293 18.4854L17.9999 1.51479" stroke="#FBFBFB" strokeWidth="2" />
+    <path d="M1.0293 1.51477L17.9999 18.4853" stroke="currentColor" strokeWidth="2" />
+    <path d="M1.0293 18.4854L17.9999 1.51479" stroke="currentColor" strokeWidth="2" />
   </svg>
 );
 

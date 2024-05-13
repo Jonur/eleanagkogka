@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import Modal from 'react-modal';
 
+import { Close } from 'src/components/Icons';
+
 type ImageModalProps = {
   image: string;
   setImage: (img: string) => void;
@@ -48,9 +50,9 @@ const ImageModal: React.FC<ImageModalProps> = ({ image, setImage }) => {
       <button
         aria-label="Close modal"
         onClick={handleCloseModal}
-        className="absolute right-4 top-2 text-3xl lg:text-4xl"
+        className="absolute right-4 top-4 text-3xl lg:text-4xl text-dark-blue"
       >
-        &times;
+        <Close className="text-dark-blue" />
       </button>
       <img src={image} className="w-auto h-auto max-h-[90vh]" />
     </Modal>

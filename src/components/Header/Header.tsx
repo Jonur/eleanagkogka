@@ -112,7 +112,10 @@ const Header: React.FC<HeaderProps> = ({ breadcrumb, pageHeader }) => {
       </div>
 
       {breadcrumb && (
-        <Link to={breadcrumb.to} className="flex gap-x-1 items-center leading-6 lg:leading-7 lg:text-lg mt-2">
+        <Link
+          to={breadcrumb.to}
+          className="flex gap-x-1 items-center leading-6 lg:leading-7 lg:text-lg mt-2 text-dark-blue"
+        >
           <Chevron className="w-3 h-3" />
           <span>{breadcrumb.label}</span>
         </Link>

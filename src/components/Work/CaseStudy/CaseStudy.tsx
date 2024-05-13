@@ -57,7 +57,7 @@ const CaseStudy: React.FC = () => {
                     >
                       {shouldAddLabel && (
                         <div
-                          className="lg:w-[140px] lg:text-right shrink-0 text-base leading-[22px] lg:text-lg lg:leading-7 uppercase font-bold"
+                          className="lg:w-[140px] lg:text-right shrink-0 text-base leading-[20px] lg:text-lg lg:leading-[22px] uppercase font-bold"
                           dangerouslySetInnerHTML={{
                             __html: 'label' in entry ? entry.label : '',
                           }}

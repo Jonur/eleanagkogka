@@ -58,7 +58,7 @@ const FavouriteTools: React.FC = () => {
           left: `-${offsetLeft || 0}px`,
         }}
       >
-        <div className="flex gap-x-10 lg:gap-x-8 shrink-0 items-center justify-around min-w-full animate-marquee">
+        <div className="flex gap-x-10 lg:gap-[100px] shrink-0 items-center justify-around min-w-full animate-marquee">
           <img src="tools/adobe.svg" />
           <img src="tools/figma.svg" />
           <img src="tools/loom.svg" />
@@ -71,7 +71,7 @@ const FavouriteTools: React.FC = () => {
           <img src="tools/jira.svg" />
           <img src="tools/slack.svg" />
         </div>
-        <div className="flex gap-x-10 lg:gap-x-8 shrink-0 items-center justify-around min-w-full animate-marquee">
+        <div className="flex gap-x-10 lg:gap-[100px] shrink-0 items-center justify-around min-w-full animate-marquee">
           <img src="tools/adobe.svg" />
           <img src="tools/figma.svg" />
           <img src="tools/loom.svg" />

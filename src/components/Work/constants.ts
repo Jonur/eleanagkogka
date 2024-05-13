@@ -36,6 +36,7 @@ export const CASE_STUDIES: Record<CaseStudy['id'], CaseStudy> = {
       },
       {
         title: 'Background',
+        prebordered: true,
         entries: [
           {
             title:
