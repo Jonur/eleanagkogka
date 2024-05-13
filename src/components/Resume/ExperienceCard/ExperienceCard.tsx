@@ -1,14 +1,17 @@
 import c from 'classnames';
 import React, { useState } from 'react';
 
-import { useOnMount } from 'src/hooks';
+import { useOnMount, useWindowDimensions } from 'src/hooks';
 import { Experience } from 'src/types';
 
 type ExperienceProps = {
   experience: Experience;
 };
 
-const ExperienceCard: React.FC<ExperienceProps> = ({ experience: { title, where, when, description, pointColor } }) => {
+const ExperienceCard: React.FC<ExperienceProps> = ({
+  experience: { title, where, when, description, pointColor, expandable },
+}) => {
+  const { onLargeScreen } = useWindowDimensions();
   const [collapsed, setCollapsed] = useState(true);
   const [preview, setPreview] = useState('');
 
@@ -21,6 +24,8 @@ const ExperienceCard: React.FC<ExperienceProps> = ({ experience: { title, where,
   const toggleExperience = () => {
     setCollapsed((prev) => !prev);
   };
+
+  const isExpandable = (onLargeScreen() && expandable.large) || (!onLargeScreen() && expandable.small);
 
   return (
     <div className="relative border-l border-black border-opacity-15 lg:border-0 pl-6 [&:not(:last-child)]:pb-8 lg:[&:not(:last-child)]:pb-0 lg:pb-0 lg:flex lg:justify-end">
@@ -41,9 +46,9 @@ const ExperienceCard: React.FC<ExperienceProps> = ({ experience: { title, where,
           @ <span className="font-bold">{where}</span>
         </h3>
 
-        {collapsed ? (
+        {collapsed && isExpandable ? (
           <div className="text-clipped-preview text-base leading-6 lg:text-lg lg:leading-7 h-[68px] lg:h-[78px]">
-            <span>{preview}</span>
+            <span className="bg-white">{preview}</span>
             <button
               onClick={toggleExperience}
               className="-bottom-[3px] lg:-bottom-[5px] right-[2px] text-clipped-preview-link text-teal-dark leading-6 lg:leading-7 lg:text-lg text-base underline"
@@ -59,14 +64,16 @@ const ExperienceCard: React.FC<ExperienceProps> = ({ experience: { title, where,
                 __html: description,
               }}
             />
-            <div className="flex justify-end">
-              <button
-                onClick={toggleExperience}
-                className="-bottom-[5px] right-[2px] mt-2 text-teal-dark leading-5 lg:leading-7 lg:text-lg text-base underline"
-              >
-                View less
-              </button>
-            </div>
+            {isExpandable && (
+              <div className="flex justify-end">
+                <button
+                  onClick={toggleExperience}
+                  className="-bottom-[5px] right-[2px] mt-2 text-teal-dark leading-5 lg:leading-7 lg:text-lg text-base underline"
+                >
+                  View less
+                </button>
+              </div>
+            )}
           </>
         )}
       </div>

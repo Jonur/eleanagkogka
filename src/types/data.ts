@@ -12,6 +12,10 @@ export type Experience = {
   when: string;
   description: string;
   pointColor: string;
+  expandable: {
+    small: boolean;
+    large: boolean;
+  };
 };
 
 export type Testimonial = {

@@ -9,6 +9,7 @@ import { BLOG_POST_GAP_PX, BLOG_POST_SIZE_LG_PX, BLOG_POST_SIZE_PX, BLOG_POSTS, 
 const BlogPosts: React.FC = () => {
   const { onLargeScreen } = useWindowDimensions();
   const blogPostContainerRef = useRef<HTMLDivElement>(null);
+  const sectionRef = useRef<HTMLDivElement>(null);
   const [blogPostScreens] = useState(Math.ceil(BLOG_POSTS.length / PAGINATION_COUNT));
   const [pageIndex, setPageIndex] = useState(0);
   const [offsets, setOffsets] = useState<number[]>([]);
@@ -73,16 +74,25 @@ const BlogPosts: React.FC = () => {
   });
 
   return (
-    <section className="border-t border-b border-black border-opacity-15 pt-3 lg:pt-4 pb-3 text-dark-blue max-w-[1180px] w-full">
+    <section
+      ref={sectionRef}
+      className="border-t border-b border-black border-opacity-15 pt-3 lg:pt-4 pb-3 text-dark-blue max-w-[1180px] w-full relative"
+    >
       <h3 className="text-lg italic mb-12 lg:mb-[80px]">Blog posts</h3>
+
+      <div
+        className="bg-gradient-to-r from-transparent from-[-10%] lg:from-[5%] to-white opacity-70 absolute -right-1 h-full top-0 z-10"
+        style={{
+          width: `${(sectionRef.current?.offsetLeft || 0) + 40}px`,
+          right: `-${sectionRef.current?.offsetLeft || 0}px`,
+        }}
+      />
 
       <div
         ref={blogPostContainerRef}
         className="overflow-x-scroll scroll-smooth no-scrollbar relative"
         style={{
-          width: onLargeScreen()
-            ? `${window.outerWidth - (blogPostContainerRef.current?.offsetLeft || 0)}px`
-            : 'initial',
+          width: `${window.outerWidth - (sectionRef.current?.offsetLeft || 0)}px`,
         }}
       >
         <div className="flex gap-x-6 lg:gap-x-8">
@@ -112,10 +122,10 @@ const BlogPosts: React.FC = () => {
           ))}
         </div>
 
-        <div
-          className="hidden lg:block bg-gradient-to-r from-transparent from-[5%] to-white opacity-70 fixed -right-1 h-full top-0"
+        {/* <div
+          className="bg-gradient-to-r from-transparent from-[5%] to-white opacity-70 fixed -right-1 h-full top-0"
           style={{ width: `${(blogPostContainerRef.current?.offsetLeft || 0) + 40}px` }}
-        />
+        /> */}
       </div>
 
       <footer className="w-full hidden lg:flex justify-end lg:justify-between mt-12 items-baseline">

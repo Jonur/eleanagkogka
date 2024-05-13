@@ -33,7 +33,7 @@
   .text-clipped-preview {
     overflow: hidden;
     position: relative;
-    background-color: white;
+    background-color: #fbfbfb;
   }
 
   .text-clipped-preview-link {
@@ -58,8 +58,15 @@ html,
 body {
   font-family: 'Alegreya Sans';
   background-color: #fbfbfb;
+  font-size: 16px;
 }
 
-body.ReactModal__Body--open {
+@media (min-width: 1024px) {
+  body {
+    font-size: 18px;
+  }
+}
+
+body.no-scroll {
   overflow: hidden;
 }

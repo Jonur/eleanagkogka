@@ -1,5 +1,5 @@
 import c from 'classnames';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
 import Contact from 'src/components/Contact';
@@ -12,12 +12,16 @@ import { Route } from 'src/types';
 import { CASE_STUDIES } from '../constants';
 import SocialProfiles from '../SocialProfiles';
 
-export const CaseStudy: React.FC = () => {
+const CaseStudy: React.FC = () => {
   const { caseStudyId = '' } = useParams();
   const caseStudy = CASE_STUDIES[caseStudyId];
 
   const { onLargeScreen } = useWindowDimensions();
   const [image, setImage] = useState('');
+
+  useEffect(() => {
+    document.body.classList.toggle('no-scroll', Boolean(image));
+  }, [image]);
 
   return caseStudy ? (
     <>
