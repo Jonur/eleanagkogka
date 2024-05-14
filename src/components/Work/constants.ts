@@ -654,12 +654,13 @@ export const CASE_STUDIES: Record<CaseStudy['id'], CaseStudy> = {
             image: '6.png',
           },
           {
+            content:
+              'Armed with these insights, I was eager to explore two distinct approaches, and the Marketing team was fully on board with the approach of A/B/C testing.',
+          },
+          {
             label: 'Hypothesis',
-            content: `
-              <p>Armed with these insights, I was eager to explore two distinct approaches, and the Marketing team was fully on board with the approach of A/B/C testing.</p>
-              <p>The current over-the-fold video effectively communicates streaming and multi-streaming to new users. Revamping our video to showcase recordings and webinars alongside multi-streaming will effectively communicate the full platform's value leading to increased sign-ups.</p>
-              <p>The current over-the-fold video although effective in communicating streaming and multi-streaming, can be hard to accommodate two more new use cases while staying concise and attention-grabbing. A new design approach, focusing on individual use cases with concise and engaging content, may better capture visitor attention and drive sign-ups.</p>
-            `,
+            content:
+              'The current over-the-fold video although effective in communicating streaming and multi-streaming, can be hard to accommodate two more new use cases while staying concise and attention-grabbing. A new design approach, focusing on individual use cases with concise and engaging content, may better capture visitor attention and drive sign-ups.',
             image: '8.png',
           },
           {
