@@ -56,8 +56,4 @@ export const PAGINATION_COUNT = 1;
 
 export const PAGINATION_COUNT_LG = 2;
 
-export const TESTIMONIAL_SIZE_PX = 304;
-
 export const TESTIMONIAL_SIZE_LG_PX = 500;
-
-export const TESTIMONIAL_GAP_PX = 24;

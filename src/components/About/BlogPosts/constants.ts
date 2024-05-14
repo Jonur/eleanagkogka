@@ -58,10 +58,6 @@ export const BLOG_POSTS: BlogPost[] = [
   },
 ];
 
-export const PAGINATION_COUNT = 3;
+export const PAGINATION_COUNT = 1;
 
-export const BLOG_POST_SIZE_PX = 304;
-
-export const BLOG_POST_SIZE_LG_PX = 373;
-
-export const BLOG_POST_GAP_PX = 24;
+export const PAGINATION_COUNT_LG = 3;

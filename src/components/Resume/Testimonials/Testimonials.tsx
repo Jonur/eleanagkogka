@@ -8,13 +8,13 @@ import { PAGINATION_COUNT, PAGINATION_COUNT_LG, TESTIMONIAL_SIZE_LG_PX, TESTIMON
 
 const Testimonials: React.FC = () => {
   const { onLargeScreen } = useWindowDimensions();
+
   const testimonialContainerRef = useRef<HTMLDivElement>(null);
   const sectionRef = useRef<HTMLDivElement>(null);
+  const testimonialRefs = useRef<Record<number, RefObject<HTMLDivElement> | null>>({});
 
   const [paginationCount] = useState(onLargeScreen() ? PAGINATION_COUNT_LG : PAGINATION_COUNT);
   const [testimonialScreens] = useState(Math.ceil(TESTIMONIALS.length / paginationCount));
-
-  const testimonialRefs = useRef<Record<number, RefObject<HTMLDivElement> | null>>({});
   const [postInView, setPostInView] = useState(0);
 
   const scrollToPost = (index: number) => {
@@ -54,6 +54,9 @@ const Testimonials: React.FC = () => {
     return {};
   };
 
+  const isViewingLastTestimonial =
+    postInView === TESTIMONIALS.length - 1 || postInView + paginationCount > TESTIMONIALS.length;
+
   return (
     <section
       ref={sectionRef}
@@ -61,10 +64,12 @@ const Testimonials: React.FC = () => {
     >
       <h3 className="text-lg italic mb-12 lg:mb-[80px]">Testimonials</h3>
 
-      <div
-        role="none"
-        className="hidden lg:block bg-gradient-to-r from-transparent from-[5%] to-white opacity-70 absolute right-0 h-full top-0 w-[130px] z-10"
-      />
+      {!isViewingLastTestimonial && (
+        <div
+          role="none"
+          className="hidden lg:block bg-gradient-to-r from-transparent from-[5%] to-white opacity-70 absolute right-0 h-[calc(100%-44px)] top-0 w-[130px] z-10"
+        />
+      )}
 
       <div ref={testimonialContainerRef} className="overflow-x-scroll scroll-smooth no-scrollbar relative w-full">
         <div className="flex gap-x-6 lg:gap-x-8">
@@ -115,11 +120,11 @@ const Testimonials: React.FC = () => {
               );
             })}
 
-          <button aria-label="Next" onClick={handleNext} disabled={postInView === TESTIMONIALS.length - 1}>
+          <button aria-label="Next" onClick={handleNext} disabled={isViewingLastTestimonial}>
             <Chevron
               className={c('rotate-180', {
-                'text-teal-dark': postInView !== TESTIMONIALS.length - 1,
-                'text-light-grey': postInView === TESTIMONIALS.length - 1,
+                'text-teal-dark': !isViewingLastTestimonial,
+                'text-light-grey': isViewingLastTestimonial,
               })}
             />
           </button>
