@@ -82,7 +82,7 @@ const CaseStudy: React.FC = () => {
                         )}
                         {'image' in entry && (
                           <img
-                            src={`/case-studies/${caseStudyId}/thumb-${entry.image}`}
+                            src={`/case-studies/${caseStudyId}/${entry.image.includes('animation') ? entry.image : `thumb-${entry.image}`}`}
                             onClick={() => setImage(`/case-studies/${caseStudyId}/${entry.image}`)}
                             className="w-full h-auto cursor-pointer"
                           />

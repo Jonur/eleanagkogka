@@ -633,6 +633,7 @@ export const CASE_STUDIES: Record<CaseStudy['id'], CaseStudy> = {
               <p>Like the StreamYard dashboard, our landing pages lacked optimisation for recording and webinar use cases, presenting a significant opportunity to position StreamYard as the go-to platform for diverse video content creation needs.</p>
               <p>Despite recent enhancements to the below-the-fold content on the SY homepage, which aimed to showcase recordings and webinars better, these changes only benefited a small fraction of visitors due to low scroll engagement.</p>
             `,
+            image: 'animation-1.gif',
           },
           {
             content:
