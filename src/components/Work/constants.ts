@@ -1,6 +1,6 @@
 import { CaseStudy } from 'src/types';
 
-export const CAST_STUDY_ORDER: CaseStudy['id'][] = ['zLI1'];
+export const CAST_STUDY_ORDER: CaseStudy['id'][] = ['zLI1', 'Dv5M'];
 
 export const CASE_STUDIES: Record<CaseStudy['id'], CaseStudy> = {
   zLI1: {
@@ -381,6 +381,286 @@ export const CASE_STUDIES: Record<CaseStudy['id'], CaseStudy> = {
           {
             content:
               '<p>&ndash; The onboarding guide turned into a Medium article which you can read <a href="#">here</a>.</p>',
+          },
+        ],
+      },
+    ],
+  },
+  Dv5M: {
+    id: 'Dv5M',
+    title: 'The Onboarding Project Part 2',
+    intro:
+      'Delve into specific user research insights, find out how they influenced the 2024 StreamYard Company Vision and kickstarted a series of growth A/B tests and product optimisation projects.',
+    img: 'cover.png',
+    sections: [
+      {
+        title: 'Introduction',
+        entries: [
+          {
+            title: 'In Part 2 of the Onboarding Project case study...',
+            content:
+              'I’ll reveal insights from our user interviews and explore thoughts and ideas that emerged around onboarding, A/B tests, and optimisations, alongside potential new features for various teams. I will also share how this research influenced our Growth roadmap and StreamYard’s Strategy and Product Vision for 2024.',
+          },
+          {
+            label: 'The product',
+            content:
+              'StreamYard is a professional live streaming and recording browser based studio. With SY you can record, go live on your website or multiple platforms like Youtube and Facebook at once.',
+          },
+          {
+            label: 'My role',
+            content: 'Product Design Lead  &bull;  Designer  &bull;  Researcher',
+          },
+          {
+            content:
+              '<em>This case study covers the second phase of the Growth Team Onboarding Project, starting on December 2023.</em>',
+          },
+        ],
+      },
+      {
+        title: 'New user interviews<br />Insights',
+        prebordered: true,
+        entries: [
+          {
+            title:
+              'From Part 1; we interviewed 7 first-time users, streamers, podcasters and webinar hosts, to delve into their onboarding experience. The goal was to understand more about their use cases, challenges and needs, and how they perceive or use SreamYard for the first time.',
+          },
+          {
+            label: 'Context',
+            content: `
+              <p>We asked people to explore our landing pages and prompted them to create a free account to try the studio. We let them explore freely and interact with the product while sharing their first impressions. We were specifically looking for positive and negative feelings, signs of struggle and AHA moments. Following the interviews, I utilised Figjam to organise the insights by themes, and identified patterns.</p>
+              <p>You can learn more about this research in <a href="/work/zLI1">Part 1</a>.</p>
+            `,
+          },
+          {
+            content:
+              'The user interviews uncovered significant opportunities to enhance touch points throughout the product, helping users quickly grasp the value of StreamYard and have a successful long-lasting experience. We also found that some participants could benefit from a more personalised experience and additional guidance.',
+          },
+          {
+            label: 'Key insights',
+            content: `
+              <p>Before looking into the research impact on our roadmaps and the potential business growth value, here are some key findings:</p>
+              <p><strong>Common Goals:</strong> Streamers, podcasters, and webinar hosts often share similar goals and metrics for success, and the line between streaming, podcasting and webinars can be a little blurry. People might create any combination of those while leaning in one of them more heavily.</p>
+              <p><strong>Content Gaps:</strong> We identified informational gaps on our landing and pricing pages, particularly regarding the benefits and features tailored to podcasters and webinar hosts.</p>
+              <p><strong>Studio Challenges:</strong> Challenges in the studio were mostly related to the initial setup actions, like “add to the stage” and layout adjustments to properly apply branding features.</p>
+              <p><strong>User Proficiency Differences:</strong> The more tech-savvy people successfully discover SY features while the not-as-tech-savvy users required additional guidance and support.</p>
+              <p><strong>Targeted Communication:</strong> While our communication effectively resonated with streamers, podcasters and webinar hosts need more tailored information. For instance, podcasters were surprised by the extensive customization options available during recording sessions, suggesting a need for more targeted educational content about these features.</p>
+              <p><strong>Enhanced Features for Podcasters:</strong> Podcasters are particularly interested in advanced editing tools such as audio enhancement and video quality improvements, like colour correction and adding graphics, images or clips over their recordings. They could also benefit from more audio-related features like sound effects.</p>
+              <p><strong>Webinar Hosts’ Navigation Struggles:</strong> Webinar hosts frequently needed help finding relevant to their use case features on our landing and pricing pages, often resorting to extensive FAQ searches.</p>
+            `,
+          },
+          {
+            label: 'Communication',
+            content:
+              'I organised the insights in a Notion document and shared them with the wider company. I also created individual Slack posts, presenting findings and linking them to the relevant product teams. I presented key insights at our All-Hands meeting and our company’s annual Strategy and Product Vision Day.',
+          },
+          {
+            label: 'Impact',
+            content: `
+              <p>This research boosted our understanding of new users, guiding business decisions around feature optimisation and onboarding prioritisation to improve their overall experience. The immediate outcomes included:</p>
+              <p><strong>Over seven feature ideas</strong> were generated for the Editor, On-Air, and Studio teams.</p>
+              <p><strong>Over twelve growth experiments</strong> and several product optimisations were initiated.</p>
+              <p><strong>Two new focus areas were added to our 2024 Product Strategy</strong></p>
+              <ul>
+                <li>Expand and optimise features specifically for podcasters and webinar hosts.</li>
+                <li>Prioritise experiments around onboarding, pricing, and retention.</li>
+              </ul>
+              <p>It also sparked team discussions and was used as inspirational material, along with other types of research, on our off-site Growth team retreat, where we workshopped and brainstormed even more growth experiment ideas.</p>
+            `,
+          },
+          {
+            content:
+              'In the document below you can read more about the StreamYard Onboarding System Project and some of the A/B test and optimisation ideas inspired by this research.',
+          },
+        ],
+      },
+      {
+        title: 'Studio<br />Onboarding audit',
+        prebordered: true,
+        entries: [
+          {
+            title:
+              'Before implementing new onboarding features, it was crucial to assess our current onboarding messages &ndash; analyse what messages were triggered when and identify any edge cases.',
+          },
+          {
+            label: 'Understanding',
+            content: `
+              <p>An early UX audit conducted during the new user interviews had already flagged issues such as ineffective messaging, poor placement, lack of hierarchy, design inconsistencies or unnecessary tips.</p>
+              <p>To delve deeper, I consulted with the Studio product team PM to obtain existing documentation on onboarding messaging. The goal was to refine these messages using insights from User Interviews and Fullstory observations while optimising the UI and applying design principles and best practices for more effective onboarding.</p>
+            `,
+          },
+          {
+            label: 'Audit',
+            content:
+              'Discovering that no comprehensive documentation existed and recognising the Studio team’s constraints due to their heavy workload, I discussed the matter with my PM. We decided to initiate a Studio messaging audit utilising our team’s resources. I led the effort, crafting a ticket based on my previous UX audit. Our engineers began to surface all Studio messages, documenting triggers and rules in a Notion document.',
+          },
+          {
+            label: 'Tips guide',
+            content:
+              'Following the audit, I compiled a Studio Onboarding Recommendations document with targeted advice inspired by my research. This included proposals for copy and design improvements, eliminating redundant messaging, and optimising message hierarchy through new trigger rules. Additionally, I suggested several A/B tests to evaluate message positioning and try different UX & UI design treatments.',
+          },
+          {
+            label: 'Component',
+            content:
+              'Further enhancing the user experience, I designed a new messaging component scalable to different message needs. This component was consistent, refined, and integrated smoothly into the UI, supporting a more unified and readable interface that assists rather than distracts users. This component became a priority in the development of our Design System.',
+          },
+          {
+            label: 'Impact',
+            content: `
+              <p>With comprehensive documentation and actionable recommendations set up, we were equipped to prioritise our A/B testing and optimisation work. This groundwork of augmenting existing onboarding would lay the foundation for experimenting with various new onboarding methods.</p>
+              <p>It would also serve as collaboration and communication document between the Growth and Studio product teams, to enhance transparency and alignment towards a common goal.</p>
+            `,
+          },
+        ],
+      },
+      {
+        title: 'Add to stage iteration',
+        prebordered: true,
+        entries: [
+          {
+            title:
+              'New observations from the New User Interviews, equipped us with knowledge to re-iterate more effectively.',
+          },
+          {
+            label: 'Context',
+            content:
+              'Our Amplitude data analysis identified the completion of the first broadcast as the most critical metric for customer activation and retention. Users who successfully navigate the studio to "Go Live" or "Record" are far more likely to stay engaged and become dedicated customers.',
+          },
+          {
+            label: 'Problem',
+            content: `
+              <p>Fullstory sessions and new user interviews indicate a common hurdle: new users often don’t realise they must actively add themselves to the stage*, unlike platforms like Zoom or Google Meets, where users are added automatically. This step is pivotal for users to make the most out of features like brand customisation and layouts and to receive value from StreamYard.</p>
+              <p>*A place within the studio where all live participants are visible to the audience.</p>
+              <p>Although we previously introduced a design tweak to make the “Add to stage” tip more noticeable through enhanced colour and animation, the change did not significantly increase user interaction as hoped, with many still overlooking this crucial step.</p>
+            `,
+          },
+          {
+            label: 'Hypothesis',
+            content:
+              'Our hypothesis was the onboarding message still needed to be more prominent to prompt the necessary action. A more forceful intervention might increase the likelihood of users adding themselves to the stage, educating them and boosting engagement metrics.',
+          },
+          {
+            label: 'New design',
+            content:
+              'Inspired by the guided tour onboarding method, we tested a more assertive approach: dimming the rest of the Studio UI to spotlight the “Add to stage” action and message. Users would need to either complete the action or dismiss the message. Additionally, we made the "Add to Stage" call-to-action permanently visible, rather than only appearing on hover.',
+          },
+          {
+            label: 'Results',
+            content:
+              'This new approach led to an 11% increase in users adding themselves to the stage and a 9% rise in broadcasts started. Although these improvements did not yet translate into more paid plan upgrades, they marked a positive shift in new user behaviour. Observations from Fullstory and Amplitude data following the feature implementation show that the new design better educates users enhancing their experience. Further optimisations might be necessary to encourage upgrades.',
+          },
+        ],
+      },
+      {
+        title: 'Contextual onboarding',
+        prebordered: true,
+        entries: [
+          {
+            title:
+              '&ndash; Create a  tailored first-user experience with targeted use case-based onboarding messaging.',
+          },
+          {
+            label: 'Problem',
+            content: `
+              <p>Initially designed for streamers, StreamYard has evolved to support recording and webinars in addition to streaming. This change isn’t reflected in the product’s current design leading to a disconnect with user expectations, needs and the product's capabilities.</p>
+              <p>Introducing new features has enriched but unintentionally complicated the product, making it harder for new users to discover and fully utilise all its functionalities.</p>
+            `,
+          },
+          {
+            label: 'Opportunity',
+            content: `
+              <p>We’ve recently rolled out a revamped Dashboard landing page, designed to suit various use cases, as discussed in <a href="/work/zLI1">Part 1</a> of this case study. This updated landing page is all about presenting users with key actions, offering flexibility to engage in activities that are relevant to them.</p>
+              <p>Additionally, by implementing the onboarding question, we’ve started segmenting users based on their use case. This approach allows us to provide a more personalised onboarding experience, offering users tailored support and guidance every step of the way.</p>
+            `,
+          },
+          {
+            label: 'Design pattern',
+            content:
+              'Contextual messages are a well-established onboarding method which could be applied in the StreamYard Dashboard to guide users. The messages would prompt action, deliver tips, provide feedback and encourage people to explore and create.',
+          },
+          {
+            label: 'Design goals',
+            content: `
+              <p>Before designing, I set some goals/guidelines to guide me through the upcoming design decisions.</p>
+              <p><strong>Useful:</strong> Provide relevant information at the right time to enhance user understanding and efficiency.</p>
+              <p><strong>Approachable:</strong> Ensure readability, friendliness, and accessibility to encourage user engagement.</p>
+              <p><strong>Delightful:</strong> Create a positive, enjoyable user experience through interesting and cheerful messaging.</p>
+              <p><strong>Consistent:</strong> Maintain alignment with StreamYard’s design & tone of voice to reinforce brand identity.</p>
+              <p><strong>Future-proof:</strong> Set the foundations for an easy to maintain and expand system.</p>
+            `,
+          },
+          {
+            label: 'Copywriting',
+            content:
+              'To reach my design goals I liaised with my PM. Together we identified key paths for each user journey &ndash; live stream, record, host webinars &ndash; to develop conditional messages tailored to educate and guide users depending on their goals. I created an Onboarding Messaging Flow Chart in FigJam, including all the relevant key user actions and we collaborated to create a consistent tone of voice to deliver clear, positive and concise guidance or feedback at different stages of the onboarding journey.',
+          },
+          {
+            label: 'Design',
+            content:
+              'To deliver a delightful positive experience, I initially explored incorporating Puddles, our duck mascot, as a guiding companion figure within the onboarding messages. However, after discussions with the design team and considering the evolving brand direction, we opted for the newly introduced illustration style that better aligned with the product’s new visual identity.',
+          },
+          {
+            content:
+              'Drawing inspiration from the existing new product illustrations, I crafted a suite of lively icons to accompany the messages, maintaining consistency with the brand identity. I iterated, tried different banner styles and shared them with the design team to get the final design approval.',
+          },
+          {
+            label: 'Impact',
+            content:
+              'While implementing the contextual onboarding messages is pending, our design direction has set the stage for future projects across the platform, like the referrals program. Establishing a cohesive and visually engaging approach to user onboarding, we anticipate enhanced user satisfaction, engagement and success.',
+          },
+        ],
+      },
+      {
+        title: 'Home landing page<br />A/B/C tests',
+        prebordered: true,
+        entries: [
+          { title: '&ndash; Optimise the user journey/s & create foundations for a tailored experience.' },
+          {
+            label: 'Problem',
+            content: `
+              <p>Like the StreamYard dashboard, our landing pages lacked optimisation for recording and webinar use cases, presenting a significant opportunity to position StreamYard as the go-to platform for diverse video content creation needs.</p>
+              <p>Despite recent enhancements to the below-the-fold content on the SY homepage, which aimed to showcase recordings and webinars better, these changes only benefited a small fraction of visitors due to low scroll engagement.</p>
+          `,
+          },
+          {
+            content:
+              'New user interviews revealed that while visitors grasp the concept of multi-streaming from the homepage video, they tend not to scroll far, failing to recognise recordings and webinars as viable use cases for StreamYard.',
+          },
+          {
+            label: 'Collaboration',
+            content: `
+              <p>So, I took the lead in partnering with the Marketing team to revamp our over-the-fold homepage content. They had some initial ideas and content ready to roll, but I urged them to take a step back, facilitating discussions and guiding them through the design thinking process. To help the team gain a deeper user understanding, I created a FigJam board curating a wealth of research insights and homepage examples. We also invited an expert, to share tips and tricks for effective landing pages. This session wasn’t as helpful as hoped, but it helped us organise our thoughts.</p>
+              <p>I ensured that the FigJam discovery board included as many relevant insights as possible:</p>
+              <ul>
+                <li>Findings from our latest customer satisfaction surveys around the SY benefits & perceived value.</li>
+                <li>Insights from new user interviews and their understanding of the SY benefits & value.</li>
+                <li>Landing page best practices and expert advice.</li>
+                <li>Competitor and other multi use case SaaS landing page examples.</li>
+              </ul>
+            `,
+          },
+          {
+            label: 'Hypothesis',
+            content: `
+              <p>Armed with these insights, I was eager to explore two distinct approaches, and the Marketing team was fully on board with the approach of A/B/C testing.</p>
+              <p>The current over-the-fold video effectively communicates streaming and multi-streaming to new users. Revamping our video to showcase recordings and webinars alongside multi-streaming will effectively communicate the full platform's value leading to increased sign-ups.</p>
+              <p>The current over-the-fold video although effective in communicating streaming and multi-streaming, can be hard to accommodate two more new use cases while staying concise and attention-grabbing. A new design approach, focusing on individual use cases with concise and engaging content, may better capture visitor attention and drive sign-ups.</p>
+            `,
+          },
+          {
+            label: 'Final design',
+            content: `
+              <p>After different explorations and discussions around copy direction with my PM, layout and UI reviews with the Marketing team and storyboard creation and reviews with our video expert, we landed on the two final designs.</p>
+              <p>A revamped video highlighting recordings and webinars, complemented by three prominent cards (“Live Stream”, “Record”, and “Host Webinars”) for easy navigation to relevant pages.</p>
+            `,
+          },
+          {
+            content:
+              'A static carousel featuring the same three cards (“Live Stream”, “Record”, and “Host Webinars”), each slide highlighting the key features and benefits of each use case with cool graphics.',
+          },
+          {
+            label: 'Impact',
+            content:
+              'While the A/B/C home landing page test is pending, this project has already enhanced collaboration with the Marketing team, fostering a user-centric approach to content creation focused on value and benefits instead of just features. Furthermore, it has underscored the importance of early design involvement in discussions and a more iterative approach to understanding what works for our customers.',
           },
         ],
       },

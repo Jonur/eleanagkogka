@@ -19,7 +19,7 @@ const Work: React.FC = () => {
         <section className="text-dark-blue max-w-[1180px] w-full lg:flex lg:justify-between">
           <h2 className="text-3xl lg:text-[32px] font-bebas uppercase mb-8">Case studies</h2>
 
-          <div role="list" className="p-0 m-0 lg:flex-1 lg:max-w-[700px] gap-y-12 lg:gap-y-[80px]">
+          <div role="list" className="p-0 m-0 flex flex-col lg:flex-1 lg:max-w-[700px] gap-y-12 lg:gap-y-[80px]">
             {CAST_STUDY_ORDER.map((id) => {
               const study = CASE_STUDIES[id];
 
