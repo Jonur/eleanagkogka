@@ -1,57 +1,42 @@
 import c from 'classnames';
-import React, { useRef, useState } from 'react';
+import React, { RefObject, useRef, useState } from 'react';
 
 import { Arrow, Chevron, Quotes } from 'src/components/Icons';
-import { useOnMount, useWindowDimensions } from 'src/hooks';
+import { useWindowDimensions } from 'src/hooks';
 
-import {
-  PAGINATION_COUNT,
-  PAGINATION_COUNT_LG,
-  TESTIMONIAL_GAP_PX,
-  TESTIMONIAL_SIZE_LG_PX,
-  TESTIMONIAL_SIZE_PX,
-  TESTIMONIALS,
-} from './constants';
+import { PAGINATION_COUNT, PAGINATION_COUNT_LG, TESTIMONIAL_SIZE_LG_PX, TESTIMONIALS } from './constants';
 
 const Testimonials: React.FC = () => {
   const { onLargeScreen } = useWindowDimensions();
   const testimonialContainerRef = useRef<HTMLDivElement>(null);
   const sectionRef = useRef<HTMLDivElement>(null);
-  const [testimonialScreens] = useState(
-    Math.ceil(TESTIMONIALS.length / (onLargeScreen() ? PAGINATION_COUNT_LG : PAGINATION_COUNT))
-  );
-  const [pageIndex, setPageIndex] = useState(0);
-  const [offsets, setOffsets] = useState<number[]>([]);
+
+  const [paginationCount] = useState(onLargeScreen() ? PAGINATION_COUNT_LG : PAGINATION_COUNT);
+  const [testimonialScreens] = useState(Math.ceil(TESTIMONIALS.length / paginationCount));
+
+  const testimonialRefs = useRef<Record<number, RefObject<HTMLDivElement> | null>>({});
+  const [postInView, setPostInView] = useState(0);
 
   const scrollToPost = (index: number) => {
     if (testimonialContainerRef.current) {
-      setPageIndex(index);
+      setPostInView(index);
 
       testimonialContainerRef.current.scrollTo({
         behavior: 'smooth',
-        left: offsets[index],
+        left: testimonialRefs.current[index]?.current?.offsetLeft || 0,
       });
     }
   };
 
   const handlePrevious = () => {
-    const index = pageIndex - 1 >= 0 ? pageIndex - 1 : 0;
+    const index = postInView - paginationCount >= 0 ? postInView - paginationCount : 0;
     scrollToPost(index);
   };
 
   const handleNext = () => {
-    const index = pageIndex + 1 <= testimonialScreens ? pageIndex + 1 : testimonialScreens - 1;
+    const index =
+      postInView + paginationCount <= TESTIMONIALS.length - 1 ? postInView + paginationCount : TESTIMONIALS.length - 1;
     scrollToPost(index);
-  };
-
-  const setOffsetList = () => {
-    setOffsets(
-      Array.from({ length: testimonialScreens }).reduce((acc: number[], _, index) => {
-        const page = index === 0 ? 0 : index * (onLargeScreen() ? PAGINATION_COUNT_LG : PAGINATION_COUNT);
-        const size = onLargeScreen() ? TESTIMONIAL_SIZE_LG_PX : TESTIMONIAL_SIZE_PX;
-        return [...acc, index === 0 ? 0 : page * size + TESTIMONIAL_GAP_PX * index];
-      }, [])
-    );
   };
 
   const inlineStyles = (index: number): Record<string, string | number> => {
@@ -69,10 +54,6 @@ const Testimonials: React.FC = () => {
     return {};
   };
 
-  useOnMount(() => {
-    setOffsetList();
-  });
-
   return (
     <section
       ref={sectionRef}
@@ -81,23 +62,15 @@ const Testimonials: React.FC = () => {
       <h3 className="text-lg italic mb-12 lg:mb-[80px]">Testimonials</h3>
 
       <div
-        className="hidden lg:block bg-gradient-to-r from-transparent from-[5%] to-white opacity-70 absolute -right-1 h-full top-0 z-10"
-        style={{
-          width: `${(sectionRef.current?.offsetLeft || 0) + 40}px`,
-          right: `-${sectionRef.current?.offsetLeft || 0}px`,
-        }}
+        role="none"
+        className="hidden lg:block bg-gradient-to-r from-transparent from-[5%] to-white opacity-70 absolute right-0 h-full top-0 w-[130px] z-10"
       />
 
-      <div
-        ref={testimonialContainerRef}
-        className="overflow-x-scroll scroll-smooth no-scrollbar relative"
-        style={{
-          width: onLargeScreen() ? `${window.outerWidth - (sectionRef.current?.offsetLeft || 0)}px` : 'initial',
-        }}
-      >
+      <div ref={testimonialContainerRef} className="overflow-x-scroll scroll-smooth no-scrollbar relative w-full">
         <div className="flex gap-x-6 lg:gap-x-8">
           {TESTIMONIALS.map((testimonial, index) => (
             <div
+              ref={(testimonialRefs.current[index] ??= { current: null })}
               key={`${testimonial.author}-${testimonial.jobTitle}`}
               className="flex flex-col min-w-[304px] lg:min-w-[500px]"
               style={inlineStyles(index)}
@@ -116,11 +89,11 @@ const Testimonials: React.FC = () => {
 
       <footer className="w-full flex justify-between mt-12 items-baseline">
         <nav className="flex gap-x-3 h-3 items-center">
-          <button aria-label="Previous" onClick={handlePrevious} disabled={pageIndex === 0}>
+          <button aria-label="Previous" onClick={handlePrevious} disabled={postInView === 0}>
             <Chevron
               className={c({
-                'text-teal-dark': pageIndex !== 0,
-                'text-light-grey': pageIndex === 0,
+                'text-teal-dark': postInView !== 0,
+                'text-light-grey': postInView === 0,
               })}
             />
           </button>
@@ -128,24 +101,25 @@ const Testimonials: React.FC = () => {
           {onLargeScreen() &&
             Array.from({ length: testimonialScreens }).map((_, index) => {
               const key = `ctrl-${index}`;
+              const postToScroll = index * paginationCount;
               return (
                 <button
-                  disabled={pageIndex === index}
-                  onClick={() => scrollToPost(index)}
+                  disabled={postInView === postToScroll}
+                  onClick={() => scrollToPost(postToScroll)}
                   key={key}
                   className={c('rounded-full w-3 h-3 bg-light-grey', {
-                    'bg-light-grey': pageIndex !== index,
-                    'bg-teal-dark': pageIndex === index,
+                    'bg-light-grey': postInView !== postToScroll,
+                    'bg-teal-dark': postInView === postToScroll,
                   })}
                 />
               );
             })}
 
-          <button aria-label="Next" onClick={handleNext} disabled={pageIndex === testimonialScreens - 1}>
+          <button aria-label="Next" onClick={handleNext} disabled={postInView === TESTIMONIALS.length - 1}>
             <Chevron
               className={c('rotate-180', {
-                'text-teal-dark': pageIndex !== testimonialScreens - 1,
-                'text-light-grey': pageIndex === testimonialScreens - 1,
+                'text-teal-dark': postInView !== TESTIMONIALS.length - 1,
+                'text-light-grey': postInView === TESTIMONIALS.length - 1,
               })}
             />
           </button>
