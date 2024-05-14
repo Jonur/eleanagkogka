@@ -430,6 +430,7 @@ export const CASE_STUDIES: Record<CaseStudy['id'], CaseStudy> = {
               <p>We asked people to explore our landing pages and prompted them to create a free account to try the studio. We let them explore freely and interact with the product while sharing their first impressions. We were specifically looking for positive and negative feelings, signs of struggle and AHA moments. Following the interviews, I utilised Figjam to organise the insights by themes, and identified patterns.</p>
               <p>You can learn more about this research in <a href="/work/zLI1">Part 1</a>.</p>
             `,
+            image: '7.png',
           },
           {
             content:
@@ -452,6 +453,7 @@ export const CASE_STUDIES: Record<CaseStudy['id'], CaseStudy> = {
             label: 'Communication',
             content:
               'I organised the insights in a Notion document and shared them with the wider company. I also created individual Slack posts, presenting findings and linking them to the relevant product teams. I presented key insights at our All-Hands meeting and our company’s annual Strategy and Product Vision Day.',
+            image: '18.png',
           },
           {
             label: 'Impact',
@@ -466,10 +468,12 @@ export const CASE_STUDIES: Record<CaseStudy['id'], CaseStudy> = {
               </ul>
               <p>It also sparked team discussions and was used as inspirational material, along with other types of research, on our off-site Growth team retreat, where we workshopped and brainstormed even more growth experiment ideas.</p>
             `,
+            image: '16.png',
           },
           {
             content:
               'In the document below you can read more about the StreamYard Onboarding System Project and some of the A/B test and optimisation ideas inspired by this research.',
+            image: '11.png',
           },
         ],
       },
@@ -497,11 +501,13 @@ export const CASE_STUDIES: Record<CaseStudy['id'], CaseStudy> = {
             label: 'Tips guide',
             content:
               'Following the audit, I compiled a Studio Onboarding Recommendations document with targeted advice inspired by my research. This included proposals for copy and design improvements, eliminating redundant messaging, and optimising message hierarchy through new trigger rules. Additionally, I suggested several A/B tests to evaluate message positioning and try different UX & UI design treatments.',
+            image: '14.png',
           },
           {
             label: 'Component',
             content:
               'Further enhancing the user experience, I designed a new messaging component scalable to different message needs. This component was consistent, refined, and integrated smoothly into the UI, supporting a more unified and readable interface that assists rather than distracts users. This component became a priority in the development of our Design System.',
+            image: '15.png',
           },
           {
             label: 'Impact',
@@ -532,6 +538,7 @@ export const CASE_STUDIES: Record<CaseStudy['id'], CaseStudy> = {
               <p>*A place within the studio where all live participants are visible to the audience.</p>
               <p>Although we previously introduced a design tweak to make the “Add to stage” tip more noticeable through enhanced colour and animation, the change did not significantly increase user interaction as hoped, with many still overlooking this crucial step.</p>
             `,
+            image: '2.png',
           },
           {
             label: 'Hypothesis',
@@ -542,11 +549,13 @@ export const CASE_STUDIES: Record<CaseStudy['id'], CaseStudy> = {
             label: 'New design',
             content:
               'Inspired by the guided tour onboarding method, we tested a more assertive approach: dimming the rest of the Studio UI to spotlight the “Add to stage” action and message. Users would need to either complete the action or dismiss the message. Additionally, we made the "Add to Stage" call-to-action permanently visible, rather than only appearing on hover.',
+            image: '1.png',
           },
           {
             label: 'Results',
             content:
               'This new approach led to an 11% increase in users adding themselves to the stage and a 9% rise in broadcasts started. Although these improvements did not yet translate into more paid plan upgrades, they marked a positive shift in new user behaviour. Observations from Fullstory and Amplitude data following the feature implementation show that the new design better educates users enhancing their experience. Further optimisations might be necessary to encourage upgrades.',
+            image: '3.png',
           },
         ],
       },
@@ -571,6 +580,7 @@ export const CASE_STUDIES: Record<CaseStudy['id'], CaseStudy> = {
               <p>We’ve recently rolled out a revamped Dashboard landing page, designed to suit various use cases, as discussed in <a href="/work/zLI1">Part 1</a> of this case study. This updated landing page is all about presenting users with key actions, offering flexibility to engage in activities that are relevant to them.</p>
               <p>Additionally, by implementing the onboarding question, we’ve started segmenting users based on their use case. This approach allows us to provide a more personalised onboarding experience, offering users tailored support and guidance every step of the way.</p>
             `,
+            image: '13.png',
           },
           {
             label: 'Design pattern',
@@ -592,15 +602,18 @@ export const CASE_STUDIES: Record<CaseStudy['id'], CaseStudy> = {
             label: 'Copywriting',
             content:
               'To reach my design goals I liaised with my PM. Together we identified key paths for each user journey &ndash; live stream, record, host webinars &ndash; to develop conditional messages tailored to educate and guide users depending on their goals. I created an Onboarding Messaging Flow Chart in FigJam, including all the relevant key user actions and we collaborated to create a consistent tone of voice to deliver clear, positive and concise guidance or feedback at different stages of the onboarding journey.',
+            image: '12.png',
           },
           {
             label: 'Design',
             content:
               'To deliver a delightful positive experience, I initially explored incorporating Puddles, our duck mascot, as a guiding companion figure within the onboarding messages. However, after discussions with the design team and considering the evolving brand direction, we opted for the newly introduced illustration style that better aligned with the product’s new visual identity.',
+            image: '4.png',
           },
           {
             content:
               'Drawing inspiration from the existing new product illustrations, I crafted a suite of lively icons to accompany the messages, maintaining consistency with the brand identity. I iterated, tried different banner styles and shared them with the design team to get the final design approval.',
+            image: '5.png',
           },
           {
             label: 'Impact',
@@ -619,7 +632,7 @@ export const CASE_STUDIES: Record<CaseStudy['id'], CaseStudy> = {
             content: `
               <p>Like the StreamYard dashboard, our landing pages lacked optimisation for recording and webinar use cases, presenting a significant opportunity to position StreamYard as the go-to platform for diverse video content creation needs.</p>
               <p>Despite recent enhancements to the below-the-fold content on the SY homepage, which aimed to showcase recordings and webinars better, these changes only benefited a small fraction of visitors due to low scroll engagement.</p>
-          `,
+            `,
           },
           {
             content:
@@ -637,6 +650,7 @@ export const CASE_STUDIES: Record<CaseStudy['id'], CaseStudy> = {
                 <li>Competitor and other multi use case SaaS landing page examples.</li>
               </ul>
             `,
+            image: '6.png',
           },
           {
             label: 'Hypothesis',
@@ -645,6 +659,7 @@ export const CASE_STUDIES: Record<CaseStudy['id'], CaseStudy> = {
               <p>The current over-the-fold video effectively communicates streaming and multi-streaming to new users. Revamping our video to showcase recordings and webinars alongside multi-streaming will effectively communicate the full platform's value leading to increased sign-ups.</p>
               <p>The current over-the-fold video although effective in communicating streaming and multi-streaming, can be hard to accommodate two more new use cases while staying concise and attention-grabbing. A new design approach, focusing on individual use cases with concise and engaging content, may better capture visitor attention and drive sign-ups.</p>
             `,
+            image: '8.png',
           },
           {
             label: 'Final design',
@@ -652,10 +667,12 @@ export const CASE_STUDIES: Record<CaseStudy['id'], CaseStudy> = {
               <p>After different explorations and discussions around copy direction with my PM, layout and UI reviews with the Marketing team and storyboard creation and reviews with our video expert, we landed on the two final designs.</p>
               <p>A revamped video highlighting recordings and webinars, complemented by three prominent cards (“Live Stream”, “Record”, and “Host Webinars”) for easy navigation to relevant pages.</p>
             `,
+            image: '10.png',
           },
           {
             content:
               'A static carousel featuring the same three cards (“Live Stream”, “Record”, and “Host Webinars”), each slide highlighting the key features and benefits of each use case with cool graphics.',
+            image: '9.png',
           },
           {
             label: 'Impact',

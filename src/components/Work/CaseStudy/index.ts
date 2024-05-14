@@ -1,3 +1,3 @@
-import { CaseStudy } from './CaseStudy';
+import CaseStudy from './CaseStudy';
 
 export default CaseStudy;

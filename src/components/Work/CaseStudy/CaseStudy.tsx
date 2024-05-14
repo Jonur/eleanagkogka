@@ -12,7 +12,7 @@ import { Route } from 'src/types';
 import { CASE_STUDIES } from '../constants';
 import SocialProfiles from '../SocialProfiles';
 
-export const CaseStudy: React.FC = () => {
+const CaseStudy: React.FC = () => {
   const { caseStudyId = '' } = useParams();
   const caseStudy = CASE_STUDIES[caseStudyId];
 
