@@ -2,13 +2,11 @@ import React from 'react';
 
 import Contact from 'src/components/Contact';
 import Footer from 'src/components/Footer';
-import GoTo from 'src/components/GoTo';
 import Header from 'src/components/Header';
 import StarList from 'src/components/StarList';
-import { Route } from 'src/types';
 
 import BlogPosts from './BlogPosts';
-import { JOY, KEY_LEARNINGS } from './constants';
+import { JOY } from './constants';
 
 const About: React.FC = () => {
   return (
@@ -37,35 +35,6 @@ const About: React.FC = () => {
               with clear principles and an uncontested, based on research, truth. I very consciously transitioned into
               UI/UX design by learning, applying and teaching design thinking.
             </p>
-          </div>
-        </article>
-
-        <StarList title="Key learnings" items={KEY_LEARNINGS} />
-
-        <article className="text-dark-blue flex flex-col lg:flex-row gap-4 max-w-[1180px] lg:w-full">
-          <h2 className="text-3xl lg:text-[32px] font-bebas uppercase mb-4 lg:flex-1">Education</h2>
-
-          <div className="flex flex-col gap-4 max-w-[700px]">
-            <h3 className="text-2xl leading-[30px] lg:text-[26px] lg:leading-8 italic">
-              &ndash; BA with Honours in Graphic Design, Communication & Technology
-            </h3>
-            <h4 className="text-2xl leading-8 lg:leading-[0px] -mt-4 lg:mt-0 lg:mb-6 lg:text-[26px] italic font-light">
-              @ University of West Attica, Athens, Greece, class of 2004
-            </h4>
-
-            <p className="leading-6 lg:leading-7 lg:text-lg">
-              Modules on the History of Art and Graphic Design, Semiotics, Typography, Colour theory, Branding,
-              Composition & Layout, Gestalt Principles, Illustration, Industrial Design, Market Research, Human-Computer
-              Interaction, Human Psychology, Multimedia, and more.
-            </p>
-
-            <p className="leading-6 lg:leading-7 lg:text-lg mb-2">
-              Education never ends this is why I regularly attend design conferences like the UX Live and the Bad
-              Conference. I am also an avid reader of anything design and human psychology as well as a member of
-              Interaction Design Foundation with several certifications.
-            </p>
-
-            <GoTo to={Route.RESUME} label="Check my resume" />
           </div>
         </article>
 

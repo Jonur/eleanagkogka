@@ -105,6 +105,26 @@ const Resume: React.FC = () => {
 
         <Testimonials />
 
+        <article className="text-dark-blue flex flex-col lg:flex-row gap-4 max-w-[1180px] lg:w-full">
+          <h2 className="text-3xl lg:text-[32px] font-bebas uppercase mb-4 lg:flex-1">Education</h2>
+
+          <div className="flex flex-col max-w-[700px]">
+            <h3 className="text-base leading-[22px] lg:text-lg lg:leading-7 font-bold">
+              BA with Honours in Graphic Design, Communication &amp; Technology
+            </h3>
+            <h4 className="leading-6 lg:leading-7 lg:text-lg">@University of West Attica, class of 2004</h4>
+
+            <h3 className="text-base leading-[22px] lg:text-lg lg:leading-7 font-bold mt-4 lg:mt-6">
+              Interaction Design Foundation member since 2018 with several certifications:
+            </h3>
+            <h4 className="leading-6 lg:leading-7 lg:text-lg">
+              User research - Methods &amp; Best Practices &#124; Human-Computer Interaction &#124; Accessibility &#124;
+              How to design for all &#124; How to Create Intuitive Products by Imitating Physicality &#124; Become a UX
+              Designer from Scratch &#124; Design for the 21st Century &#124; AI for Designers.
+            </h4>
+          </div>
+        </article>
+
         <Contact />
       </div>
 
