@@ -5,12 +5,20 @@ import Contact from 'src/components/Contact';
 import Footer from 'src/components/Footer';
 import Header from 'src/components/Header';
 import { Arrow } from 'src/components/Icons';
+import { useOnMount } from 'src/hooks';
 import { Route } from 'src/types';
 
 import { CASE_STUDIES, CAST_STUDY_ORDER } from './constants';
 import SocialProfiles from './SocialProfiles';
 
 const Work: React.FC = () => {
+  useOnMount(() => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+    });
+  });
+
   return (
     <>
       <Header pageHeader="Work" />

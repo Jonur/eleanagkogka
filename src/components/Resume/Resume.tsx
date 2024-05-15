@@ -5,6 +5,7 @@ import Contact from 'src/components/Contact';
 import Footer from 'src/components/Footer';
 import Header from 'src/components/Header';
 import { Arrow } from 'src/components/Icons';
+import { useOnMount } from 'src/hooks';
 
 import { EXPERIENCE, KEY_SKILLS } from './constants';
 import ExperienceCard from './ExperienceCard';
@@ -26,6 +27,13 @@ const Resume: React.FC = () => {
       ...p,
       [index]: +!p[index],
     }));
+
+  useOnMount(() => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+    });
+  });
 
   return (
     <>

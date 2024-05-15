@@ -6,7 +6,7 @@ import Contact from 'src/components/Contact';
 import Footer from 'src/components/Footer';
 import Header from 'src/components/Header';
 import ImageModal from 'src/components/ImageModal';
-import { useWindowDimensions } from 'src/hooks';
+import { useOnMount, useWindowDimensions } from 'src/hooks';
 import { Route } from 'src/types';
 
 import { CASE_STUDIES } from '../constants';
@@ -22,6 +22,13 @@ export const CaseStudy: React.FC = () => {
   useEffect(() => {
     document.body.classList.toggle('no-scroll', Boolean(image));
   }, [image]);
+
+  useOnMount(() => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+    });
+  });
 
   return caseStudy ? (
     <>

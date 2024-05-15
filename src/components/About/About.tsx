@@ -4,11 +4,19 @@ import Contact from 'src/components/Contact';
 import Footer from 'src/components/Footer';
 import Header from 'src/components/Header';
 import StarList from 'src/components/StarList';
+import { useOnMount } from 'src/hooks';
 
 import BlogPosts from './BlogPosts';
 import { JOY } from './constants';
 
 const About: React.FC = () => {
+  useOnMount(() => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+    });
+  });
+
   return (
     <>
       <Header pageHeader="About" />
