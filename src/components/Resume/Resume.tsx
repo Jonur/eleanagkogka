@@ -90,7 +90,7 @@ const Resume: React.FC = () => {
                       <span className="leading-normal lg:leading-7">{skill.title}</span>
                     </div>
                     <span
-                      className="text-[28px] lg:text-3xl font-normal leading-[22px] lg:leading-7 cursor-pointer"
+                      className="text-[28px] lg:text-3xl font-normal leading-[22px] lg:leading-7 cursor-pointer hover:text-teal-dark"
                       dangerouslySetInnerHTML={{
                         __html: keySkillsToggleStatus[index] ? '&ndash;' : '&plus;',
                       }}
