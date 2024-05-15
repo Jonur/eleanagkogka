@@ -75,14 +75,14 @@ const Resume: React.FC = () => {
                 <li className="py-6 border-black border-opacity-15 flex flex-col gap-y-2 [&:not(:last-child)]:border-b lg:first:pt-0">
                   <button
                     onClick={() => toggleKeySkill(index)}
-                    className="text-base leading-[22px] lg:text-lg lg:leading-7 uppercase font-bold flex justify-between items-center"
+                    className="text-base leading-normal lg:text-lg lg:leading-7 uppercase font-bold flex justify-between items-center"
                   >
                     <div className="flex items-center gap-x-2">
                       <img src={`/icons/${skill.icon}.svg`} />
-                      <span>{skill.title}</span>
+                      <span className="leading-normal lg:leading-7">{skill.title}</span>
                     </div>
                     <span
-                      className="text-2xl leading-[22px] lg:leading-7 font-bold cursor-pointer"
+                      className="text-[28px] lg:text-3xl font-normal leading-[22px] lg:leading-7 cursor-pointer"
                       dangerouslySetInnerHTML={{
                         __html: keySkillsToggleStatus[index] ? '&ndash;' : '&plus;',
                       }}

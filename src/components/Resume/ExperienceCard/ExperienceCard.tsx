@@ -30,7 +30,7 @@ const ExperienceCard: React.FC<ExperienceProps> = ({
   return (
     <div className="relative border-l border-black border-opacity-15 lg:border-0 pl-6 [&:not(:last-child)]:pb-8 lg:[&:not(:last-child)]:pb-0 lg:pb-0 lg:flex lg:justify-end">
       <div className="hidden lg:flex flex-col w-[230px] pb-8 h-full pr-10">
-        <h4 className="leading-6 lg:leading-7 lg:text-lg">{when}</h4>
+        <h4 className="leading-6 lg:leading-7 lg:text-lg lg:-mt-1">{when}</h4>
         <h3 className="text-base leading-[22px] lg:text-lg lg:leading-7 uppercase mb-1">
           @ <span className="font-bold">{where}</span>
         </h3>
@@ -38,10 +38,10 @@ const ExperienceCard: React.FC<ExperienceProps> = ({
 
       <div className={c('absolute w-4 h-4 rounded-full -left-2 lg:hidden', pointColor)} />
 
-      <div className="lg:flex-1 lg:max-w-[700px] lg:pb-8 border-0 lg:border-l border-black border-opacity-15 lg:pl-10 lg:relative">
+      <div className="lg:flex-1 lg:max-w-[700px] lg:pb-10 border-0 lg:border-l border-black border-opacity-15 lg:pl-10 lg:relative">
         <div className={c('absolute w-4 h-4 rounded-full -left-2 hidden lg:block', pointColor)} />
-        <h4 className="leading-6 lg:leading-7 lg:text-lg lg:hidden">{when}</h4>
-        <h3 className="text-base leading-[22px] lg:text-lg lg:leading-7 uppercase font-bold mt-1">{title}</h3>
+        <h4 className="leading-6 lg:leading-7 lg:text-lg lg:hidden -mt-1">{when}</h4>
+        <h3 className="text-base leading-[22px] lg:text-lg lg:leading-7 uppercase font-bold lg:-mt-[5px]">{title}</h3>
         <h3 className="text-base leading-[22px] lg:text-lg lg:leading-7 uppercase mb-1 lg:hidden">
           @ <span className="font-bold">{where}</span>
         </h3>

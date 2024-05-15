@@ -52,13 +52,13 @@ const FavouriteTools: React.FC = () => {
       />
 
       <div
-        className="overflow-hidden flex gap-x-10 absolute -left-6 h-[34px]"
+        className="overflow-hidden flex gap-x-10 lg:gap-x-[100px] absolute -left-6 h-[34px]"
         style={{
           width: `${window.outerWidth}px`,
           left: `-${offsetLeft || 0}px`,
         }}
       >
-        <div className="flex gap-x-10 lg:gap-[100px] shrink-0 items-center justify-around min-w-full animate-marquee">
+        <div className="flex gap-x-10 lg:gap-x-[100px] shrink-0 items-center justify-around min-w-full animate-marquee">
           <img src="tools/adobe.svg" />
           <img src="tools/figma.svg" />
           <img src="tools/loom.svg" />

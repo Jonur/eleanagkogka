@@ -5,7 +5,7 @@ export const EXPERIENCE: Experience[] = [
     title: 'STAFF PRODUCT DESIGNER (GROWTH)',
     where: 'HOPIN - STREAMYARD',
     when: 'Oct 2021 - April 2024',
-    description: `<p>Responsible for customer acquisition, activation, and retention strategies, focusing on optimising the pricing page, payment processes and product onboarding while introducing and testing new features. Drove a 10% increase in weekly active broadcasters over 18 months.</p>
+    description: `<p>Staring as a Senior Product and then being promoted to Staff, I was responsible for customer acquisition, activation, and retention strategies, focusing on optimising the pricing page, payment processes and product onboarding while introducing and testing new features. Drove a 10% increase in weekly active broadcasters over 18 months.</p>
 <p>Through extensive research, user interviews, and continuous A/B testing, I generated numerous hypotheses to drive growth, carefully measuring and iterating with different design solutions while coordinating and collaborating with teams.</p>
 <p>I initiated the SY Mobile App Guest Experience and played a vital role in developing the Design System. I led company-wide ideation workshops and presentations, advocated for evidence-based design, and created educational content to boost team capabilities, enhancing the company’s user-centred culture.</p>`,
     pointColor: 'bg-mustard',

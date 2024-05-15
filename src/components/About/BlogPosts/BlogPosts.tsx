@@ -47,12 +47,12 @@ const BlogPosts: React.FC = () => {
       ref={sectionRef}
       className="border-t border-b border-black border-opacity-15 pt-3 lg:pt-4 pb-3 text-dark-blue max-w-[1180px] w-full relative"
     >
-      <h3 className="text-lg italic mb-12 lg:mb-[80px]">Blog posts</h3>
+      <h3 className="text-lg italic mb-12 lg:mb-[80px]">My Blog posts</h3>
 
       {!isViewingLastBlogPosts && (
         <div
           role="none"
-          className="bg-gradient-to-r from-transparent from-[-10%] lg:from-[0%] to-white to-[100%] opacity-70 absolute right-0 w-[50px] h-[calc(100%-44px)] top-0 z-10"
+          className="bg-gradient-to-r from-transparent from-[-10%] lg:from-[0%] to-white to-[100%] absolute right-0 w-[50px] lg:w-[70px] h-[calc(100%-44px)] top-0 z-10"
         />
       )}
 
@@ -120,16 +120,6 @@ const BlogPosts: React.FC = () => {
             />
           </button>
         </nav>
-
-        <a
-          href="https://medium.com/@eleana_gkogka"
-          target="_blank"
-          rel="noreferrer"
-          className="flex gap-2 items-center text-teal-dark leading-5 lg:leading-7 lg:text-lg text-base mt-4"
-        >
-          <span>More on Medium</span>
-          <Arrow className="-rotate-45 w-[12px] h-[12px]" />
-        </a>
       </footer>
     </section>
   );
