@@ -18,7 +18,7 @@ const Header: React.FC<HeaderProps> = ({ breadcrumb, pageHeader }) => {
   const location = useLocation();
   const [menuVisible, setMenuVisible] = useState(false);
 
-  const isAtRoot = (): boolean => (location.pathname as Route) === Route.ROOT;
+  const locationMatch = (route: Route): boolean => (location.pathname as Route) === route;
 
   useEffect(() => {
     document.body.classList.toggle('no-scroll', menuVisible);
@@ -60,12 +60,52 @@ const Header: React.FC<HeaderProps> = ({ breadcrumb, pageHeader }) => {
 
             <nav
               role="menu"
-              className="text-white lg:text-dark-blue text-2xl lg:text-lg flex flex-col lg:flex-row lg:items-center lg:justify-end gap-6 border-l border-white border-opacity-10 lg:border-l-0 pl-8 lg:pl-0 w-[258px] lg:w-auto"
+              className="text-white lg:text-dark-blue text-2xl lg:text-lg flex flex-col lg:flex-row lg:items-center lg:justify-end gap-6 lg:gap-x-12 border-l border-white border-opacity-10 lg:border-l-0 pl-8 lg:pl-0 w-[258px] lg:w-auto"
             >
-              <Link to={Route.ROOT}>Home</Link>
-              <Link to={Route.ABOUT}>About</Link>
-              <Link to={Route.RESUME}>Resume</Link>
-              <Link to={Route.WORK}>Work</Link>
+              <Link
+                className={c(
+                  'lg:hover:font-medium hover:border-b hover:border-dark-blue hover:leading-[26px] hover:pt-[1px]',
+                  {
+                    'lg:font-medium': locationMatch(Route.ROOT),
+                  }
+                )}
+                to={Route.ROOT}
+              >
+                Home
+              </Link>
+              <Link
+                className={c(
+                  'lg:hover:font-medium hover:border-b hover:border-dark-blue hover:leading-[26px] hover:pt-[1px]',
+                  {
+                    'lg:font-medium': locationMatch(Route.ABOUT),
+                  }
+                )}
+                to={Route.ABOUT}
+              >
+                About
+              </Link>
+              <Link
+                className={c(
+                  'lg:hover:font-medium hover:border-b hover:border-dark-blue hover:leading-[26px] hover:pt-[1px]',
+                  {
+                    'lg:font-medium': locationMatch(Route.RESUME),
+                  }
+                )}
+                to={Route.RESUME}
+              >
+                Resume
+              </Link>
+              <Link
+                className={c(
+                  'lg:hover:font-medium hover:border-b hover:border-dark-blue hover:leading-[26px] hover:pt-[1px]',
+                  {
+                    'lg:font-medium': locationMatch(Route.WORK),
+                  }
+                )}
+                to={Route.WORK}
+              >
+                Work
+              </Link>
 
               <a
                 href="https://drive.google.com/file/d/1MTQQlVUEtiiCFBFwBrwt-dA04jzvwkFP/view"
@@ -86,15 +126,15 @@ const Header: React.FC<HeaderProps> = ({ breadcrumb, pageHeader }) => {
         <div className="w-[1px] h-[65%] bg-black opacity-10 lg:absolute lg:left-[60px]" />
         <div
           className={c('w-[1px] h-[100%] lg:h-[320px] bg-black opacity-10 ml-[35%] lg:ml-[45%] lg:absolute lg:top-0', {
-            'lg:h-[320px]': isAtRoot(),
-            'lg:h-[250px]': !isAtRoot(),
+            'lg:h-[320px]': locationMatch(Route.ROOT),
+            'lg:h-[250px]': !locationMatch(Route.ROOT),
           })}
         />
         {onLargeScreen() && (
           <div
             className={c('w-[1px] h-[320px] bg-black opacity-10 absolute right-[23%] top-[40px]', {
-              'lg:h-[320px]': isAtRoot(),
-              'lg:h-[250px]': !isAtRoot(),
+              'lg:h-[320px]': locationMatch(Route.ROOT),
+              'lg:h-[250px]': !locationMatch(Route.ROOT),
             })}
           />
         )}
