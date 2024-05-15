@@ -134,7 +134,7 @@ const Testimonials: React.FC = () => {
           href="https://www.linkedin.com/in/eleanagkogka/"
           target="_blank"
           rel="noreferrer"
-          className="flex gap-2 items-center text-teal-dark leading-5 lg:leading-7 lg:text-lg text-base mt-4"
+          className="flex gap-2 items-center text-teal-dark leading-5 lg:leading-7 lg:text-lg text-base mt-4 active:text-dark-blue hover:underline w-fit"
         >
           <span>More on LinkedIn</span>
           <Arrow className="-rotate-45 w-[12px] h-[12px]" />

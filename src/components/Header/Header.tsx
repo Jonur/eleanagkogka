@@ -71,7 +71,7 @@ const Header: React.FC<HeaderProps> = ({ breadcrumb, pageHeader }) => {
                 href="https://drive.google.com/file/d/1MTQQlVUEtiiCFBFwBrwt-dA04jzvwkFP/view"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-base gradient-btn border hover:border-0 border-white active:border-teal-dark active:border-2 active:text-teal-dark lg:border-dark-blue rounded-tr-2xl rounded-bl-2xl w-fit mt-[175px] lg:mt-0 lg:ml-[36px] hover:ml-[36px] h-[40px] px-6 hover:px-[25px] py-0 flex items-center justify-center"
+                className="text-base gradient-btn border hover:border-0 active:border-2 border-white active:border-teal-dark active:text-teal-dark lg:border-dark-blue rounded-tr-2xl rounded-bl-2xl w-fit mt-[175px] lg:mt-0 lg:ml-[36px] hover:ml-[36px] h-[40px] px-6 hover:px-[25px] active:px-[23px] py-0 flex items-center justify-center"
               >
                 Download CV
               </a>

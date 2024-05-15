@@ -53,7 +53,7 @@ const Resume: React.FC = () => {
               <div className="lg:flex-1 lg:max-w-[700px] border-0 lg:border-l border-black border-opacity-15 lg:pl-10">
                 <button
                   onClick={toggleExperienceCount}
-                  className="flex gap-2 items-center text-teal-dark leading-5 lg:leading-7 lg:text-lg text-base mt-4 "
+                  className="flex gap-2 items-center text-teal-dark leading-5 lg:leading-7 lg:text-lg text-base mt-4 active:text-dark-blue hover:underline w-fit"
                 >
                   {viewingExperienceCount.length === EXPERIENCE.length ? (
                     <>

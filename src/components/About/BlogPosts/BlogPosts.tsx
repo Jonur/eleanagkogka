@@ -77,7 +77,7 @@ const BlogPosts: React.FC = () => {
                 <h5 className="text-base leading-[22px] lg:text-lg lg:leading-7 uppercase font-bold">{post.title}</h5>
                 {post.subtitle && <h6 className="text-base leading-6 lg:text-lg lg:leading-7 mt-1">{post.subtitle}</h6>}
               </div>
-              <div className="flex gap-2 items-center text-teal-dark leading-5 lg:leading-7 lg:text-lg text-base mt-4">
+              <div className="flex gap-2 items-center text-teal-dark leading-5 lg:leading-7 lg:text-lg text-base mt-4 active:text-dark-blue hover:underline w-fit">
                 <span>Read on Medium</span>
                 <Arrow className="-rotate-45 w-[12px] h-[12px]" />
               </div>
