@@ -20,7 +20,7 @@ const Contact: React.FC = () => (
     <div className="mt-4 lg:mt-0 flex justify-end">
       <a
         href="mailto:eleana.gkogka@gmail.com"
-        className="flex items-center justify-center text-base border border-dark-blue rounded-tr-2xl rounded-bl-2xl w-fit h-[40px] px-6 py-0"
+        className="gradient-btn flex items-center justify-center text-base border hover:border-0 border-dark-blue rounded-tr-2xl rounded-bl-2xl w-fit h-[40px] px-6 hover:px-[25px] py-0 active:border-teal-dark active:border-2 active:text-teal-dark"
       >
         Email me
       </a>

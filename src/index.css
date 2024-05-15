@@ -52,6 +52,45 @@
     text-decoration: none;
     color: #000;
   }
+
+  .gradient-btn:hover {
+    --b: 2px; /* border width */
+
+    background: linear-gradient(45deg, #de7e90 0%, #5992aa 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+
+    border-top-right-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    position: relative;
+    z-index: 0;
+    text-decoration: none;
+  }
+  /* check lined question for the detail of the below code */
+  .gradient-btn:hover::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    border: var(--b) solid transparent;
+    border-top-right-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+    background: inherit;
+    background-origin: border-box;
+    background-clip: border-box;
+    -webkit-mask:
+      linear-gradient(#fff 0 0) padding-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    -webkit-mask-repeat: no-repeat;
+  }
 }
 
 html,
