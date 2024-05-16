@@ -81,7 +81,7 @@ const CaseStudy: React.FC = () => {
                         )}
                         {'content' in entry && (
                           <span
-                            className="flex flex-col gap-y-2 leading-6 lg:leading-7 lg:text-lg [&_a]:text-teal-dark [&_a]:border-b [&_a]:border-teal-dark [&_a]:inline-block [&_a]:leading-[13px] [&_ul]:list-disc [&_ul]:ml-8"
+                            className="flex flex-col gap-y-2 leading-6 lg:leading-7 lg:text-lg [&_a]:text-teal-dark [&_a]:border-b [&_a]:border-teal-dark [&_a]:inline-block [&_a]:leading-[13px] [&_ul]:list-disc [&_ul]:ml-8 [&_ol]:list-decimal [&_ol]:ml-8"
                             dangerouslySetInnerHTML={{
                               __html: entry.content,
                             }}

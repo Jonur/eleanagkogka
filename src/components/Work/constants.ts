@@ -1,6 +1,6 @@
 import { CaseStudy } from 'src/types';
 
-export const CAST_STUDY_ORDER: CaseStudy['id'][] = ['zLI1', 'Dv5M'];
+export const CAST_STUDY_ORDER: CaseStudy['id'][] = ['zLI1', 'Dv5M', 'Uzer'];
 
 export const CASE_STUDIES: Record<CaseStudy['id'], CaseStudy> = {
   zLI1: {
@@ -680,6 +680,135 @@ export const CASE_STUDIES: Record<CaseStudy['id'], CaseStudy> = {
             label: 'Impact',
             content:
               'While the A/B/C home landing page test is pending, this project has already enhanced collaboration with the Marketing team, fostering a user-centric approach to content creation focused on value and benefits instead of just features. Furthermore, it has underscored the importance of early design involvement in discussions and a more iterative approach to understanding what works for our customers.',
+          },
+        ],
+      },
+    ],
+  },
+  Uzer: {
+    id: 'Uzer',
+    title: 'Enabling payments',
+    intro: '',
+    img: 'cover.png',
+    sections: [
+      {
+        title: 'Introduction',
+        entries: [
+          { title: 'Optimising payments and driving growth through better faster checkout.' },
+          {
+            content: `
+              <p>In this case study, I will go through the billing and checkout new features and optimisations to show how design can impact growth.</p>
+              <p>StreamYard is a professional live streaming and recording browser based studio. With SY you can record, go live on your website or multiple platforms like Youtube and Facebook at once.</p>
+            `,
+          },
+          {
+            label: 'The product',
+            content: 'Product Design Lead  &bull;  Designer',
+          },
+          {
+            label: 'My role',
+            content: 'November &ndash; December 2023.',
+          },
+        ],
+      },
+      {
+        title: 'Background',
+        prebordered: true,
+        entries: [
+          {
+            title:
+              'One of the Growth team focus is to upgrade customers to paid users. So far, experimenting  around our checkout flow was an untapped opportunity.',
+          },
+          {
+            label: 'Opportunity',
+            content:
+              'Upgrading to a StreamYard paid plan typically involves entering card details manually, a tedious and fallible process. Most SaaS products offer quick payment methods that can make checkout an effortless experience, leaving no space for errors or reconsideration. Our users often ask for easier payment options like PayPal, highlighting a clear opportunity to streamline checkout and boost conversions.',
+          },
+          {
+            label: 'Limitations',
+            content:
+              'While PayPal wasn’t on the table due to cost concerns, we saw potential in Google and Apple Pay as alternatives worth exploring.',
+          },
+          {
+            label: 'Design audit',
+            content: `
+              <p>Taking a closer look at our checkout flow, revealed additional opportunities and improvement areas:</p>
+              <ul>
+                <li>Simplistic and not refined design could undermine trust.</li>
+                <li>Confusing plan descriptions and less clear payment details, especially for less common payment scenarios could confuse.</li>
+                <li>Limited scalability made accommodating new payment methods challenging.</li>
+              </ul>
+            `,
+          },
+          {
+            label: 'Hypothesis',
+            content:
+              'Redesigning the checkout page to look more refined with better hierarchy and transparent copy will increase trust and conversions. It would also lay the groundwork for introducing alternative payment methods, driving even more growth.',
+          },
+          {
+            label: 'The plan',
+            content: `
+              <p>My PM was on board with revamping the whole experience to optimise checkout and better accommodate alternative payment methods.</p>
+              <p>Taking the project to the engineering team, we’ve decided to split the project into three tickets:</p>
+              <ol>
+                <li>Redesign the billing page UI, incorporating a payment method selection option and refining plan-related messaging.</li>
+                <li>Revamp the checkout page to improve clarity, hierarchy, and focus, catering to various payment scenarios.</li>
+                <li>Implement a scalable design to support alternative payment methods like Google Pay and Apple Pay.</li>
+              </ol>
+            `,
+          },
+        ],
+      },
+      {
+        title: 'The design',
+        prebordered: true,
+        entries: [
+          { title: 'Having a clear goal and plan, and the team onboard, I could explore different design solutions.' },
+          {
+            label: 'Billing page',
+            content:
+              'Before the billing page felt chaotic, with confusing copy and poor hierarchy, adding new payment methods would only exacerbate the issue. We also saw an opportunity to communicate plan details and relevant information better.',
+            image: '1.png',
+          },
+          {
+            content:
+              'The new design focuses on creating a clear hierarchy and messaging. The content is organised into distinct cards with intuitive controls, to improve focus and scan-ability. Add-on options are now prominently displayed alongside subscription details, ensuring users have a comprehensive view of their plan. The billing settings were redesigned to accommodate alternative payment methods like Apple Pay and Google Pay for future updates.',
+            image: '8.png',
+          },
+          { image: '2.png' },
+          {
+            content:
+              'For this design, I introduced two new card components: one for plan subscription details and messaging, and another for billing settings and add-ons. These additions received positive feedback from the design team and have since been integrated into other product areas.',
+          },
+          {
+            label: 'Checkout page',
+            content:
+              'Previously, the checkout page lacked focus, hierarchy, and clarity, especially when it came to different payment scenarios and edge cases. An audit with the engineering team revealed problems in communicating billing details, such as previous plan credits, discounts, and annual plan benefits.',
+            image: '3.png',
+          },
+          {
+            content:
+              'The redesigned checkout page, brings the payment UI to the forefront, improving focus and readability. Unnecessary copy is removed, and a stronger hierarchy is introduced through refined typography and layout. Specifically, the payment method section is clearly defined as this is where user interaction is most critical. A revamped toggle button better highlights the annual discount benefit, while discounts and offers are clearly presented below, ensuring users understand exactly what they’re paying for.',
+            image: '4.png',
+          },
+          { image: '7.png' },
+          {
+            label: 'Design impact',
+            content: `
+              <p>This was expected but unexpected!</p>
+              <p>On paper, all of these design changes, based on UI/UX best practices & design principles, should contribute to improved conversion, but in the world of product design, we hardly ever measure them to obtain that data proof. But in our case we did, and this change alone has increased our checkout conversion by over 5%!</p>
+            `,
+          },
+          {
+            label: 'Payment methods',
+            content:
+              'After this successful change, we could now introduce the Apple and Google Pay options. If a user is eligible, these options will be displayed on the page, and upon selection the CTA will be updated accordingly. Clicking “Buy with A/G Pay” will initiate a seamless payment process handled entirely by Google or Apple.',
+            image: '6.png',
+          },
+          { image: '5.png' },
+          {
+            content:
+              'While the impact of these new options is still being assessed, the redesigned checkout lays the groundwork for future experimentation with alternative payment methods.',
           },
         ],
       },
