@@ -28,20 +28,20 @@ const Root: React.FC = () => {
 
           <div className="flex flex-col gap-4 max-w-[700px]">
             <h3 className="text-2xl leading-[30px] lg:text-[26px] lg:leading-8 italic">
-              I am Eleana a strategic designer, creative thinker, experience enhancer, accessibility guardian and user
-              protector.
+              I am Eleana &ndash; a strategic designer, creative thinker, experience enhancer, accessibility guardian
+              and user protector.
             </h3>
 
             <p className="leading-6 lg:leading-7 lg:text-lg">
-              Modules on the History of Art and Graphic Design, Semiotics, Typography, Colour theory, Branding,
-              Composition & Layout, Gestalt Principles, Illustration, Industrial Design, Market Research, Human-Computer
-              Interaction, Human Psychology, Multimedia, and more.
+              I work as a Staff Product Designer with over 14 years of design experience. I specialise in strategic,
+              growth, data-driven design and product optimisation, and have a rich background in various design
+              disciplines such as branding, marketing and graphic design.
             </p>
 
             <p className="leading-6 lg:leading-7 lg:text-lg mb-2">
-              I currently work as a Staff Product Designer and have over 14 years of professional design experience. I
-              specialise in strategic, growth, data-based design and product optimisation, with a rich background in
-              various design disciplines such as branding, marketing and graphic design.
+              I truly enjoy solving challenging problems, defining the abstract and simplifying the complex. I believe
+              asking questions while truly listening is key in delivering successful products. Learning & coaching
+              designers is a passion of mine.
             </p>
 
             <GoTo to={Route.RESUME} label="Check my resume" />
