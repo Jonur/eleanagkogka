@@ -689,7 +689,7 @@ export const CASE_STUDIES: Record<CaseStudy['id'], CaseStudy> = {
     id: 'Uzer',
     title: 'Enabling payments',
     intro:
-      'Delve into specific user research insights, find out how they influenced the 2024 StreamYard Company Vision and kickstarted a series of growth A/B tests and product optimisation projects.',
+      'Explore how optimising the UI and UX of payments can drive growth.',
     img: 'cover.png',
     sections: [
       {
