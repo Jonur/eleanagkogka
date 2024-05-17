@@ -774,9 +774,9 @@ export const CASE_STUDIES: Record<CaseStudy['id'], CaseStudy> = {
           {
             content:
               'The new design focuses on creating a clear hierarchy and messaging. The content is organised into distinct cards with intuitive controls, to improve focus and scan-ability. Add-on options are now prominently displayed alongside subscription details, ensuring users have a comprehensive view of their plan. The billing settings were redesigned to accommodate alternative payment methods like Apple Pay and Google Pay for future updates.',
-            image: '8.png',
+            image: '2.png',
           },
-          { image: '2.png' },
+          { image: '8.png' },
           {
             content:
               'For this design, I introduced two new card components: one for plan subscription details and messaging, and another for billing settings and add-ons. These additions received positive feedback from the design team and have since been integrated into other product areas.',
