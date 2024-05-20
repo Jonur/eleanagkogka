@@ -1,6 +1,6 @@
 import { CaseStudy } from 'src/types';
 
-export const CAST_STUDY_ORDER: CaseStudy['id'][] = ['zLI1', 'Dv5M', 'Uzer'];
+export const CAST_STUDY_ORDER: CaseStudy['id'][] = ['zLI1', 'Dv5M', 'Uzer', 'WHR4'];
 
 export const CASE_STUDIES: Record<CaseStudy['id'], CaseStudy> = {
   zLI1: {
@@ -688,8 +688,7 @@ export const CASE_STUDIES: Record<CaseStudy['id'], CaseStudy> = {
   Uzer: {
     id: 'Uzer',
     title: 'Enabling payments',
-    intro:
-      'Explore how optimising the UI and UX of payments can drive growth.',
+    intro: 'Explore how optimising the UI and UX of payments can drive growth.',
     img: 'cover.png',
     sections: [
       {
@@ -814,5 +813,13 @@ export const CASE_STUDIES: Record<CaseStudy['id'], CaseStudy> = {
         ],
       },
     ],
+  },
+  WHR4: {
+    id: 'WHR4',
+    disabled: true,
+    title: 'StreamYard Guest Mobile App',
+    intro: 'Coming soon',
+    img: 'cover.png',
+    sections: [],
   },
 };

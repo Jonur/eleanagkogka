@@ -31,10 +31,16 @@ const Work: React.FC = () => {
             {CAST_STUDY_ORDER.map((id) => {
               const study = CASE_STUDIES[id];
 
-              return (
+              return study.disabled ? (
+                <div key={study.title} role="listitem" className="flex flex-col gap-y-4 lg:gap-y-6">
+                  <h3 className="text-2xl leading-[30px] lg:text-[26px] lg:leading-8 italic">{study.title}</h3>
+                  <p className="leading-6 lg:leading-7 lg:text-lg">{study.intro}</p>
+                  <img src={`/case-studies/${id}/${study.img}`} className="rounded-tl-[32px] rounded-br-[32px] my-2" />
+                </div>
+              ) : (
                 <Link
-                  key={study.title}
                   to={`${Route.WORK}/${study.id}`}
+                  key={study.title}
                   role="listitem"
                   className="flex flex-col gap-y-4 lg:gap-y-6"
                 >

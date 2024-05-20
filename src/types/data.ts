@@ -77,4 +77,5 @@ export type CaseStudy = {
   intro: string;
   img: string;
   sections?: CaseStudySection[];
+  disabled?: boolean;
 };
