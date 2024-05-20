@@ -1,6 +1,7 @@
 export type StarListItem = { title: string; description: string; starColor: string };
 
 export type BlogPost = {
+  id: string;
   title: string;
   subtitle: string;
   url: string;

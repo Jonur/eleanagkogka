@@ -4,7 +4,7 @@ import React, { RefObject, useRef, useState } from 'react';
 import { Arrow, Chevron } from 'src/components/Icons';
 import { useWindowDimensions } from 'src/hooks';
 
-import { BLOG_POSTS, PAGINATION_COUNT, PAGINATION_COUNT_LG } from './constants';
+import { BLOG_POST_ORDER, BLOG_POSTS, PAGINATION_COUNT, PAGINATION_COUNT_LG } from './constants';
 
 const BlogPosts: React.FC = () => {
   const { onLargeScreen } = useWindowDimensions();
@@ -14,7 +14,7 @@ const BlogPosts: React.FC = () => {
   const blogPostRefs = useRef<Record<number, RefObject<HTMLAnchorElement> | null>>({});
 
   const [paginationCount] = useState(onLargeScreen() ? PAGINATION_COUNT_LG : PAGINATION_COUNT);
-  const [blogPostScreens] = useState(Math.ceil(BLOG_POSTS.length / paginationCount));
+  const [blogPostScreens] = useState(Math.ceil(BLOG_POST_ORDER.length / paginationCount));
   const [postInView, setPostInView] = useState(0);
 
   const scrollToPost = (index: number) => {
@@ -35,12 +35,14 @@ const BlogPosts: React.FC = () => {
 
   const handleNext = () => {
     const index =
-      postInView + paginationCount <= BLOG_POSTS.length - 1 ? postInView + paginationCount : BLOG_POSTS.length - 1;
+      postInView + paginationCount <= BLOG_POST_ORDER.length - 1
+        ? postInView + paginationCount
+        : BLOG_POST_ORDER.length - 1;
     scrollToPost(index);
   };
 
   const isViewingLastBlogPosts =
-    postInView === BLOG_POSTS.length - 1 || postInView + paginationCount > BLOG_POSTS.length;
+    postInView === BLOG_POST_ORDER.length - 1 || postInView + paginationCount > BLOG_POST_ORDER.length;
 
   return (
     <section
@@ -58,31 +60,38 @@ const BlogPosts: React.FC = () => {
 
       <div ref={blogPostContainerRef} className="overflow-x-scroll scroll-smooth no-scrollbar relative w-full">
         <div className="flex gap-x-6">
-          {BLOG_POSTS.map((post, index) => (
-            <a
-              ref={(blogPostRefs.current[index] ??= { current: null })}
-              id={`blog-post-${index}`}
-              key={post.title}
-              href={post.url}
-              target="_blank"
-              rel="noreferrer"
-              className="w-[304px] lg:w-[353px] flex-shrink-0 flex flex-col justify-between"
-            >
-              <div className="flex flex-col relative">
-                <div
-                  className="w-full h-[140px] bg-cover bg-center mb-4 lg:mb-6 rounded-tl-[32px] rounded-br-[32px]"
-                  style={{ backgroundImage: `url(/blog/thumb-${index}.jpg)` }}
-                />
-                <div className="absolute top-0 left-0 w-full h-[140px] mb-4 lg:mb-6 rounded-tl-[32px] rounded-br-[32px] bg-dark-blue opacity-30" />
-                <h5 className="text-base leading-[22px] lg:text-lg lg:leading-7 uppercase font-bold">{post.title}</h5>
-                {post.subtitle && <h6 className="text-base leading-6 lg:text-lg lg:leading-7 mt-1">{post.subtitle}</h6>}
-              </div>
-              <div className="flex gap-2 items-center text-teal-dark leading-5 lg:leading-7 lg:text-lg text-base mt-4 active:text-dark-blue hover:underline w-fit">
-                <span>Read on Medium</span>
-                <Arrow className="-rotate-45 w-[12px] h-[12px]" />
-              </div>
-            </a>
-          ))}
+          {BLOG_POST_ORDER.map((id, index) => {
+            const post = BLOG_POSTS[id];
+            if (!post) console.info(post, index);
+
+            return (
+              <a
+                ref={(blogPostRefs.current[index] ??= { current: null })}
+                id={`blog-post-${index}`}
+                key={post.title}
+                href={post.url}
+                target="_blank"
+                rel="noreferrer"
+                className="w-[304px] lg:w-[353px] flex-shrink-0 flex flex-col justify-between"
+              >
+                <div className="flex flex-col relative">
+                  <div
+                    className="w-full h-[140px] bg-cover bg-center mb-4 lg:mb-6 rounded-tl-[32px] rounded-br-[32px]"
+                    style={{ backgroundImage: `url(/blog/${id}.jpg)` }}
+                  />
+                  <div className="absolute top-0 left-0 w-full h-[140px] mb-4 lg:mb-6 rounded-tl-[32px] rounded-br-[32px] bg-dark-blue opacity-30" />
+                  <h5 className="text-base leading-[22px] lg:text-lg lg:leading-7 uppercase font-bold">{post.title}</h5>
+                  {post.subtitle && (
+                    <h6 className="text-base leading-6 lg:text-lg lg:leading-7 mt-1">{post.subtitle}</h6>
+                  )}
+                </div>
+                <div className="flex gap-2 items-center text-teal-dark leading-5 lg:leading-7 lg:text-lg text-base mt-4 active:text-dark-blue hover:underline w-fit">
+                  <span>Read on Medium</span>
+                  <Arrow className="-rotate-45 w-[12px] h-[12px]" />
+                </div>
+              </a>
+            );
+          })}
         </div>
       </div>
 
