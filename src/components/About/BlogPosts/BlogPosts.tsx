@@ -62,7 +62,6 @@ const BlogPosts: React.FC = () => {
         <div className="flex gap-x-6">
           {BLOG_POST_ORDER.map((id, index) => {
             const post = BLOG_POSTS[id];
-            if (!post) console.info(post, index);
 
             return (
               <a

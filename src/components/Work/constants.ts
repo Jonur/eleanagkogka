@@ -1,6 +1,6 @@
 import { CaseStudy } from 'src/types';
 
-export const CAST_STUDY_ORDER: CaseStudy['id'][] = ['zLI1', 'Dv5M', 'Uzer', 'WHR4'];
+export const CAST_STUDY_ORDER: CaseStudy['id'][] = ['WHR4', 'zLI1', 'Dv5M', 'Uzer'];
 
 export const CASE_STUDIES: Record<CaseStudy['id'], CaseStudy> = {
   zLI1: {
@@ -816,10 +816,256 @@ export const CASE_STUDIES: Record<CaseStudy['id'], CaseStudy> = {
   },
   WHR4: {
     id: 'WHR4',
-    disabled: true,
     title: 'StreamYard Guest Mobile App',
-    intro: 'Coming soon',
+    intro:
+      'Discover how I designed the StreamYard guest mobile app and set the foundations for a more tailored iOS experience.',
     img: 'cover.png',
-    sections: [],
+    sections: [
+      {
+        title: 'Introduction',
+        entries: [
+          {
+            title: 'Optimising the StreamYard guest experience on iOS through the development of a mobile application ',
+          },
+          {
+            content: 'In this case study, I will go through how I designed the StreamYard guest mobile app experience.',
+          },
+          {
+            label: 'The product',
+            content:
+              'StreamYard is a user-friendly, browser-based professional studio tailored for live video content creation. With StreamYard you can also record and host webinars but live streaming is the primary SY use case. You can also present, play videos or invite guest to join you on stage.',
+          },
+          {
+            label: 'My role',
+            content: 'Product Design Lead  &bull;  Designer',
+          },
+        ],
+      },
+      {
+        title: 'Background',
+        prebordered: true,
+        entries: [
+          {
+            label: 'Background',
+            content: `
+              <p>While StreamYard enables hosts to go live and invite guests from anywhere, a significant portion of the hosts (people who create and run the show with SY), predominantly use desktops. However, there’s a growing trend of mobile usage among guests, particularly on iPhones with Safari as their primary browser. Unfortunately, Safari’s poor reliability and stability pose challenges for the StreamYard platform, limiting its accessibility for mobile users.</p>
+              <p>With the emergence of new content formats, like shorts and reels, and the increasing demand for a more seamless integration with platforms like Facebook, YouTube, and potentially Instagram, there’s a pressing need to accommodate mobile users better.</p>
+            `,
+          },
+          {
+            label: 'The plan',
+            content:
+              'To tackle these challenges and capitalise on the mobile space opportunities, we decided to develop the StreamYard mobile app. Our initial focus was on iOS, particularly in the Guest experience, with potential expansion to the Host experience, or even an Android version down the line.  With that, our primary objective was to address the core use case of a guest joining a live stream and resolving issues related to Safari’s limitations while laying the groundwork for a comprehensive mobile experience to test and build upon to ensure a smoother rollout process.',
+          },
+          {
+            label: 'The team',
+            content:
+              'A new squad was created with people from different SY teams. Having previous mobile experience, I was picked to initiate the project, before we invested in getting a dedicated designer for this mobile App project.',
+          },
+          {
+            label: 'Collaboration &amp; Research',
+            content: `
+              <p>For this project, I collaborated closely with the studio team PM to gain a deeper understanding of the mobile challenges associated with our browser-based platform. I also engaged with the studio designers at various stages of the design process to gather information and feedback on specific design nuances.</p>
+              <p>With the assistance of our data analyst, I reviewed over 50 mobile user accounts to observe their shows and gain insights into their use cases and guest experiences. Additionally, I watched numerous Fullstory mobile sessions to identify general interaction patterns and challenges. While these sessions primarily focused on hosts, many of the insights were relevant to improving the guest experience as well.</p>
+            `,
+          },
+          {
+            label: 'Design goals',
+            content: `
+              <p>Drawing insights from watching user interactions via Fullstory and looking at mobile-relevant support tickets, I’ve identified some key areas for improvement in the mobile user experience beyond addressing the Safari Browser’s limitations:</p>
+              <ol>
+                <li><strong>Enhance Usability:</strong> Improve the existing browser-based mobile experience to deliver a more intuitive and seamless experience for iOS users.</li>
+                <li><strong>Dark Mode:</strong> Respond to user feedback by implementing dark mode to cater to user preferences, decrease glare and improve comfort, especially in low-light environments.</li>
+                <li><strong>Innovation in Video Creation:</strong> Use the re-design to innovate within the video content creation space, leveraging the mobile platform capabilities to enhance the creative process and experience.</li>
+              </ol>
+            `,
+          },
+        ],
+      },
+      {
+        title: 'Join a studio',
+        prebordered: true,
+        entries: [
+          {
+            title:
+              'Having a clear plan and design goals, I could explore different design solutions tailored to the iOS environment. I also worked with our existing design system to introduce a new accessible dark more colour palette.',
+          },
+          {
+            label: 'Join studio',
+            content:
+              'I aimed to ensure a seamless experience for guests when joining a show, requiring just a few simple clicks. I introduced a subtle wave dynamic animation to elevate the "join a studio" screen. Guests can effortlessly paste a guest link into the provided field, automatically granting them entry to the studio. For the returning guests, selecting previously joined shows was made convenient with just a click within the field.',
+            image: '4.png',
+          },
+          { image: '5.png' },
+          {
+            label: 'Loading screen',
+            content:
+              'As guests join the studio, there’s usually a 2-4 sec delay. To add a touch of delight, I crafted an animation featuring Puddles, our duck mascot, to welcome guests as they enter the studio and make the waiting a bit less annoying. Initially conceptualised in Figma and later brought to life with the help of a colleague in After Effects, the animation showcased Puddles following a loader with its eyes, ending with a friendly blink. Although the team embraced this approach, a change in brand direction led to the animation being replaced with a static illustration.',
+            image: 'animation-8.gif',
+          },
+          {
+            label: 'Permissions',
+            content:
+              'First-time users of the SY guest mobile app are prompted to grant some permissions for camera, audio, and notifications.',
+            image: '7.png',
+          },
+        ],
+      },
+      {
+        title: 'Enter studio',
+        prebordered: true,
+        entries: [
+          {
+            title:
+              'Even before entering the studio, I could spot several opportunities to mobile tailor the StreamYard experience.',
+          },
+          {
+            label: 'Key challenges',
+            content:
+              'Upon entering the studio, guests are provided the opportunity to check their audio and camera settings. Previously, the screen layout closely resembled the desktop view, resulting in several mobile interaction challenges.',
+            image: '12.png',
+          },
+          {
+            content: `
+              <ol>
+                <li>The horizontal camera preview area could have utilised the vertical space more effectively, for a more visible, clearer view.</li>
+                <li>Key user controls were positioned too high on the screen, making them difficult to reach with a thumb.</li>
+                <li>The display name field wasn’t easily accessible.</li>
+                <li>The navigation controls were placed at the top of the screen, presenting accessibility issues.</li>
+                <li>The settings and relevant controls were also placed at the top of the screen.</li>
+                <li>The camera options dropdown wasn’t aligned with mobile platform conventions, hindering a seamless experience.</li>
+                <li>Furthermore, according to my research with existing mobile users, a common scenario for mobile guests was to join with their cameras turned off. This resulted in a generic avatar being assigned. On the browser experience, the guests have to enter the studio and only then have the option to edit their avatar to something more personalised.</li>
+              </ol>
+            `,
+          },
+          {
+            label: 'Solutions',
+            content: `
+              <p>To address these issues, I revamped the layout to prioritise a clear camera preview and relocated controls to the bottom of the screen for easier access. A minimalist set of icons simplified the UI, while the display name field was repositioned for improved usability.</p>
+              <p>Introducing a drawer UI pattern housed the settings options, ensuring easy access at the bottom of the screen.</p>
+            `,
+            image: '13.png',
+          },
+          {
+            content: `
+              <p>Changing the phone camera was simplified by introducing a switch camera icon on the camera view, similar to smartphone camera functionality.</p>
+              <p>Audio settings were tailored for mobile experiences, featuring user-friendly toggle controls for the advanced audio settings.</p>
+              <p>Finally, by optimising the UI, I created space to introduce the option for users to edit their audio avatar seamlessly using native iOS features to upload or take a photo effortlessly.</p>
+            `,
+          },
+        ],
+      },
+      {
+        title: 'The studio',
+        prebordered: true,
+        entries: [
+          {
+            title:
+              'The studio was the perfect space to optimise and innovate. My PM was keen for me to explore new solutions.',
+          },
+          {
+            label: 'Key challenges',
+            content: 'The mobile view of the studio posed several usability challenges.',
+            image: '15.png',
+          },
+          {
+            content: `
+              <ol>
+                <li>The backstage guest view was small and displayed horizontally, which didn’t match the camera ratio, cutting off parts of the camera view. This left much vertical space unused, and the layout needed refinement.</li>
+                <li>The user actions menu was cluttered with a poor hierarchy, making navigation difficult.</li>
+                <li>The comments view was hidden under the chat menu item, which included both the private chat and public comments.</li>
+                <li>The settings menu, and the private chat and comments, expanded to cover the entire screen, obscuring the stage show view.</li>
+                <li>The navigation controls were placed at the top of the screen, making them hard to reach.</li>
+                <li>The camera & audio settings, and chat and comments tabs were also placed at the top of the screen.</li>
+                <li>Many mobile-based shows take place outdoors, where guests and hosts might want to showcase their surroundings. Accessing the camera settings needed to be more accessible than through the settings.</li>
+              </ol>
+            `,
+          },
+          {
+            label: 'Solutions',
+            content:
+              'The first issue I addressed was simplifying the actions menu. While being live, a guest should be able to easily focus and access controls, settings, and studio features. Establishing a clear information hierarchy was crucial, so I experimented with various approaches to find a structure that was intuitive and accessible.',
+            image: '3.png',
+          },
+          { image: '17.png' },
+          {
+            content: `
+              <p>I divided the navigation into two main parts: video and audio controls/settings, and show-related actions such as chatting, comments, and recordings (to be added later).</p>
+              <ol>
+                <li>Video and Audio Controls: These are made the most accessible to ensure minimal hand movement during live streaming, preventing camera blockage or phone shaking.</li>
+                <li>Show-Related Actions: These are placed just below the stage, functioning as tabs or via sliding, fully utilising the space without disrupting the screen view.</li>
+              </ol>
+              <p>Settings are also easily accessible using the same drawer pattern introduced upon entering the studio.</p>
+            `,
+            image: '14.png',
+          },
+          {
+            content:
+              'Lastly, the stage tab was improved so the guests have a larger vertical view of their camera and a clear in-sight line height view of their backstage status. A switch icon on their camera view allows easy switching between the front and rear phone cameras.',
+          },
+          {
+            label: 'Opportunities',
+            content:
+              'Analysing the stage display on a mobile screen revealed opportunities to address broader issues. The stage is where the show takes place, and where the host’s banners and audience comments are displayed. On a mobile device, these appear very small and are hard to read. Since comments are often directed at the guest, guests should be able to read them without straining or moving their devices closer to their faces.',
+            image: '1.png',
+          },
+          {
+            content:
+              'Even after redesigning the stage tab to include a larger guest view, there was still space to utilise. I proposed adding a dedicated slot for comments and banners, displaying them larger and at eye level for easy readability.',
+            image: '18.png',
+          },
+          {
+            content:
+              'Another opportunity was improving guests’ awareness of when they would join the host on stage. Previously, guests had to stay alert to the chat or other show cues to know when they would be joining. I explored adding a countdown along with a sound effect to visually and audibly inform and prepare guests before joining the stage, giving them a few seconds to get ready. Unfortunately, this feature was deprioritised for the MVP but remains a future enhancement goal.',
+            image: '2.png',
+          },
+        ],
+      },
+      {
+        title: 'More features',
+        prebordered: true,
+        entries: [
+          {
+            title:
+              'There were a few more features we could integrate into the MVP  App that could significantly improve the guest experience.',
+          },
+          {
+            label: 'Starred comments',
+            content:
+              'Comments are a crucial feature of the app, often coming in from various platforms like Facebook and YouTube. In popular shows, handling comments can be overwhelming. Monitoring, pinning, or answering comments is typically the host’s responsibility. We recently introduced a "star comments" feature, allowing hosts to shortlist comments to address or pin later. These starred comments are often relevant to guests as well.',
+            image: '16.png',
+          },
+          {
+            content:
+              'Previously, guests had to sift through numerous comments to find those relevant to them. The app provided the perfect opportunity to introduce this new feature, making starred comments visible to guests for better communication. With just one click, guests can filter the comments to see only the starred ones that might need their attention.',
+          },
+          {
+            label: 'Local recordings',
+            content:
+              'Another new studio feature was local recordings which allows the host to activate device recording, ensuring a flawless result even with a weak connection. Each guest records their feed locally and uploads it to the SY cloud. It was crucial to include this feature in the MVP guest app.',
+            image: '11.png',
+          },
+          { image: '9.png' },
+          {
+            content:
+              'When local recordings are activated, the guest is notified, and a new tab appears in their studio interface. This tab allows them to monitor the progress of their local recording upload. To ensure the recording uploads completely, the app must remain open. Collaborating with the studio design team, I designed a series of messages, notifications, and error states to communicate progress inside and outside the app.',
+            image: '10.png',
+          },
+        ],
+      },
+      {
+        title: 'Impact',
+        prebordered: true,
+        entries: [
+          {
+            title: 'The Guest App is currently on the iOS app store and has received some positive reviews.',
+            content: `
+              <p>Although the app has been live for less than four months, the initial feedback highlights the need for a more tailored mobile experience for StreamYard users. This need will become even more significant with the introduction of Instagram as a destination for live streaming.</p>
+              <p>Furthermore, the guest app and the design patterns I introduced laid the groundwork for developing the host app. We have since hired a dedicated mobile designer to advance this project further.</p>
+            `,
+          },
+        ],
+      },
+    ],
   },
 };
