@@ -64,12 +64,16 @@ const Testimonials: React.FC = () => {
     >
       <h3 className="text-lg italic mb-12 lg:mb-[80px]">Testimonials</h3>
 
-      {!isViewingLastTestimonial && (
-        <div
-          role="none"
-          className="hidden lg:block bg-gradient-to-r from-transparent from-[5%] to-white opacity-70 absolute right-0 h-[calc(100%-44px)] top-0 w-[130px] z-10"
-        />
-      )}
+      <div
+        role="none"
+        className={c(
+          'hidden lg:block from-transparent from-[5%] to-white opacity-70 absolute  h-[calc(100%-44px)] top-0 w-[130px] z-10 pointer-events-none',
+          {
+            'bg-gradient-to-l left-0': isViewingLastTestimonial,
+            'bg-gradient-to-r right-0': !isViewingLastTestimonial,
+          }
+        )}
+      />
 
       <div ref={testimonialContainerRef} className="overflow-x-scroll scroll-smooth no-scrollbar relative w-full">
         <div className="flex gap-x-6 lg:gap-x-8">

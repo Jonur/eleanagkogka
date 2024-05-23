@@ -41,8 +41,7 @@ const BlogPosts: React.FC = () => {
     scrollToPost(index);
   };
 
-  const isViewingLastBlogPosts =
-    postInView === BLOG_POST_ORDER.length - 1 || postInView + paginationCount > BLOG_POST_ORDER.length;
+  const isViewingLastBlogPosts = () => postInView + paginationCount === BLOG_POST_ORDER.length;
 
   return (
     <section
@@ -51,12 +50,16 @@ const BlogPosts: React.FC = () => {
     >
       <h3 className="text-lg italic mb-12 lg:mb-[80px]">My Blog posts</h3>
 
-      {!isViewingLastBlogPosts && (
-        <div
-          role="none"
-          className="bg-gradient-to-r from-transparent from-[-10%] lg:from-[0%] to-white to-[100%] absolute right-0 w-[50px] lg:w-[70px] h-[calc(100%-44px)] top-0 z-10"
-        />
-      )}
+      <div
+        role="none"
+        className={c(
+          'from-transparent from-[-10%] lg:from-[0%] to-white to-[100%] absolute w-[50px] lg:w-[70px] h-[calc(100%-44px)] top-0 z-10 pointer-events-none',
+          {
+            'left-0 bg-gradient-to-l': isViewingLastBlogPosts(),
+            'right-0 bg-gradient-to-r': !isViewingLastBlogPosts(),
+          }
+        )}
+      />
 
       <div ref={blogPostContainerRef} className="overflow-x-scroll scroll-smooth no-scrollbar relative w-full">
         <div className="flex gap-x-6">
@@ -107,6 +110,7 @@ const BlogPosts: React.FC = () => {
           {Array.from({ length: blogPostScreens }).map((_, index) => {
             const key = `ctrl-${index}`;
             const postToScroll = index * paginationCount;
+
             return (
               <button
                 disabled={postInView === postToScroll}
@@ -119,11 +123,11 @@ const BlogPosts: React.FC = () => {
               />
             );
           })}
-          <button aria-label="Next" onClick={handleNext} disabled={isViewingLastBlogPosts}>
+          <button aria-label="Next" onClick={handleNext} disabled={isViewingLastBlogPosts()}>
             <Chevron
               className={c('rotate-180', {
-                'text-teal-dark': !isViewingLastBlogPosts,
-                'text-light-grey': isViewingLastBlogPosts,
+                'text-teal-dark': !isViewingLastBlogPosts(),
+                'text-light-grey': isViewingLastBlogPosts(),
               })}
             />
           </button>
