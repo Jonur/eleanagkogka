@@ -2,7 +2,8 @@ import c from 'classnames';
 import React, { RefObject, useRef, useState } from 'react';
 
 import { Arrow, Chevron } from 'src/components/Icons';
-import { useWindowDimensions } from 'src/hooks';
+import { useOnMount, useWindowDimensions } from 'src/hooks';
+import { EventType } from 'src/types';
 
 import { BLOG_POST_ORDER, BLOG_POSTS, PAGINATION_COUNT, PAGINATION_COUNT_LG } from './constants';
 
@@ -21,9 +22,10 @@ const BlogPosts: React.FC = () => {
     if (blogPostContainerRef.current) {
       setPostInView(index);
 
+      const left = blogPostRefs.current[index]?.current?.offsetLeft || 0;
       blogPostContainerRef.current.scrollTo({
         behavior: 'smooth',
-        left: blogPostRefs.current[index]?.current?.offsetLeft || 0,
+        left,
       });
     }
   };
@@ -42,6 +44,24 @@ const BlogPosts: React.FC = () => {
   };
 
   const isViewingLastBlogPosts = () => postInView + paginationCount === BLOG_POST_ORDER.length;
+
+  useOnMount(() => {
+    const cb = () => {
+      const scrollLeft = blogPostContainerRef.current?.scrollLeft || 0;
+      const offsets = Object.values(blogPostRefs.current).map((el) => el?.current?.offsetLeft || 0);
+
+      const offset = offsets.find(
+        (_o, index) => scrollLeft >= offsets[index] && scrollLeft <= (offsets[index + 1] || offsets[offsets.length - 1])
+      );
+      const result = Math.floor((offset ? offsets.indexOf(offset) + 1 : 0) / paginationCount);
+      setPostInView(result * paginationCount);
+    };
+
+    blogPostContainerRef.current?.addEventListener(EventType.SCROLLEND, cb);
+    return () => {
+      blogPostContainerRef.current?.removeEventListener(EventType.SCROLLEND, cb);
+    };
+  });
 
   return (
     <section

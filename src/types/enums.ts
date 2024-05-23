@@ -17,6 +17,7 @@ export enum EventType {
   UNHANDLEDREJECTION = 'unhandledrejection',
   ERROR = 'error',
   SCROLL = 'scroll',
+  SCROLLEND = 'scrollend',
 }
 
 export enum Breakpoint {
