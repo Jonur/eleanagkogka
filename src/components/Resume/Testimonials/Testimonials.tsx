@@ -2,7 +2,8 @@ import c from 'classnames';
 import React, { RefObject, useRef, useState } from 'react';
 
 import { Arrow, Chevron, Quotes } from 'src/components/Icons';
-import { useWindowDimensions } from 'src/hooks';
+import { useOnMount, useWindowDimensions } from 'src/hooks';
+import { EventType } from 'src/types';
 
 import { PAGINATION_COUNT, PAGINATION_COUNT_LG, TESTIMONIAL_SIZE_LG_PX, TESTIMONIALS } from './constants';
 
@@ -54,8 +55,26 @@ const Testimonials: React.FC = () => {
     return {};
   };
 
-  const isViewingLastTestimonial =
+  const isViewingLastTestimonial = () =>
     postInView === TESTIMONIALS.length - 1 || postInView + paginationCount > TESTIMONIALS.length;
+
+  useOnMount(() => {
+    const cb = () => {
+      const scrollLeft = testimonialContainerRef.current?.scrollLeft || 0;
+      const offsets = Object.values(testimonialRefs.current).map((el) => el?.current?.offsetLeft || 0);
+
+      const offset = offsets.find(
+        (_o, index) => scrollLeft >= offsets[index] && scrollLeft <= (offsets[index + 1] || offsets[offsets.length - 1])
+      );
+      const result = Math.floor((offset ? offsets.indexOf(offset) + 1 : 0) / paginationCount);
+      setPostInView(result * paginationCount);
+    };
+
+    testimonialContainerRef.current?.addEventListener(EventType.SCROLLEND, cb);
+    return () => {
+      testimonialContainerRef.current?.removeEventListener(EventType.SCROLLEND, cb);
+    };
+  });
 
   return (
     <section
@@ -69,8 +88,8 @@ const Testimonials: React.FC = () => {
         className={c(
           'hidden lg:block from-transparent from-[5%] to-white opacity-70 absolute  h-[calc(100%-44px)] top-0 w-[130px] z-10 pointer-events-none',
           {
-            'bg-gradient-to-l left-0': isViewingLastTestimonial,
-            'bg-gradient-to-r right-0': !isViewingLastTestimonial,
+            'bg-gradient-to-l left-0': isViewingLastTestimonial(),
+            'bg-gradient-to-r right-0': !isViewingLastTestimonial(),
           }
         )}
       />
@@ -124,11 +143,11 @@ const Testimonials: React.FC = () => {
               );
             })}
 
-          <button aria-label="Next" onClick={handleNext} disabled={isViewingLastTestimonial}>
+          <button aria-label="Next" onClick={handleNext} disabled={isViewingLastTestimonial()}>
             <Chevron
               className={c('rotate-180', {
-                'text-teal-dark': !isViewingLastTestimonial,
-                'text-light-grey': isViewingLastTestimonial,
+                'text-teal-dark': !isViewingLastTestimonial(),
+                'text-light-grey': isViewingLastTestimonial(),
               })}
             />
           </button>
