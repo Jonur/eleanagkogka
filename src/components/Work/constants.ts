@@ -1060,8 +1060,9 @@ export const CASE_STUDIES: Record<CaseStudy['id'], CaseStudy> = {
           {
             title: 'The Guest App is currently on the iOS app store and has received some positive reviews.',
             content: `
-              <p>Although the app has been live for less than four months, the initial feedback highlights the need for a more tailored mobile experience for StreamYard users. This need will become even more significant with the introduction of Instagram as a destination for live streaming.</p>
-              <p>Furthermore, the guest app and the design patterns I introduced laid the groundwork for developing the host app. We have since hired a dedicated mobile designer to advance this project further.</p>
+              <p>From November 2023, when it was first released, to May 2024, the StreamYard Guest App was downloaded over 30k times! It has a rate of 4.6 stars across all app stores, and about 45% of regular mobile guests exclusively use the app to join studios.
+              <p>The app has been live for less than six months, and the initial feedback highlights the need for a more tailored mobile experience for StreamYard users, both guests and hosts, especially with the introduction of Instagram as a destination for live streaming.</p>
+              <p>The guest app and the design patterns I introduced laid the groundwork for developing the host app. We have since hired a dedicated mobile designer to advance this project further.</p>
             `,
           },
         ],
