@@ -25,8 +25,8 @@ const Header: React.FC<HeaderProps> = ({ breadcrumb, pageHeader }) => {
   }, [menuVisible]);
 
   return (
-    <header className="bg-light-grey pt-4 lg:pt-8 px-6 lg:px-[80px] pb-8 lg:pb-[60px] lg:relative lg:z-20">
-      <div className="w-full flex justify-between">
+    <header className="bg-light-grey pt-4 lg:pt-8 px-6 lg:px-[80px] pb-8 lg:pb-[60px] lg:relative lg:z-20 lg:flex lg:flex-col lg:items-center">
+      <div className="w-full flex justify-between lg:max-w-[1600px]">
         <Link to={Route.ROOT}>
           <img src="/logo.svg" className="w-10 h-10 lg:w-[54px] lg:h-[54px]" />
         </Link>
@@ -122,7 +122,7 @@ const Header: React.FC<HeaderProps> = ({ breadcrumb, pageHeader }) => {
         )}
       </div>
 
-      <div role="none" className="flex w-full h-[200px] lg:h-[300px] items-center mb-2 relative">
+      <div role="none" className="flex w-full h-[200px] lg:h-[300px] items-center mb-2 relative lg:max-w-[1600px]">
         <div className="w-[1px] h-[65%] bg-black opacity-10 lg:absolute lg:left-[60px]" />
         <div
           className={c('w-[1px] h-[100%] lg:h-[320px] bg-black opacity-10 ml-[35%] lg:ml-[45%] lg:absolute lg:top-0', {
@@ -141,9 +141,11 @@ const Header: React.FC<HeaderProps> = ({ breadcrumb, pageHeader }) => {
         <div className="w-[1px] h-[85%] lg:h-[300px] bg-black opacity-10 absolute right-0 lg:-right-[50px] lg:top-[30px]" />
       </div>
 
-      <h2 className="italic text-2xl lg:text-3xl text-dark-blue mb-2 lg:mb-3">Eleana Gkogka &ndash;</h2>
+      <h2 className="italic text-2xl lg:text-3xl text-dark-blue mb-2 lg:mb-3 lg:w-full lg:max-w-[1600px]">
+        Eleana Gkogka &ndash;
+      </h2>
 
-      <div className="flex justify-between lg:items-end">
+      <div className="flex justify-between lg:items-end lg:w-full lg:max-w-[1600px]">
         <h1 className="text-6xl lg:text-[100px] max-w-[585px] leading-[48px] lg:leading-[90px] font-bebas uppercase bg-gradient-to-r from-teal-dark to-pink inline-block text-transparent bg-clip-text">
           {pageHeader}
         </h1>
