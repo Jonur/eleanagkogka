@@ -1,11 +1,12 @@
 import c from 'classnames';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
 import { Chevron, Close, Menu } from 'src/components/Icons';
-import { useWindowDimensions } from 'src/hooks';
+import { useOnMount, useWindowDimensions } from 'src/hooks';
 import { Route } from 'src/types';
 
+import { PAGE_HEADERS } from './constants';
 import SocialMedia from './SocialMedia';
 
 type HeaderProps = {
@@ -16,13 +17,44 @@ type HeaderProps = {
 const Header: React.FC<HeaderProps> = ({ breadcrumb, pageHeader }) => {
   const { onLargeScreen } = useWindowDimensions();
   const location = useLocation();
+
   const [menuVisible, setMenuVisible] = useState(false);
+  const animateRef = useRef<HTMLHeadingElement>(null);
 
   const locationMatch = (route: Route): boolean => (location.pathname as Route) === route;
 
   useEffect(() => {
     document.body.classList.toggle('no-scroll', menuVisible);
   }, [menuVisible]);
+
+  useOnMount(() => {
+    let i = 0;
+    let animateTimeout: NodeJS.Timeout;
+
+    const change = () => {
+      if (animateRef.current) {
+        animateRef.current.classList.add('fade');
+
+        animateRef.current.addEventListener(
+          'transitionend',
+          () => {
+            if (animateRef.current) {
+              animateRef.current.textContent = PAGE_HEADERS[(i = (i + 1) % PAGE_HEADERS.length)];
+              animateRef.current.classList.remove('fade');
+              animateTimeout = setTimeout(change, 3000);
+            }
+          },
+          { once: true }
+        );
+      }
+    };
+    const initTimeout = setTimeout(change, 3000);
+
+    return () => {
+      clearTimeout(animateTimeout);
+      clearTimeout(initTimeout);
+    };
+  });
 
   return (
     <header className="bg-light-grey pt-4 lg:pt-8 px-6 lg:px-[80px] pb-8 lg:pb-[60px] lg:relative lg:z-20 lg:flex lg:flex-col lg:items-center">
@@ -146,9 +178,23 @@ const Header: React.FC<HeaderProps> = ({ breadcrumb, pageHeader }) => {
       </h2>
 
       <div className="flex justify-between lg:items-end lg:w-full lg:max-w-[1600px]">
-        <h1 className="text-6xl lg:text-[100px] max-w-[585px] leading-[48px] lg:leading-[90px] font-bebas uppercase bg-gradient-to-r from-teal-dark to-pink inline-block text-transparent bg-clip-text">
-          {pageHeader}
-        </h1>
+        {locationMatch(Route.ROOT) ? (
+          <div className="relative flex flex-col">
+            <h1
+              ref={animateRef}
+              className="text-6xl lg:text-[100px] max-w-[585px] leading-[48px] lg:leading-[90px] font-bebas uppercase bg-gradient-to-r from-teal-dark to-pink inline-block text-transparent bg-clip-text fadeable"
+            >
+              Strategic
+            </h1>
+            <h1 className="text-6xl lg:text-[100px] max-w-[585px] leading-[48px] lg:leading-[90px] font-bebas uppercase bg-gradient-to-r from-teal-dark to-pink inline-block text-transparent bg-clip-text">
+              Product designer
+            </h1>
+          </div>
+        ) : (
+          <h1 className="text-6xl lg:text-[100px] max-w-[585px] leading-[48px] lg:leading-[90px] font-bebas uppercase bg-gradient-to-r from-teal-dark to-pink inline-block text-transparent bg-clip-text">
+            {pageHeader}
+          </h1>
+        )}
 
         {onLargeScreen() && <SocialMedia />}
       </div>
