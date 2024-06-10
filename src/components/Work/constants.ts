@@ -1,6 +1,6 @@
 import { CaseStudy } from 'src/types';
 
-export const CAST_STUDY_ORDER: CaseStudy['id'][] = ['WHR4', 'zLI1', 'Dv5M', 'Uzer'];
+export const CAST_STUDY_ORDER: CaseStudy['id'][] = ['WHR4', 'zLI1', 'Dv5M', 'Uzer', 'Vm6M'];
 
 export const CASE_STUDIES: Record<CaseStudy['id'], CaseStudy> = {
   zLI1: {
@@ -86,7 +86,7 @@ export const CASE_STUDIES: Record<CaseStudy['id'], CaseStudy> = {
               <p>To gauge the impact of our efforts, I set specific metrics to monitor.</p>
               <p><strong>Retention Rate:</strong> More users should understand the value of SY and form the habit of using it.</p>
               <p><strong>Engagement Rate:</strong> A higher percentage of users should actively engage with the platform over time.</p>
-              <p><strong>Time to Value:</strong> The duration from sign-up to realising the product's value should decrease.</p>
+              <p><strong>Time to Value:</strong> The duration from sign-up to realising the product’s value should decrease.</p>
               <p><strong>Feature Adoption Rate:</strong> There should be an increase in feature usage post-onboarding.</p>
               <p><strong>Upgrade Rate:</strong> More users should find enough value to upgrade to a paid plan.</p>
               <p><strong>Completion Rate:</strong> More users should be about to complete onboarding without any usability issues.</p>
@@ -150,7 +150,7 @@ export const CASE_STUDIES: Record<CaseStudy['id'], CaseStudy> = {
               <p>Replace the initial question with a more relevant one: “Welcome! What’s your main reason for using StreamYard?”. Users could choose from live streaming, recording, or hosting webinars. This change will aim to help us:</p>
               <ul>
                 <li>Understand what our users are using us for today, and measure the impact of our marketing and growth efforts on attracting different use cases in the future.</li>
-                <li>Provide a tailored to our customers's use case experience.</li>
+                <li>Provide a tailored to our customers’s use case experience.</li>
                 <li>Inform new users about the platform’s capabilities.</li>
               </ul>
           `,
@@ -1069,4 +1069,252 @@ export const CASE_STUDIES: Record<CaseStudy['id'], CaseStudy> = {
       },
     ],
   },
+  Vm6M: {
+    id: 'Vm6M',
+    title: 'Marketplace in the app',
+    intro:
+      'Introducing Marketplace within the Experian Mobile app. Optimising and enhancing credit cards and loans search.',
+    img: 'cover.png',
+    sections: [
+      {
+        title: 'Introduction',
+        entries: [
+          {
+            title:
+              'Introducing Marketplace within the Experian Mobile app. Optimising and enhancing credit cards and loans search.',
+          },
+          {
+            label: 'The product',
+            content: `
+              <p>In this case study, I will go through how I designed the Experian credit cards and loans search flow.</p>
+              <p>Experian is a leading fintech company, ranked as the 6th largest global provider of technology solutions for the financial services industry. It specialises in helping individuals save money, access credit, and protect their identities through advanced data analytics and platforms. Experian offers a range of financial products, including credit score checks, credit cards, loans, and mortgages. The segment providing these financial products is known as Marketplace.</p>
+            `,
+          },
+          {
+            label: 'My role',
+            content: `<p>Product Design Lead &bull; Designer &bull; <em>(This project took place in 2019-20)</em></p>`,
+          },
+        ],
+      },
+      {
+        title: 'Background',
+        entries: [
+          {
+            label: 'Project overview',
+            content: `
+              <p>Objective: Design the Marketplace experience within Experian’s newly developed mobile app. This involved:</p>
+              <ol>
+                <li>Adding a Marketplace section to the app’s home page.</li>
+                <li>Optimizing the offers page.</li>
+                <li>Enhancing the search flow for credit cards.</li>
+                <li>Streamlining the search flow for loans.</li>
+              </ol>
+            `,
+          },
+          {
+            label: 'Design goals',
+            content: `
+              <p><strong>Prominence:</strong> Ensure Marketplace, Experian’s most profitable consumer product, is easily accessible and highly visible.</p>
+              <p><strong>Usability:</strong> Create an intuitive, mobile-friendly experience to boost product engagement.</p>
+              <p><strong>Aesthetics:</strong> Refresh and modernise the design while adhering to Experian’s brand guidelines.</p>
+              <p><strong>Efficiency:</strong> Develop a smooth, frictionless flow to deliver personalised product results.</p>
+              <p><strong>Convenience:</strong> Enable seamless repeated searches with saved sessions and direct access to results.</p>
+            `,
+          },
+          {
+            label: 'Process',
+            content: `
+              <p>I collaborated closely with the Marketplace Product Manager and Design Lead to:</p>
+              <ul>
+                <li>Identify requirements and analyse mobile data.</li>
+                <li>Conduct usability testing to inform design decisions.</li>
+                <li>Address specific challenges uncovered during the discovery phase.</li>
+              </ul>
+            `,
+          },
+          {
+            label: 'The problems',
+            content: `
+              <ul>
+                <li>The app lacked search functionality for credit cards and loans, resulting in low user engagement.</li>
+                <li>The existing search process was cumbersome, with unclear steps.</li>
+                <li>We were requesting information that users had already provided.</li>
+                <li>Users were required to type answers unnecessarily.</li>
+                <li>The interface relied heavily on dropdown menus, requiring numerous clicks.</li>
+                <li>Personal questions were asked without explanation, leading to high user drop-off.</li>
+              </ul>
+            `,
+          },
+          {
+            label: 'Optimisation goals',
+            content: `
+              <ul>
+                <li>Modernise, simplify and lighten the user interface to reduce visual clutter.</li>
+                <li>Use concise, easy-to-understand language, especially for non-native speakers.</li>
+                <li>Employ visual cues like placeholders and format hints for inputs (e.g. currency symbols).</li>
+                <li>Use icons to represent different sections and options, enhancing engagement.</li>
+                <li>Provide immediate validation and feedback to guide users through the process.</li>
+              </ul>
+            `,
+          },
+        ],
+      },
+      {
+        title: 'Landing pages',
+        entries: [
+          {
+            title:
+              'Having a clear list of problems and goals would help me tackle different areas of the mobile app Marketplace experience. Additional research and usability testing will help me refine my design to optimise the experience.',
+          },
+          {
+            label: 'The app landing page',
+            content: `
+              <p>The original idea was to introduce a slider UI pattern for selecting credit limits and loan amounts to better promote credit cards and loans and engage people guiding them into the search flow.</p>
+              <p>However, due to space constraints and the need to share the page with other products, I had to compromise and simplified the design to include two buttons: “Credit Cards” and “Loans” for direct access to search flows.</p>
+            `,
+            image: '1.png',
+          },
+          {
+            label: 'Offers landing page',
+            content: `
+              <p>This page includes all the financial products you can access through Experian. It was quickly built to provide different search flow links like credit cards, loans, mortgages and car finance. With this project, we would make credit cards and loan searches available within the app.</p>
+              <p>This was a good opportunity to also improve visual design, hierarchy, and indicate when external links are accessed. I took this chance to also introduce a new icon for car finance, despite it being outside the project’s scope.</p>
+            `,
+            image: '2.png',
+          },
+        ],
+      },
+      {
+        title: 'Search forms',
+        entries: [
+          {
+            title:
+              'To create an intuitive and less overwhelming search experience for credit cards and loans, I focused on the following key areas.',
+          },
+          {
+            label: 'Layout',
+            content:
+              'I discovered that our questions could be divided into three main types, product-related (credit cards/loans), personal details, and lender-required information. This categorisation helped in structuring the form more logically.',
+            image: '3.png',
+          },
+          {
+            content:
+              'I explored various methods to convey progress to users, such as percentage-based progress bars and clear step indicators.',
+          },
+          { title: 'I came up with two different approaches to usability test:' },
+          {
+            label: 'Usability testing',
+            content:
+              '<p><strong>Linear Progress Bar Approach:</strong> This design used a step-by-step, percentage-based progress indicator. Each question appeared sequentially, providing users with a sense of gradual completion.</p>',
+            image: '4.png',
+          },
+          {
+            content: `
+              <p>Three-Step Approach: This method combined the categorised questions into three clear steps:</p>
+              <ol>
+                <li>Credit Card or Loan-related questions were tagged with clear indicators.</li>
+                <li>Personal details were grouped under a dedicated title, providing context for the type of information required.</li>
+                <li>Additional lender-required questions were displayed with progressive disclosure, meaning that depending on previous answers, further details might be requested.</li>
+              </ol>
+            `,
+            image: '5.png',
+          },
+          {
+            label: 'Prototype',
+            content:
+              'I then developed two prototypes reflecting the different design approaches. These prototypes were tested with 20 users to gather feedback on interaction ease, error rates, and overall satisfaction. I also created a document with a usability testing scenario and follow up questions on the relevant interactions to gather more specific insights.',
+            image: '6.png',
+          },
+          {
+            label: 'Results',
+            content:
+              'The three-step approach outperformed the linear progress bar, with users completing the forms almost twice as fast and making fewer errors. This approach also provided better transparency and context, helping users understand why specific questions were asked.',
+          },
+          {
+            label: 'Refinement',
+            content:
+              'Based on testing feedback, I refined the three-step approach, ensuring clarity in navigation and accessibility to minimise user errors. Clear tags and titles were used to guide users, and a combination of progress bars and contextual prompts enhanced the overall user experience.',
+            image: '7.png',
+          },
+        ],
+      },
+      {
+        title: 'Content',
+        entries: [
+          {
+            title:
+              'Simplifying the content was crucial but it was also challenging due to regulatory requirements. Here’s how I approached it:',
+          },
+          {
+            label: 'Simplification',
+            content: `
+              <p>I crafted several proposals aimed at reducing the complexity of the questions while complying with Financial Conduct Authority (FCA) guidelines. Each proposal was reviewed in meetings with the compliance team. From these meetings, I achieved:</p>
+              <ol>
+                <li>The elimination of a lender-required question about phone numbers, which was a major drop-off point for users.</li>
+                <li>Leveraging existing user data to pre-fill form fields, significantly reducing the user effort. Users only needed to review and confirm pre-filled information, which streamlined the search flow.</li>
+                <li>Revision of our micro-copy to be more accessible, especially for non-native English speakers. This included shortening questions and using plain language to improve comprehension.</li>
+                <li>By reducing unnecessary text and providing concise, direct instructions, we decreased visual clutter and made the form more user-friendly and visually pleasing.</li>
+              </ol>
+            `,
+            image: '8.png',
+          },
+          { image: '9.png' },
+          {
+            label: 'Interaction',
+            content: `
+              <p>To further improve interaction:</p>
+              <ul>
+                <li>I introduced placeholders and format hints, such as currency symbols for salary fields and input formats for content-specific fields, to guide users on what to enter.</li>
+                <li>Used icons to represent different sections and answers, making the options more visually appealing and easier to understand.</li>
+                <li>Reduced typing and clicking, by replacing dropdown menus with clearly visible button options. This change made selection faster and the interaction smoother.</li>
+                <li>To enhance user interaction, I incorporated shadows, animations, and transitions that mimicked physical interactions. Completing a step was visually rewarding, with animated checks and colour changes signalling progress.</li>
+              </ul>
+            `,
+          },
+        ],
+      },
+      {
+        title: 'Impact',
+        entries: [
+          {
+            title:
+              'The impact of this app design was massive! We not only saw people completing the search flows faster but we have reduced the drop-off rate.',
+          },
+          {
+            label: 'Key metrics',
+            content: `
+              <p><strong>Improved Efficiency:</strong> Users completed search flows up to 2 minutes faster.</p>
+              <p><strong>Reduced Error:</strong> Disabling progression buttons reduced errors due to missed questions.</p>
+              <p><strong>Reduced Drop-Off:</strong> Drop-off rates decreased by over 60%.</p>
+              <p><strong>Increased Engagement:</strong> The app became stickier, with more users returning to search for financial products, leading to the introduction of new features like car finance searches.</p>
+            `,
+            image: '10.png',
+          },
+          { image: '11.png' },
+        ],
+      },
+      {
+        title: 'Car finance',
+        entries: [
+          {
+            title:
+              'Following the success of the credit card and loan features, we decided to extend the in-app experience to include car finance.',
+          },
+          {
+            label: 'Collaboration',
+            content:
+              'This required introducing new questions specific to car finance applications, such as job title and industry. To streamline this process, I collaborated with the Dev team to implement an API that provides an existing list of job titles and industries. This feature allows users to start typing their job title or industry and select the appropriate option from a dropdown menu, significantly speeding up the form completion process.',
+          },
+          {
+            label: 'Efficiency',
+            content:
+              'Additionally, for users who have previously searched with Experian, we pre-populated all common form fields. This meant that users only needed to review and confirm the information, making the application process quicker and more efficient.',
+            image: '12.png',
+          },
+        ],
+      },
+    ],
+  },
 };
+
+// “word” ’
