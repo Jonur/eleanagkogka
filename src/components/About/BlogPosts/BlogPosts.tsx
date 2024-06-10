@@ -73,7 +73,7 @@ const BlogPosts: React.FC = () => {
       <div
         role="none"
         className={c(
-          'from-transparent from-[-10%] lg:from-[0%] to-white to-[100%] absolute w-[50px] lg:w-[70px] h-[calc(100%-44px)] top-0 z-10 pointer-events-none',
+          'hidden lg:block from-transparent from-[-10%] lg:from-[0%] to-white to-[100%] absolute w-[50px] lg:w-[70px] h-[calc(100%-44px)] top-0 z-10 pointer-events-none',
           {
             'left-0 bg-gradient-to-l': isViewingLastBlogPosts(),
             'right-0 bg-gradient-to-r': !isViewingLastBlogPosts(),
@@ -117,7 +117,7 @@ const BlogPosts: React.FC = () => {
         </div>
       </div>
 
-      <footer className="w-full hidden lg:flex justify-end lg:justify-between mt-12 items-baseline">
+      <footer className="w-full hidden lg:flex justify-end lg:justify-between mt-12 lg:mt-[80px] items-baseline">
         <nav className="flex gap-x-3 h-3 items-center">
           <button aria-label="Previous" onClick={handlePrevious} disabled={postInView === 0}>
             <Chevron

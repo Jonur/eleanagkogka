@@ -154,23 +154,23 @@ const Header: React.FC<HeaderProps> = ({ breadcrumb, pageHeader }) => {
         )}
       </div>
 
-      <div role="none" className="flex w-full h-[200px] lg:h-[300px] items-center mb-2 relative lg:max-w-[1600px]">
+      <div role="none" className="flex w-full h-[136px] lg:h-[138px] items-center mb-2 relative lg:max-w-[1600px]">
         <div className="w-[1px] h-[65%] bg-black opacity-10 lg:absolute lg:left-[60px]" />
         <div
-          className={c('w-[1px] h-[100%] lg:h-[320px] bg-black opacity-10 ml-[35%] lg:ml-[45%] lg:absolute lg:top-0', {
+          className={c('w-[1px] h-[100%] bg-black opacity-10 ml-[35%] lg:ml-[45%] lg:absolute lg:top-0', {
             'lg:h-[320px]': locationMatch(Route.ROOT),
             'lg:h-[250px]': !locationMatch(Route.ROOT),
           })}
         />
         {onLargeScreen() && (
           <div
-            className={c('w-[1px] h-[320px] bg-black opacity-10 absolute right-[23%] top-[40px]', {
+            className={c('w-[1px] bg-black opacity-10 absolute right-[23%] top-[40px]', {
               'lg:h-[320px]': locationMatch(Route.ROOT),
               'lg:h-[250px]': !locationMatch(Route.ROOT),
             })}
           />
         )}
-        <div className="w-[1px] h-[85%] lg:h-[300px] bg-black opacity-10 absolute right-0 lg:-right-[50px] lg:top-[30px]" />
+        <div className="w-[1px] h-[85%] lg:h-[200px] bg-black opacity-10 absolute right-0 lg:-right-[50px] lg:top-[30px]" />
       </div>
 
       <h2 className="italic text-2xl lg:text-3xl text-dark-blue mb-2 lg:mb-3 lg:w-full lg:max-w-[1600px]">

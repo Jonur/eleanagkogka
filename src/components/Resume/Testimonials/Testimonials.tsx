@@ -115,7 +115,7 @@ const Testimonials: React.FC = () => {
         </div>
       </div>
 
-      <footer className="w-full flex justify-between mt-12 items-baseline">
+      <footer className="w-full flex justify-between mt-12 lg:mt-[80px] items-baseline">
         <nav className="flex gap-x-3 h-3 items-center">
           <button aria-label="Previous" onClick={handlePrevious} disabled={postInView === 0}>
             <Chevron
