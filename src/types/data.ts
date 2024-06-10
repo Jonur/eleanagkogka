@@ -1,5 +1,10 @@
 export type StarListItem = { title: string; description: string; starColor: string };
 
+export type BehancePortfolioEntry = {
+  id: string;
+  url: string;
+};
+
 export type BlogPost = {
   id: string;
   title: string;

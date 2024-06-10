@@ -8,6 +8,7 @@ import { Arrow } from 'src/components/Icons';
 import { useOnMount } from 'src/hooks';
 import { Route } from 'src/types';
 
+import BehanceCarousel from './BehanceCarousel';
 import { CASE_STUDIES, CAST_STUDY_ORDER } from './constants';
 import SocialProfiles from './SocialProfiles';
 
@@ -66,6 +67,8 @@ const Work: React.FC = () => {
             })}
           </div>
         </section>
+
+        <BehanceCarousel />
 
         <SocialProfiles />
 
