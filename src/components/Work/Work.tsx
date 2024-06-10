@@ -70,6 +70,38 @@ const Work: React.FC = () => {
 
         <BehanceCarousel />
 
+        <section className="text-dark-blue max-w-[1180px] w-full lg:flex lg:justify-between">
+          <h2 className="text-3xl lg:text-[32px] font-bebas uppercase mb-8">Dribbble</h2>
+
+          <div role="list" className="p-0 m-0 flex lg:flex-1 lg:max-w-[904px] flex-col">
+            <div role="list" className="grid grid-cols-2 gap-4 lg:flex lg:flex-1 lg:gap-y-8 lg:gap-x-8 lg:flex-wrap">
+              {Array.from({ length: 18 }).map((_, idx) => {
+                const key = crypto.randomUUID();
+
+                return (
+                  <img
+                    key={key}
+                    src={`/dribble/${idx + 1}.png`}
+                    className="rounded-tl-[32px] rounded-br-[32px] lg:w-[280px] lg:h-[210px]"
+                  />
+                );
+              })}
+            </div>
+
+            <div className="flex justify-end mt-4">
+              <a
+                href="https://dribbble.com/EleanaGkogka"
+                target="_blank"
+                rel="noreferrer"
+                className="flex gap-2 items-center text-teal-dark leading-5 lg:leading-7 lg:text-lg text-base mt-4 active:text-dark-blue hover:underline w-fit"
+              >
+                <span>More on Dribbble</span>
+                <Arrow className="-rotate-45 w-[12px] h-[12px]" />
+              </a>
+            </div>
+          </div>
+        </section>
+
         <SocialProfiles />
 
         <Contact />
