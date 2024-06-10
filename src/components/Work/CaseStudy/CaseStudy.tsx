@@ -32,7 +32,7 @@ export const CaseStudy: React.FC = () => {
 
   return caseStudy ? (
     <>
-      <Header pageHeader={caseStudy.title} breadcrumb={{ to: Route.WORK, label: 'Work' }} />
+      <Header pageHeader={caseStudy.pageTitle} breadcrumb={{ to: Route.WORK, label: 'Work' }} />
 
       <div className="pt-[60px] lg:pt-[100px] px-6 pb-4 flex flex-col items-center gap-y-[60px] lg:gap-y-[80px] lg:last:mb-[20px]">
         {(caseStudy.sections || []).map((section, index) => {

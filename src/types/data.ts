@@ -75,7 +75,7 @@ type CaseStudySection = {
 export type CaseStudy = {
   id: string;
   title: string;
-  intro: string;
+  pageTitle: string;
   img: string;
   sections?: CaseStudySection[];
   disabled?: boolean;

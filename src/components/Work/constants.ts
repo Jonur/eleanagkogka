@@ -1,13 +1,12 @@
 import { CaseStudy } from 'src/types';
 
-export const CAST_STUDY_ORDER: CaseStudy['id'][] = ['WHR4', 'zLI1', 'Dv5M', 'Uzer', 'Vm6M'];
+export const CAST_STUDY_ORDER: CaseStudy['id'][] = ['WHR4', 'zLI1', 'Dv5M', 'Uzer', 'Vm6M', 'vpnm'];
 
 export const CASE_STUDIES: Record<CaseStudy['id'], CaseStudy> = {
   zLI1: {
     id: 'zLI1',
-    title: 'The Onboarding Project Part 1',
-    intro:
-      'A look into my design thinking process, user research strategies and team collaboration. Preview some of my design solutions, A/B tests and artefacts developed throughout this project.',
+    title: 'StreamYard - The Onboarding Project Part 1',
+    pageTitle: 'Onboarding Part 1',
     img: 'cover.png',
     sections: [
       {
@@ -388,9 +387,8 @@ export const CASE_STUDIES: Record<CaseStudy['id'], CaseStudy> = {
   },
   Dv5M: {
     id: 'Dv5M',
-    title: 'The Onboarding Project Part 2',
-    intro:
-      'Delve into specific user research insights, find out how they influenced the 2024 StreamYard Company Vision and kickstarted a series of growth A/B tests and product optimisation projects.',
+    title: 'StreamYard - The Onboarding Project Part 2',
+    pageTitle: 'Onboarding Part 2',
     img: 'cover.png',
     sections: [
       {
@@ -687,8 +685,8 @@ export const CASE_STUDIES: Record<CaseStudy['id'], CaseStudy> = {
   },
   Uzer: {
     id: 'Uzer',
-    title: 'Enabling payments',
-    intro: 'Explore how optimising the UI and UX of payments can drive growth.',
+    title: 'StreamYard - Checkout redesign',
+    pageTitle: 'Checkout redesign',
     img: 'cover.png',
     sections: [
       {
@@ -816,9 +814,8 @@ export const CASE_STUDIES: Record<CaseStudy['id'], CaseStudy> = {
   },
   WHR4: {
     id: 'WHR4',
-    title: 'StreamYard Guest Mobile App',
-    intro:
-      'Discover how I designed the StreamYard guest mobile app and set the foundations for a more tailored iOS experience.',
+    title: 'StreamYard App - Guest experience',
+    pageTitle: 'Mobile Guest app',
     img: 'cover.png',
     sections: [
       {
@@ -1071,9 +1068,8 @@ export const CASE_STUDIES: Record<CaseStudy['id'], CaseStudy> = {
   },
   Vm6M: {
     id: 'Vm6M',
-    title: 'Marketplace in the app',
-    intro:
-      'Introducing Marketplace within the Experian Mobile app. Optimising and enhancing credit cards and loans search.',
+    title: 'Experian App - Marketplace search',
+    pageTitle: 'Search in the app',
     img: 'cover.png',
     sections: [
       {
@@ -1314,6 +1310,13 @@ export const CASE_STUDIES: Record<CaseStudy['id'], CaseStudy> = {
         ],
       },
     ],
+  },
+  vpnm: {
+    id: 'vpnm',
+    img: 'cover.png',
+    title: 'Experian App - Marketplace products',
+    pageTitle: 'Products in the app',
+    disabled: true,
   },
 };
 

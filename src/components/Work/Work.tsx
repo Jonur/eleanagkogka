@@ -27,26 +27,36 @@ const Work: React.FC = () => {
         <section className="text-dark-blue max-w-[1180px] w-full lg:flex lg:justify-between">
           <h2 className="text-3xl lg:text-[32px] font-bebas uppercase mb-8">Case studies</h2>
 
-          <div role="list" className="p-0 m-0 flex flex-col lg:flex-1 lg:max-w-[700px] gap-y-12 lg:gap-y-[80px]">
+          <div
+            role="list"
+            className="p-0 m-0 flex flex-col lg:flex-row lg:flex-1 lg:max-w-[904px] gap-y-6 lg:gap-y-8 lg:gap-x-8 lg:flex-wrap"
+          >
             {CAST_STUDY_ORDER.map((id) => {
               const study = CASE_STUDIES[id];
 
               return study.disabled ? (
-                <div key={study.title} role="listitem" className="flex flex-col gap-y-4 lg:gap-y-6">
+                <div key={study.title} role="listitem" className="flex flex-col gap-y-4 lg:w-[436px] lg:flex-grow-0">
+                  <img
+                    src={`/case-studies/${id}/${study.img}`}
+                    className="rounded-tl-[32px] rounded-br-[32px] my-2 lg:h-[209px] lg:w-auto"
+                  />
                   <h3 className="text-2xl leading-[30px] lg:text-[26px] lg:leading-8 italic">{study.title}</h3>
-                  <p className="leading-6 lg:leading-7 lg:text-lg">{study.intro}</p>
-                  <img src={`/case-studies/${id}/${study.img}`} className="rounded-tl-[32px] rounded-br-[32px] my-2" />
+                  <span className="flex gap-2 items-center text-teal-dark leading-6 lg:leading-7 lg:text-lg w-fit">
+                    Coming soon
+                  </span>
                 </div>
               ) : (
                 <Link
                   to={`${Route.WORK}/${study.id}`}
                   key={study.title}
                   role="listitem"
-                  className="flex flex-col gap-y-4 lg:gap-y-6"
+                  className="flex flex-col gap-y-4 lg:w-[436px] lg:flex-grow-0"
                 >
+                  <img
+                    src={`/case-studies/${id}/${study.img}`}
+                    className="rounded-tl-[32px] rounded-br-[32px] my-2 lg:h-[209px] lg:w-auto"
+                  />
                   <h3 className="text-2xl leading-[30px] lg:text-[26px] lg:leading-8 italic">{study.title}</h3>
-                  <p className="leading-6 lg:leading-7 lg:text-lg">{study.intro}</p>
-                  <img src={`/case-studies/${id}/${study.img}`} className="rounded-tl-[32px] rounded-br-[32px] my-2" />
                   <span className="flex gap-2 items-center text-teal-dark leading-6 lg:leading-7 lg:text-lg active:text-dark-blue hover:underline w-fit">
                     Go to project
                     <Arrow />
