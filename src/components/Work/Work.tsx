@@ -36,12 +36,12 @@ const Work: React.FC = () => {
               const study = CASE_STUDIES[id];
 
               return study.disabled ? (
-                <div key={study.title} role="listitem" className="flex flex-col gap-y-4 lg:w-[436px] lg:flex-grow-0">
+                <div key={study.title} role="listitem" className="flex flex-col lg:w-[436px] lg:flex-grow-0">
                   <img
                     src={`/case-studies/${id}/${study.img}`}
-                    className="rounded-tl-[32px] rounded-br-[32px] my-2 lg:h-[209px] lg:w-auto"
+                    className="rounded-tl-[32px] rounded-br-[32px] lg:h-[209px] lg:w-auto mb-4"
                   />
-                  <h3 className="text-2xl leading-[30px] lg:text-[26px] lg:leading-8 italic">{study.title}</h3>
+                  <h3 className="text-2xl leading-[30px] lg:text-[26px] lg:leading-8 italic mb-2">{study.title}</h3>
                   <span className="flex gap-2 items-center text-teal-dark leading-6 lg:leading-7 lg:text-lg w-fit">
                     Coming soon
                   </span>
@@ -51,13 +51,13 @@ const Work: React.FC = () => {
                   to={`${Route.WORK}/${study.id}`}
                   key={study.title}
                   role="listitem"
-                  className="flex flex-col gap-y-4 lg:w-[436px] lg:flex-grow-0"
+                  className="flex flex-col lg:w-[436px] lg:flex-grow-0"
                 >
                   <img
                     src={`/case-studies/${id}/${study.img}`}
-                    className="rounded-tl-[32px] rounded-br-[32px] my-2 lg:h-[209px] lg:w-auto"
+                    className="rounded-tl-[32px] rounded-br-[32px] lg:h-[209px] lg:w-auto mb-4"
                   />
-                  <h3 className="text-2xl leading-[30px] lg:text-[26px] lg:leading-8 italic">{study.title}</h3>
+                  <h3 className="text-2xl leading-[30px] lg:text-[26px] lg:leading-8 italic mb-2">{study.title}</h3>
                   <span className="flex gap-2 items-center text-teal-dark leading-6 lg:leading-7 lg:text-lg active:text-dark-blue hover:underline w-fit">
                     Go to project
                     <Arrow />
