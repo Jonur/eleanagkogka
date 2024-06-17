@@ -42,10 +42,10 @@ type CaseStudyEntry =
       title: string;
       content: string;
       label: string;
-      image: string;
+      image: string | string[];
     }
   | {
-      image: string;
+      image: string | string[];
     }
   | {
       content: string;
@@ -62,7 +62,7 @@ type CaseStudyEntry =
       label: string;
     }
   | {
-      image: string;
+      image: string | string[];
       label: string;
     }
   | {

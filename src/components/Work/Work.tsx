@@ -74,7 +74,7 @@ const Work: React.FC = () => {
           <h2 className="text-3xl lg:text-[32px] font-bebas uppercase mb-8">Dribbble</h2>
 
           <div role="list" className="p-0 m-0 flex lg:flex-1 lg:max-w-[904px] flex-col">
-            <div role="list" className="grid grid-cols-2 gap-4 lg:flex lg:flex-1 lg:gap-y-8 lg:gap-x-8 lg:flex-wrap">
+            <div role="list" className="grid grid-cols-2 gap-4 lg:flex lg:flex-1 lg:gap-y-6 lg:gap-x-6 lg:flex-wrap">
               {Array.from({ length: 18 }).map((_, idx) => {
                 const key = crypto.randomUUID();
 
@@ -82,7 +82,7 @@ const Work: React.FC = () => {
                   <img
                     key={key}
                     src={`/dribble/${idx + 1}.png`}
-                    className="rounded-tl-[32px] rounded-br-[32px] lg:w-[280px] lg:h-[210px]"
+                    className="rounded-tl-[22px] rounded-br-[22px] lg:w-[280px] lg:h-[210px]"
                   />
                 );
               })}

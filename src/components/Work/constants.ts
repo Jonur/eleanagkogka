@@ -1316,7 +1316,331 @@ export const CASE_STUDIES: Record<CaseStudy['id'], CaseStudy> = {
     img: 'cover.png',
     title: 'Experian App - Marketplace products',
     pageTitle: 'Products in the app',
-    disabled: true,
+    sections: [
+      {
+        title: 'Introduction',
+        entries: [
+          {
+            title:
+              'Optimising Marketplace results pages for the web mobile experience, while adjusting them to introduce them to the Experian Mobile app experience.',
+            content:
+              'In this case study, I will go through how I redesigned and optimised the Experian results page for the web mobile experience and adjusted it for the mobile app to improve discoverability and conversion.',
+          },
+          {
+            label: 'The product',
+            content:
+              'Experian is a leading fintech company, ranked as the 6th largest global provider of technology solutions for the financial services industry. It specialises in helping individuals save money, access credit, and protect their identities through advanced data analytics and platforms. Experian offers a range of financial products, including credit score checks, credit cards, loans, and mortgages. The segment providing these financial products is known as Marketplace.',
+          },
+          {
+            label: 'My role',
+            content: 'Lead product designer &bull; Researcher &bull; (This project took place in 2020)',
+          },
+        ],
+      },
+      {
+        title: 'Background',
+        prebordered: true,
+        entries: [
+          {
+            label: 'Problem',
+            content:
+              'Adding new features to our loans and credit card products page resulted in a cluttered and overwhelming experience, particularly on mobile. This led to higher drop-off rates and significantly impacted conversions. Users, especially those with lower credit scores and less experience with financial products, struggled with the excessive information and lengthy scrolling required to compare options. This made the decision-making process time-consuming and frustrating.',
+          },
+          {
+            label: 'Key questions',
+            content:
+              'How might we simplify the search and comparison process for all users, particularly those with fewer product options and less credit experience? How can we enhance their confidence and reduce the overwhelm associated with our product features?',
+          },
+        ],
+      },
+      {
+        title: 'Discovery',
+        prebordered: true,
+        entries: [
+          {
+            title:
+              'To tackle this challenge, I sought insights from various perspectives to ensure a comprehensive understanding of our users’ challenges and needs.',
+          },
+          {
+            label: 'User research',
+            content:
+              'Collaborating with our research team, I conducted interviews with 10 users to explore how they search for and compare loans and credit cards. Key findings included:',
+            image: '1.png',
+          },
+          {
+            content: `
+              <ul>
+                <li>The application process, for credit cards or loans, typically spans a few days to a week, involving considerable comparison shopping.</li>
+                <li>Users often discover products on Experian but complete purchases directly through lenders’ websites.</li>
+                <li>Our comparison pages were criticised for containing too much irrelevant information.</li>
+                <li>Users found some information unclear or difficult to understand.</li>
+                <li>Critical decision factors included interest rates, promotional periods, balance transfer limits, brand awareness, product eligibility, and customer reviews.</li>
+              </ul>
+            `,
+          },
+          {
+            label: 'Surveys',
+            content: 'I analysed 1273 customer surveys to understand user experiences and potential improvements:',
+            image: '2.png',
+          },
+          {
+            content: `
+              <ul>
+                <li>Some users were unaware they could apply for products directly through Experian.</li>
+                <li>Navigating and comparing products on mobile was a common difficulty.</li>
+                <li>Many users felt overwhelmed by the sheer volume of displayed information.</li>
+              </ul>
+            `,
+          },
+          {
+            label: 'Observations',
+            content: 'Using SessionCam, I reviewed over 60 high-struggle sessions, identifying top issues such as:',
+            image: '3.png',
+          },
+          {
+            content: `
+              <ul>
+                <li>Extended time spent on pages.</li>
+                <li>Excessive scrolling.</li>
+                <li>High levels of touch/cursor movement.</li>
+                <li>Multiple page revisits.</li>
+              </ul>
+            `,
+          },
+          {
+            label: 'Competitor analysis',
+            content:
+              'I examined six competitors to draw inspiration and identify limitations and common practices within our regulated space. I found:',
+            image: '4.png',
+          },
+          { image: '5.png' },
+          {
+            content: `
+              <ul>
+                <li>Clearer calls to action for product applications.</li>
+                <li>More concise compliance copy.</li>
+                <li>More compact result tables.</li>
+                <li>Reduced information overload and fewer interactive elements.</li>
+              </ul>
+            `,
+          },
+          {
+            label: 'Assumptions',
+            content:
+              'Focusing on our current design and its mobile experience, I identified two key assumptions for further exploration:',
+            image: '6.png',
+          },
+          {
+            content: `
+              <ul>
+                <li>The proximity of the “View & Apply” button to adjacent products might lead to incorrect product selections.</li>
+                <li>Extensive scrolling could hinder users’ ability to compare and choose the right product.</li>
+              </ul>
+            `,
+          },
+        ],
+      },
+      {
+        title: 'Design plan',
+        prebordered: true,
+        entries: [
+          {
+            title: 'Triangulating these insights allowed me to set clear design goals and develop an actionable plan.',
+          },
+          {
+            label: 'Goals',
+            content: `
+              <p>Our objectives were to:</p>
+              <ul>
+                <li>Provide an effortless experience for users searching for credit cards or loans.</li>
+                <li>Ensure users feel well-informed and considered.</li>
+                <li>Facilitate easy interaction and product comparison.</li>
+                <li>Boost user confidence to apply for products through Experian.</li>
+              </ul>
+            `,
+          },
+          {
+            label: 'Action plan',
+            content: `
+              <p>We needed to:</p>
+              <ul>
+                <li>Enhance navigation clarity and streamline product browsing.</li>
+                <li>Simplify features and reduce visual clutter.</li>
+                <li>Make additional information easily accessible to build trust and satisfaction.</li>
+                <li>Minimise scrolling and optimise hierarchy to reduce errors.</li>
+                <li>Improve hierarchy to encourage direct applications through Experian.</li>
+              </ul>
+            `,
+          },
+          {
+            label: 'Considerations',
+            content:
+              'We should adhere to Experian’s design principles, branding, and product style guidelines. Aim for minimal development time and scalable solutions. Focus on maintaining a clear product hierarchy to prevent overwhelming our customers.',
+          },
+        ],
+      },
+      {
+        title: 'Design',
+        prebordered: true,
+        entries: [
+          {
+            title:
+              'Before diving into the design, I formulated three hypotheses to guide our changes and measure their impact incrementally:',
+          },
+          {
+            label: 'Hypotheses',
+            content: `
+              <p>Reducing the size and visual noise of product tables will decrease scrolling and time on the page while boosting conversion.</p>
+              <p>Reorganising and condensing product information will help users make quicker, more confident decisions.</p>
+              <p>Elevating the “View &amp; Apply” button will enhance conversion rates and reduce selection errors.</p>
+            `,
+          },
+          {
+            label: 'Explorations',
+            content:
+              'I explored multiple design directions to address each UI, UX, and copy issues for both the web mobile view and mobile app. Successful designs were to be adjusted for both platforms.',
+            image: '7.png',
+          },
+          {
+            content:
+              'For the mobile app specifically, I experimented with a minimal card design approach to fit as many products as possible on the screen. I also redesigned the result “More details” screen to accommodate and organise better all the product features.',
+            image: '8.png',
+          },
+          {
+            content:
+              'Unfortunately, our Compliance Team didn’t approve this redesign proposal. Displaying less information and hiding some product features under the “More details” was deemed risky.',
+          },
+          {
+            label: 'Key optimisations',
+            content:
+              'After the initial exploration discussion and several iterations, I finalised a design for review with my PM and Compliance team. Key changes included:',
+            image: '9.png',
+          },
+          {
+            content: `
+              <ol>
+                <li>Remove the “Loan Type” link and highlighted it in the “More Details” overlay.</li>
+                <li>Reduce the eligibility rating banner by optimising its copy.</li>
+                <li>Combine the Real rates message with the Eligibility (chance of approval) message.</li>
+                <li>Merge the rate information link & tooltip, as they were displaying similar information.</li>
+                <li>Eliminate open table space when not in use on mobile.</li>
+                <li>Move the “View & Apply” button higher within the product table.</li>
+                <li>Simplify the representative example copy with shorter, simpler language.</li>
+                <li>Remove the “Credit available subject to status” line.</li>
+                <li>Display the “Experian Credit Broker, not a lender” message once on the page.</li>
+                <li>Increase the spacing between different product results for clearer distinction.</li>
+              </ol>
+            `,
+          },
+          {
+            label: 'Extended scope',
+            content: 'I also proposed additional changes to enhance the overall search and comparison experience:',
+            image: '10.png',
+          },
+          {
+            content: `
+              <ol>
+                <li>Refine the filtering bar to take advantage of the full width of the screen.</li>
+                <li>Align the “Edit this search” and “Sort by” horizontally in the utility belt.</li>
+                <li>Remove the loan-type accordion and added a loan-type information link to the title.</li>
+                <li>Reduce the product rating banner’s space.</li>
+                <li>Rework the utility belt copy to improve clarity.</li>
+              </ol>
+            `,
+          },
+          {
+            label: 'Design review',
+            content: 'Feedback from stakeholders, compliance, and development led to some adjustments:',
+            image: '11.png',
+          },
+          {
+            content: `
+              <ol>
+                <li>We couldn’t change the “View & Apply” to “Apply now.”</li>
+                <li>We couldn’t move the “Apply now” CTA above the Representative example.</li>
+                <li>We couldn’t change the representative example copy.</li>
+                <li>We couldn’t remove the “Credit subject to status”.</li>
+              </ol>
+          `,
+          },
+          {
+            content:
+              'Compliance initially rejected moving the representative example under the CTA due to visibility concerns. However, a design tweak to enhance its prominence secured their approval, allowing the “Apply now” action to be more visible within the product card.',
+          },
+        ],
+      },
+      {
+        title: 'Impact',
+        prebordered: true,
+        entries: [
+          {
+            title:
+              'We conducted an A/B test, releasing the redesigned page to 10% of users searching for credit cards and loans over two weeks. Key success metrics included leads, conversions, and time spent on the page.',
+          },
+          {
+            label: 'A/B test results',
+            content:
+              'The redesign led to a 15% increase in “View & Apply” clicks and a reduction in average time spent on the results page from 3 min 25 sec to 2 min 45 sec. However, “More details” clicks decreased by 19%, and the overall conversion rate from the results page to unique leads dropped by 3.5%.',
+          },
+          {
+            label: 'Follow up',
+            content: `
+              <p>The results where fewer people clicked on “More details” and more clicked on “View & Apply” but haven’t converted, suggested users might need clearer indications for the “More details” link and better alignment between CTA copy and their expectations.</p>
+              <p>We hypothesised:</p>
+              <ul>
+                <li>Users might have overlooked the “More details” link, necessitating clearer interaction cues.</li>
+                <li>Users might have expected more information on the “View & Apply” destination, indicating a need for CTA copy refinement.</li>
+              </ul>
+            `,
+            image: '12.png',
+          },
+          {
+            image: '13.png',
+          },
+          {
+            content:
+              'Looking at the test evidence the compliance team has accepted the CTA copy change and we managed to maintain the positive results while improving the unique leads metric.',
+          },
+          {
+            label: 'App designs',
+            content: `
+              <p>The final design successfully balanced strict FCA compliance guidelines with an optimised mobile user experience.</p>
+              <p>Upon approval of the mobile web experience designs, I adapted and refined them for integration into our mobile app. This adaptation process allowed me to further enhance the user interface's look and feel and ensure a seamless and engaging user experience across all platforms.</p>
+            `,
+            image: '14.png',
+          },
+        ],
+      },
+      {
+        title: 'Other refinements',
+        prebordered: true,
+        entries: [
+          { title: 'With the main problems solved I could now focus on some additional page refinements.' },
+          {
+            label: 'Loading times',
+            content: `
+              <p>Another significant challenge was the lengthy results page loading time, due to pulling data from multiple lenders’ APIs. Discussions with the development team confirmed that technical constraints limited our ability to shorten this loading period.</p>
+              <p>To mitigate the impact of this delay and decrease page drop-off, I proposed introducing a new, engaging branded animation to enhance the waiting experience. I designed two versions of the animation: a more detailed one and a streamlined version.</p>
+            `,
+            image: ['animation_max.gif', 'animation_min.gif'],
+          },
+          {
+            content:
+              'These animations aimed to maintain user engagement during the loading process. Upon testing, we observed a substantial 7% reduction in page drop-off rates, a noteworthy improvement given our high traffic volumes. Based on these positive results, we decided to fully implement the more elaborate animation on the web platform and the minimal version on the mobile app, effectively enhancing user experience across both interfaces.',
+          },
+          {
+            label: 'Product details',
+            content:
+              'Another area of improvement was the "More Details" information modals and pages. I identified the opportunity to enhance the user interface and streamline the information hierarchy, combining the eligibility details with the more details page.',
+            image: '15.png',
+          },
+          {
+            content:
+              'The updated design focuses on clearly highlighting key features and presenting information in a more accessible, easy-to-digest format. This refined approach can help users find and compare essential details quickly and effortlessly, ultimately aiding them in making informed decisions and confidently purchasing the right products.',
+          },
+        ],
+      },
+    ],
   },
 };
 

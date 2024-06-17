@@ -24,10 +24,12 @@ export const CaseStudy: React.FC = () => {
   }, [image]);
 
   useOnMount(() => {
-    window.scrollTo({
-      top: 0,
-      left: 0,
-    });
+    if (window.location.hostname !== 'localhost') {
+      window.scrollTo({
+        top: 0,
+        left: 0,
+      });
+    }
   });
 
   return caseStudy ? (
@@ -81,19 +83,31 @@ export const CaseStudy: React.FC = () => {
                         )}
                         {'content' in entry && (
                           <span
-                            className="flex flex-col gap-y-2 leading-6 lg:leading-7 lg:text-lg [&_a]:text-teal-dark [&_a]:border-b [&_a]:border-teal-dark [&_a]:inline-block [&_a]:leading-[13px] [&_ul]:list-disc [&_ul]:ml-8 [&_ol]:list-decimal [&_ol]:ml-8"
+                            className="flex flex-col gap-y-2 leading-6 lg:leading-7 lg:text-lg [&_a]:text-teal-dark [&_a]:border-b [&_a]:border-teal-dark [&_a]:inline-block [&_a]:leading-[13px] [&_ul]:list-disc [&_ul]:ml-8 [&_ol]:list-decimal [&_ol]:ml-8 rounded-[13px]"
                             dangerouslySetInnerHTML={{
                               __html: entry.content,
                             }}
                           />
                         )}
-                        {'image' in entry && (
-                          <img
-                            src={`/case-studies/${caseStudyId}/${entry.image}`}
-                            onClick={() => setImage(`/case-studies/${caseStudyId}/${entry.image}`)}
-                            className="w-full h-auto cursor-pointer"
-                          />
-                        )}
+                        {'image' in entry &&
+                          (typeof entry.image === 'string' ? (
+                            <img
+                              src={`/case-studies/${caseStudyId}/${entry.image}`}
+                              onClick={() => setImage(`/case-studies/${caseStudyId}/${entry.image}`)}
+                              className="w-full h-auto cursor-pointer"
+                            />
+                          ) : (
+                            <div className="grid grid-cols-2 gap-4">
+                              {entry.image.map((img) => (
+                                <img
+                                  key={crypto.randomUUID()}
+                                  src={`/case-studies/${caseStudyId}/${img}`}
+                                  onClick={() => setImage(`/case-studies/${caseStudyId}/${img}`)}
+                                  className="w-full h-auto cursor-pointer rounded-[13px]"
+                                />
+                              ))}
+                            </div>
+                          ))}
                       </div>
                     </div>
                   );
