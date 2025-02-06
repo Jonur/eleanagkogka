@@ -182,16 +182,16 @@ const Header: React.FC<HeaderProps> = ({ breadcrumb, pageHeader }) => {
           <div className="relative flex flex-col">
             <h1
               ref={animateRef}
-              className="text-6xl lg:text-[100px] max-w-[650px] leading-[48px] lg:leading-[90px] font-bebas uppercase bg-gradient-to-r from-teal-dark to-pink inline-block text-transparent bg-clip-text fadeable"
+              className="text-6xl lg:text-[100px] max-w-[650px] leading-[50px] lg:leading-[90px] font-bebas uppercase bg-gradient-to-r from-teal-dark to-pink inline-block text-transparent bg-clip-text fadeable"
             >
               Strategic
             </h1>
-            <h1 className="text-6xl lg:text-[100px] max-w-[650px] leading-[48px] lg:leading-[90px] font-bebas uppercase bg-gradient-to-r from-teal-dark to-pink inline-block text-transparent bg-clip-text">
+            <h1 className="text-6xl lg:text-[100px] max-w-[650px] leading-[50px] lg:leading-[90px] font-bebas uppercase bg-gradient-to-r from-teal-dark to-pink inline-block text-transparent bg-clip-text">
               Product designer
             </h1>
           </div>
         ) : (
-          <h1 className="text-6xl lg:text-[100px] max-w-[650px] leading-[48px] lg:leading-[90px] font-bebas uppercase bg-gradient-to-r from-teal-dark to-pink inline-block text-transparent bg-clip-text">
+          <h1 className="text-6xl lg:text-[100px] max-w-[650px] leading-[50px] lg:leading-[90px] font-bebas uppercase bg-gradient-to-r from-teal-dark to-pink inline-block text-transparent bg-clip-text">
             {pageHeader}
           </h1>
         )}
