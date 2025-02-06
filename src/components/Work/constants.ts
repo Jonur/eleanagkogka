@@ -1,6 +1,6 @@
 import { CaseStudy } from 'src/types';
 
-export const CAST_STUDY_ORDER: CaseStudy['id'][] = ['WHR4', 'zLI1', 'Dv5M', 'Uzer', 'Vm6M', 'vpnm'];
+export const CAST_STUDY_ORDER: CaseStudy['id'][] = ['d783', 'o4ee', 'WHR4', 'zLI1', 'Dv5M', 'Uzer', 'Vm6M', 'vpnm'];
 
 export const CASE_STUDIES: Record<CaseStudy['id'], CaseStudy> = {
   zLI1: {
@@ -1646,15 +1646,451 @@ export const CASE_STUDIES: Record<CaseStudy['id'], CaseStudy> = {
     id: 'd783',
     img: 'cover.png',
     title: 'Lawrence the AI Assistant',
-    pageTitle: 'Products in the app',
-    sections: [],
+    pageTitle: 'AI assistant design',
+    sections: [
+      {
+        title: 'Introduction',
+        entries: [
+          {
+            title: 'Crafting a seamless experience for Lawrence, the Legal AI Assistant.',
+          },
+          {
+            label: 'The product',
+            content: `
+              <p>When I joined Lawhive, a lawyer marketplace and platform, I faced the exciting challenge of designing Lawrence, an AI assistant; a lawyers’ trusted paralegal. Lawrence is an LLM (Large Language Model) based chatbot tailored to help lawyers analyse cases, bring up relevant laws, draft contracts, create notes, letters and forms, and answer law-related questions.</p>
+              <p>Lawrence is a vital tool and selling point of the Lawhive lawyer platform. A platform aiming to make lawyers’ work more efficient and affordable for the end client, by providing tools to help them organise their work, keep notes, communicate with clients, exchange and sign documents, find resources and much more.</p>
+              <p>Designing an AI assistant comes with unique challenges, especially when the technology isn’t always perfect and the users are new to it and coming from a non as tech-savvy background. This case study dives into the journey of designing a user interface and integrated AI experience, highlighting the design challenges and solutions as well as best practices applied and lessons learned.</p>
+            `,
+          },
+          {
+            label: 'My role',
+            content: `<p>Product Design Lead &bull; Designer &bull; <em>(This project took place in August &dash; October 2024)</em></p>`,
+          },
+        ],
+      },
+      {
+        title: 'Background',
+        entries: [
+          {
+            title:
+              'Understanding Lawyers in the digital age and the the current challenges and limitations for this project.',
+            content:
+              'Lawyers are meticulous, time-strapped professionals. Their tools need to deliver precision, efficiency, and reliability. Before diving into designs, I wanted to understand lawyers’ workflows, pain points, and expectations. A basic version of an AI chatbox existed for about 6 months and I found that less than 40% of lawyers were using it, and only one out of three felt it was providing value, improving their workflow.',
+          },
+          {
+            label: 'Key insights',
+            content: `
+              <p>Here’s what I’ve learned from talking to lawyers, our support team and founders:</p>
+              <ul>
+              <li><strong>Lack of integration</strong>: Lawyers didn’t know when to turn to Lawrence for help and how it fits into their existing workflow or what’s possible.</li>
+              <li><strong>Lack of understanding</strong>: Lawyers didn’t know how to interact and get valuable results from their interaction with AI and didn’t know where to start and how to ask for what they needed.</li>
+              <li><strong>Lack of trust</strong>: Many lawyers are cautious about relying on AI, given the high stakes of their work. Those who tried it found that the results weren’t always accurate affecting their confidence in its capabilities.</li>
+              <li><strong>Lack of transparency and visibility</strong>: Lawyers didn’t know where the information came from, what Lawrence was doing and why it was so fast or took so long, depending on the task.</li>
+              <li><strong>Lack of control</strong>: Lawyers didn’t know how to change and improve the results. They had no way to provide feedback so that we could improve the system.</li>
+              </ul>
+            `,
+          },
+          {
+            label: 'Limitations',
+            content: `
+              <p>Here’s what I’ve learned from talking to our engineering  and AI teams around technical limitations:</p>
+              <ul>
+                <li><strong>Generation speed</strong>: I found that for the generation of legal documents, forms, letters or contracts, the AI tech team layered three different LLMs to check each other’s work to improve accuracy and reduce hallucinations. This made the generation of these documents up to 5 minutes long.</li>
+                <li><strong>Accuracy</strong>: Even with this treatment the results could be only up to 70% accurate. The AI tech team was working actively on creating a more reliable, law-tailored LLM to improve accuracy.</li>
+                <li><strong>Integration</strong>: There was no dedicated space in the platform for documents created by Lawrence. Lawyers would have to search the chat to find their past generations. And we couldn’t at this point add a new space for Lawrence-generated documents so those had to live in a section under the existing general documents tab.</li>
+                <li><strong>Usability</strong>: Lawrence was hidden in a busy UI and the existing layout wasn’t optimised to house Lawrence in a usable and clear way. At this time we couldn’t adjust the platform layout to create space for Lawrence but had to work around this challenge.</li>
+              </ul>
+            `,
+          },
+        ],
+      },
+      {
+        title: 'The design plan',
+        entries: [
+          { title: 'Creating a useful, approachable, transparent and seamless user experience.' },
+          {
+            content: `
+              <p>These insights helped create an action plan of what I should focus on to solve these key problems. I had to:</p>
+              <ul>
+                <li>Create a seamless proactive experience, where Lawrence is there when needed and proactive to suggest relevant actions at the right time.</li>
+                <li>Automatically create outputs when new inputs come in, like documents uploaded on the case from the lawyer or the client,  and suggest the best actions depending on the type and stage of the case.</li>
+                <li>Explore ways to improve Lawrence’s outputs, show examples or suggest prompts to help them revise and regenerate results and allow them to provide feedback improving future outputs.</li>
+                <li>Offer transparency and manage expectations with progress cues and information about what Lawrence is doing and where the information comes from.</li>
+              </ul>
+              <p>In a nutshell, I had to create a reliable, present, proactive, informative, honest and reflective paralegal. Easy!</p>
+            `,
+          },
+          {
+            label: 'Usability scenarios',
+            image: '1.png',
+          },
+          {
+            content: `
+              <p>To create a useful assistant, I mapped out key usability scenarios:</p>
+              <ol>
+                <li><strong>Generating documents</strong>: Lawyers can create draft letters, forms, or contracts with minimal input.</li>
+                <li><strong>Getting Information & guidance</strong>: Lawyers can ask Lawrence quick legal questions depending on their case.</li>
+                <li><strong>Iterate</strong>: Offering feedback on AI outputs and easy re-generating or editing when necessary.</li>
+              </ol>
+            `,
+          },
+        ],
+      },
+      {
+        title: 'The design',
+        entries: [
+          { title: 'Solving key problems with thoughtful UI/UX Design and creating space for Lawrence to shine.' },
+          {
+            content: `
+              <p>Working with the existing UI and creating a dedicated space for Lawrence was a challenge. We didn’t have the luxury of adjusting the platform layout and most of our lawyers use 12-16 inch screens so I had to create a flexible and responsive solution.</p>
+              <p>First I moved the Lawrence button to the bottom right of the page so that it breathes. I added a shadow to it and made it floating, available on every screen. At the time all of the primary UI buttons were purple, so I made the button black and rounded its corners to stand out from the rest of the UI and created a Lawrence dedicated icon as a visual cue.</p>
+            `,
+            image: '2.gif',
+          },
+          {
+            content:
+              'I created different states for the button like generating and being proactive with subtle animations and notifications.',
+          },
+          {
+            label: 'New lawrence',
+            content: `
+              Next, I focused on the chat box and opted to keep the help icon bringing up useful information on how to use Lawrence and what to expect. Improved the chat flow by clearly distinguishing between the lawyer’s inputs and Lawrence’s outputs and ensured the chat box was responsive for smaller screens to future-proof the feature, as currently, less than 10% of lawyers use our platform from their mobile devices.
+            `,
+            image: '3.png',
+          },
+          {
+            content:
+              'The previous chat box looked flat and lost in the white background of the UI, so I highlighted it using a light grey background and elevated it on the page by using a soft shadow. Lastly, I softened it with rounded corners.',
+            image: '4.gif',
+          },
+          {
+            content:
+              'My goal was to add some personality to Lawrence, so I created an animated avatar based on the Lawhive logo which delighted the team. I also proposed applying a more friendly and empathetic tone of voice and provided different examples of achieving that. A welcome message to kick of the conversation was another addition to make Lawrence more approachable while guiding the user.',
+          },
+          {
+            label: 'Actionable UI',
+            content:
+              'One of the key problems lawyers were facing was not knowing where to start, this in combination with key popular actions taking longer to generate due to AI fact-checking backend processes led me to separate the interactive UI into two sections ‘quick actions’ and ‘ask anything’. I considered suggesting prompts instead of showing the key actions but settled on actions as they had the common limitation of being slow to generate and I had a plan for that.',
+          },
+          {
+            content:
+              'In collaboration with the AI team, we could offer some prompt examples within the chat to encourage lawyers and help them request help. Follow-up messages would confirm an action has taken place, indicate how long it will take and suggest they can continue asking questions while the action is in progress.',
+            image: '5.png',
+          },
+          {
+            content: `
+              <p>For integrating quick actions I considered many different solutions, like separate Lawrence pages and different types of user inputs. One of my favourite solutions was splitting the interaction card into two sections using a tabs UI pattern. The team was concerned that the users might not click on quick actions as they can’t see all the options offered.</p>
+              <p>Some key actions required more details from the lawyer or further specifications like ‘what type of form?’ or ‘what kind of letter?’. I created interaction patterns within the chat for lawyers to engage with, and relevant messages to request additional information. In the case of missing documents from the client, Lawrence would proactively generate a request message for the lawyer to send to the client within the platform chat.</p>
+            `,
+          },
+          {
+            label: 'Visual language',
+            image: '6.png',
+          },
+          {
+            content:
+              'To support the above, I created a new visual language for Lawrence-related interactions, messages and feedback which I used in all the buttons, follow-up actions and notifications. The visual language included iconography, colours, and buttons as well as components like progress bars, notifications, alerts and modals.',
+            image: '7.png',
+          },
+          {
+            label: 'Transparency',
+            content: `
+              <p>One of the biggest problems was that the generation of key documents was slow, so I applied visual feedback cues & progress indicators to improve transparency, clarity and manage expectations, like:</p>
+              <ul>
+                <li>A Lawrence thinking animation to confirm that the action request was sent.</li>
+                <li>A Lawrence message in the chat to acknowledge the generation has started.</li>
+                <li>An expanding animated progress bar at the top of the chat with detailed steps Lawrence takes to generate the requested document.</li>
+                <li>A message from Lawrence to let the lawyer know they can ask for more while the generation is taking place.</li>
+                <li>A message that the generation is complete and ready to view in their documents.</li>
+                <li>A link to go to the Lawrence drafts to view the generated document</li>
+                <li>A notification message outside the Lawrence chat box, when moved on to a different case or dismissed the chat.</li>
+                <li>A notification pip on the documents tab to confirm something new was added to their documents.</li>
+              </ul>
+            `,
+            image: '8.png',
+          },
+          {
+            content:
+              'For the animated progress bar, I’ve considered different approaches like placing them inside the chat, but the goal was to prompt lawyers to keep interacting with Lawrence for generations, so the chat would have moved on and they wouldn’t be able to see the progress any more.',
+            image: '9.gif',
+          },
+          {
+            content:
+              'The progress bar should also support different states, like completion success, error and edge cases like working on multiple document generations at the same time. My goal was to use the limited space wisely, offering the right visual cues and controls to allow lawyers to monitor the progress of their requests effortlessly.',
+            image: '10.png',
+          },
+          {
+            label: 'Feedback',
+            content: `
+              <p>Keeping users engaged with Lawrence even on its ‘bad’ days, improving satisfaction and giving the user control to enhance outputs was critical. As well as learning from Lawrence’s mistakes to gradually improve its outputs. So building mechanisms to handle inaccuracies gracefully was key. For that reason, I suggested that we:</p>
+              <ul>
+                <li>Introduce a feedback bar under each Lawrence generation in the chat and every draft document saved in their documents tab.</li>
+                <li>Create a follow-up question from Lawrence to identify the issue with the option to re-generate. And offer a list of things that might have gone wrong for faster interaction.</li>
+                <li>Allow users to edit Lawrence drafts saved in their documents. With additional options to copy, regenerate or delete.</li>
+              </ul>
+              <p>In the end, we didn’t go with the follow-up question as it was difficult at this point to identify the exact issues on different documents and there was a risk of creating negative bias against Lawrence.</p>
+            `,
+            image: '11.png',
+          },
+          {
+            label: 'Collaboration',
+            content: `
+              <p>Throughout the process, I worked closely with the AI and engineering teams to explore what’s possible and how we can push the boundaries. I also collaborated with the product team and founders to ensure goal alignment. We all wanted an easy-to-use assistant that’s valuable and loved by the lawyers but we didn’t always agree on the best ways to achieve that or the priorities in terms of features. It was an exercise of measuring effort vs value to stick to the tight deadlines we set for ourselves.</p>
+              <p>As expected with any big feature like this one, a couple of projects didn’t make it to development.</p>
+              <p>Like the ‘Lawrence Everywhere’ project. A proposal to fully integrate Lawrence on every page and seamlessly advise, guide and proactively complete tasks for lawyers. Tasks like creating requests, messaging clients, generating documents from the documents tab, and suggesting the next best actions depending on case activity like new messages and uploaded documents. And automation tools like summarisation, legal letterheads and emails.</p>
+              <p>Or the Lawrence avatar, although loved by the team, didn’t make it to the final product, after a change in direction aiming for a less humanoid or playful AI.</p>
+            `,
+          },
+          {
+            label: 'Impact',
+            content:
+              'The redesigned Lawrence AI assistant was very successful with lawyers. Adoption jumped, with 60% of them using it regularly, and those who did generated more documents than ever. A survey after launch showed a clear boost in satisfaction and perceived value, with over half of the users saying they’d be very disappointed if they couldn’t use Lawrence anymore. On top of that, the AI team was able to gather valuable feedback from lawyers to keep improving the quality of its outputs.',
+            image: '12.png',
+          },
+          {
+            content:
+              'More features are coming soon with more quick actions and advanced interactions for selecting and generating pre-filled legal forms and creating document summaries and legal letters based on templates.',
+          },
+        ],
+      },
+    ],
   },
   o4ee: {
     id: 'o4ee',
     img: 'cover.png',
     title: 'Legal services client platform',
-    pageTitle: 'Products in the app',
-    sections: [],
+    pageTitle: 'Client platform',
+    sections: [
+      {
+        title: 'Introduction',
+        entries: [
+          {
+            title: 'Redesigning the client platform and launching to the US',
+          },
+          {
+            label: 'The product',
+            content:
+              'Lawhive is a legal services marketplace designed to make finding and working with a lawyer fast and affordable. Clients begin by filling out a form describing their legal issue, after which the Legal Advice Services team assesses their case and provides a quote. Once the client accepts the quote, the system automatically matches them with the most suitable lawyer, and their journey within the platform begins.',
+          },
+          {
+            label: 'My role',
+            content: `<p>Product Design Lead &bull; Designer &bull; <em>(This project took place in January 2025)</em></p>`,
+          },
+        ],
+      },
+      {
+        title: 'Background',
+        entries: [
+          {
+            title:
+              'Uncovering  opportunities and setting the goals for a more user-friendly and professional client platform.',
+          },
+          {
+            content:
+              'Once the clients accept the quote and matches with a lawyer, they receive an email inviting them to the client platform, where they can view case details, review their quote and what’s included, track progress, share documents, and communicate with their lawyer. However, the UK platform—originally built by developers—had several usability challenges. Expanding to the US provided the perfect opportunity to refine the experience since some features weren’t necessary for the new market. We could simplify the platform while tackling existing UX issues with a complete redesign.',
+          },
+          {
+            content: `
+              <p>For launching in the US, we identified three features that weren’t essential for this market:</p>
+              <ul>
+                <li>Identity verification – Not a regulatory requirement in the US.</li>
+                <li>Terms of business agreement – This could be simplified and integrated into the client onboarding flow.</li>
+                <li>Letter of authority signing – Unnecessary for US legal cases.</li>
+              </ul>
+              <p>This allowed us to simplify the client journey while maintaining compliance and usability.</p>
+            `,
+            image: '1.png',
+          },
+          {
+            label: 'The problems',
+            content: `
+              <p>Through a UX audit and discussions with customer support, we uncovered several friction points in the client experience:</p>
+              <ul>
+                <li>Redundant registration steps – Clients had to go through a lengthy sign-up process, re-entering details (like email and phone number) that were already collected and verified during their initial application.</li>
+                <li>Lack of case progress visibility – After the initial onboarding, the home page provided little to no information about case progress, and the information hierarchy was unclear.</li>
+                <li>Confusing navigation – The platform relied on nested pages without a clear navigation structure, making it difficult for users to understand where they were or how to move through the platform efficiently. Some pages served no real purpose other than adding unnecessary steps.</li>
+                <li>Overloaded case page – The main case page was cluttered with excessive information, making it overwhelming and hard to scan.</li>
+                <li>Unoptimized mobile experience – Most clients accessed the platform from their phones, but the interface wasn’t designed with mobile usability in mind. Key actions were hard to find, layouts didn’t adapt well to smaller screens, and navigation felt clunky.</li>
+                <li>Inconsistent and unpolished UI – The design lacked visual clarity and personality, with inconsistent layouts, UI bugs, and a lack of polish that impacted the platform’s perceived professionalism.</li>
+              </ul>
+              <p>By addressing these issues, we aimed to create a more intuitive, efficient, and visually cohesive experience for Lawhive clients.</p>
+            `,
+            image: '2.png',
+          },
+          {
+            label: 'Limitations',
+            content: `
+              <p>Expanding Lawhive to the US was a fast-paced initiative, with multiple products and processes requiring refinement, rework, and redesign. The client platform was considered one of the quickest projects, with a strict two-week timeline for discovery, design, and development.</p>
+              <p>These constraints shaped our approach:</p>
+              <ol>
+                <li>Minimal structural changes – Due to time limitations, the redesign needed to stay close to the existing UK platform’s structure. There was little room to explore vastly different solutions.</li>
+                <li>No new features – We couldn’t introduce new functionalities or “nice-to-haves”. However, I pushed for small, low-effort quality-of-life improvements where possible.</li>
+                <li>Limited user research – There was no time to conduct user interviews or usability testing before development. Instead, I relied on UX best practices, common design patterns, and insights from internal teams to address key pain points.</li>
+              </ol>
+            `,
+          },
+        ],
+      },
+      {
+        title: 'The design plan',
+        entries: [
+          {
+            title: 'Bringing everything together to create a clear goal and plan for the US client platform.',
+            content: `
+              <p>To create a streamlined, user-friendly experience within these constraints, I focused on five key areas:</p>
+              <ol>
+                <li><strong>Revamp the platform’s information architecture</strong> – Introduced a clear navigation system, improved page hierarchy, and ensured key actions were easily accessible.</li>
+                <li><strong>Simplify the user journey</strong> – Removed unnecessary features, steps, and pages while improving the clarity of existing content.</li>
+                <li><strong>Enhance communication</strong> – Introduced personalised messages, notifications, and clear next steps to improve transparency and case progress tracking.</li>
+                <li><strong>Refine the visual experience</strong> – Fixed UI inconsistencies and visual bugs, implemented components from the new design system I developed for the Lawhive products, and created a cohesive, professional look.</li>
+                <li><strong>Optimise for mobile usability</strong> – Ensured the platform was fully responsive, improving layouts, touch interactions, and navigation to create a seamless experience for mobile users.</li>
+                <li><strong>Ensure seamless development</strong> – Maintained as much of the existing functionality and technical infrastructure as possible to meet the tight deadline.</li>
+              </ol>
+              <p>The redesigned platform focused on two core pages: the Home Page and the Case Page.</p>
+            `,
+          },
+        ],
+      },
+      {
+        title: 'The design',
+        entries: [
+          {
+            title:
+              'Designing the new platform, from the home & case pages to all of the new and existing features, with a special focus on mobile view and accessibility.',
+          },
+          {
+            label: 'Home Page',
+            content:
+              'A new Home page was designed to welcome clients, provide updates on their case/s, and highlight next steps. It displayed a list of all their cases—both active and completed—allowing them to easily navigate to the relevant case page.',
+            image: '3.png',
+          },
+          {
+            content:
+              'A series of messages was developed to provide information about the progress of their cases improving clarity and transparency, and/or directing them to act on their cases. The case cards were redesigned to provide high-level information about their case, like case name and number, date started and name of their lawyer. And a new notification system with relevant iconography was designed to show the latest activity like new messages and documents.',
+            image: '4.png',
+          },
+          {
+            content: `
+              <p>The Quote Page, which was an unnecessary intermediary step before reaching the case page, was removed. Instead, its content was integrated directly into the Case Page, streamlining navigation and reducing friction.</p>
+              <p>The pre-existing referral section, a business requirement to attract new clients, was deprioritised in the layout and moved to the bottom of the page. It also received a full design revamp to improve its visibility and appeal without distracting from primary case-related actions.</p>
+            `,
+          },
+          {
+            label: 'Case Page',
+            image: '5.png',
+          },
+          {
+            content: `
+              <p>The Case Page was designed to serve as the central hub for all case-related information and actions. After exploring multiple layouts, I landed on a solution that struck a balance between functionality, usability, and minimal development effort.</p>
+              <ul>
+                <li>The chat window was placed at the centre of the experience, ensuring seamless communication with lawyers.</li>
+                <li>Documents, quotes, and payments were easily accessible through action cards opening the updated modals, marrying simplicity with function.</li>
+              </ul>
+            `,
+            image: '6.png',
+          },
+          {
+            content: `
+              <p>One issue identified in the UK platform was inconsistent service quality across lawyers, which sometimes led to negative reviews on Trustpilot. Since dissatisfaction often surfaced too late—after a case was completed or escalated—we needed a way to proactively identify and address issues before they became major problems.</p>
+              <p>To tackle this, I proposed adding a “Rate Your Lawyer” banner to the case page. This would allow clients to provide real-time feedback, giving the team an opportunity to intervene early and resolve concerns before they escalated.</p>
+            `,
+          },
+          {
+            label: 'Features',
+            content: '<strong>Contact Information</strong>',
+            image: '7.png',
+          },
+          {
+            content: `
+              <p>One of the most frequent client frustrations was the lack of lawyer contact details. Clients had to request this information via chat, adding unnecessary friction to their experience.</p>
+              <p>To solve this, I introduced a more icon next to the lawyer’s name, opening a modal with their details. Clients could now copy the full contact card or individually copy the lawyer’s email and phone number, making it easier to use or share this information when needed.</p>
+            `,
+          },
+          {
+            content: '<strong>Documents</strong>',
+            image: '8.png',
+          },
+          {
+            content: `
+              <p>The previous document management system was minimal, with a confusing search function that wasn’t helpful—clients often didn’t remember document names. Instead, they needed a better way to find, preview, and download documents uploaded by their lawyer or themselves.</p>
+              <p>To improve this:</p>
+              <ul>
+                <li>I added a delete option, allowing clients to remove documents they uploaded in case of errors.</li>
+                <li>A filtering bar to let clients quickly switch between all documents, lawyer-uploaded documents, and their uploads.</li>
+                <li>Document cards were redesigned for clarity and ease of scanning.</li>
+                <li>An improved empty state for when no documents were available was designed to be more informative and visually clear.</li>
+                <li>Lastly, unnecessary for the US launch documents (such as the Client Care Letter and Letter of Authority) were removed to declutter the space.</li>
+              </ul>
+            `,
+          },
+          { content: '<strong>Quotes</strong>' },
+          {
+            content: `
+              <p>Case quotes, which outline the agreed scope of work, were simplified for clarity.</p>
+              <ul>
+                <li>All quotes were treated as accepted, with a clear ‘Paid’ or ‘Not Paid’ status to avoid confusion.</li>
+                <li>Unlike in the UK, quotes in the US didn’t expire, so this information was removed from the interface.</li>
+                <li>A “Pay” CTA for unpaid quotes, with an alternative link to contact support for assistance.</li>
+                <li>A new “View Receipt” option for paid quotes, addressing a common client request.</li>
+                <li>A link to the “Limited Scope Agreement” that clients signed during payment, ensuring easy access.</li>
+              </ul>
+            `,
+            image: '9.png',
+          },
+          {
+            content:
+              'Each quote would have a randomised name (as in the UK platform), and in some cases, contain multiple products listed under it with their prices, and a “What’s included” link to view the services included. Talking to our customer success team, I learned that clients wouldn’t always care about the products but the services attached. So, I proposed that we group all of the services and provide one “What’s included” button opening a modal allowing clients to view details only when needed and streamlining the UI.',
+            image: '10.png',
+          },
+          {
+            content: `
+              <p>UI improvements in the quote breakdown modal included:</p>
+              <ul>
+                <li>Removing the icons of the ‘included’ and ‘excluded’ items that looked clickable.</li>
+                <li>Introducing new icons for the ‘included’ and ‘excluded’ sections as visual cues.</li>
+                <li>Renaming “Line Items” to “Changes” for better clarity.</li>
+                <li>Restructuring labels and hierarchy to make tax details on service fees clearer.</li>
+              </ul>
+            `,
+          },
+          { content: '<strong>Payments</strong>', image: '11.png' },
+          {
+            content: `
+              <p>The payment structure in the US was different from the UK. Hourly billing and additional fees after the initial payment—common in the UK—were not applicable in the US. Instead, clients could only see direct one-time payments related to their quotes, thus the design was simplified.</p>
+              <p>A frequent client request was the ability to view and download receipts, which was not previously available. I added this functionality to individual payment cards, making it easier for clients to obtain their receipts.</p>
+            `,
+          },
+          { content: '<strong>Profile</strong>', image: '12.png' },
+          {
+            content: `The last area I focused on was the client profile page which previously had a buggy appearance due to the content coming from a different software. I proposed an updated UI with clear actions for adding an email or a phone number, and the addition of an option to edit which didn’t exist before to allow users to update their details without having to contact our support team.`,
+          },
+          {
+            label: 'Mobile optimisation',
+            content: `
+              <p>The platform was designed mobile-first, recognising that most clients would access it from their phones.</p>
+              <ul>
+                <li>Touch-friendly interactions were prioritised, with large, well-placed click areas for ease of use.</li>
+                <li>Cards were redesigned for clarity, ensuring a streamlined and digestible mobile experience.</li>
+                <li>The navigation structure was simplified to reduce friction and enhance accessibility.</li>
+              </ul>
+            `,
+            image: '13.png',
+          },
+          {
+            content:
+              'By applying best practices for mobile interaction, we ensured the platform was intuitive, efficient, and accessible on any device.',
+          },
+          {
+            label: 'Impact',
+            content: `
+              <p>The low-effort, high-impact redesign was well received by the team. The improvements were fast to implement, easy to scale, and significantly enhanced the client experience.</p>
+              <p>Following the US launch, the team decided to revamp the UK platform using the same design principles. We’re now monitoring how clients interact with the new platform and identifying further opportunities for improvement.</p>
+              <p>This project showcased how thoughtful UX decisions—even within tight constraints—can deliver a meaningful impact. Simplification, clarity, and usability can transform a jaggy experience into a streamlined, intuitive, scalable product.</p>
+            `,
+          },
+        ],
+      },
+    ],
   },
 };
 
