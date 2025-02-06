@@ -2,9 +2,22 @@ import { Experience, KeySkill } from 'src/types';
 
 export const EXPERIENCE: Experience[] = [
   {
+    title: 'PRINCIPAL PRODUCT DESIGNER (FOUNDING)',
+    where: 'Lawhive',
+    when: 'July 2024 - Present',
+    description: `<p>Shaping the way lawyers interact with technology by leading the design and user experience for our lawyer and client platform. Building an accessible and scalable design system from scratch and conducting user research and testing to validate designs and copy. Working closely with founders and product teams, exploring ideas and finalising requirements to create effective, user-friendly and rapid solutions.</p>
+      <p>Collaborating with AI researchers and engineers to launch, refine, and elevate an AI Legal Assistant, simplifying complex tasks while enhancing usability. In addition, designing tools and features that address intricate legal challenges and streamline lawyers’ daily workflows while continuously optimising our Marketplace through A/B testing and iterative improvements.</p>
+    `,
+    pointColor: 'bg-coral',
+    expandable: {
+      small: true,
+      large: true,
+    },
+  },
+  {
     title: 'STAFF PRODUCT DESIGNER (GROWTH)',
     where: 'HOPIN - STREAMYARD',
-    when: 'Oct 2021 - April 2024',
+    when: 'Oct 2021 - June 2024',
     description: `<p>Starting as a Senior Product and then being promoted to Staff, I was responsible for customer acquisition, activation, and retention strategies, focusing on optimising the pricing page, payment processes and product onboarding while introducing and testing new features. Drove a 10% increase in weekly active broadcasters over 18 months.</p>
 <p>Through extensive research, user interviews, and continuous A/B testing, I generated numerous hypotheses to drive growth, carefully measuring and iterating with different design solutions while coordinating and collaborating with teams.</p>
 <p>I initiated the SY Mobile App Guest Experience and played a vital role in developing the Design System. I led company-wide ideation workshops and presentations, advocated for evidence-based design, and created educational content to boost team capabilities, enhancing the company’s user-centred culture.</p>`,
