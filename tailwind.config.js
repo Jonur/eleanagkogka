@@ -23,6 +23,7 @@ export default {
       'dark-mode-body': '#2A3649',
       'dark-mode-link': '#91E3EE',
       black: '#000000',
+      error: '#cc0000',
     },
     extend: {
       fontFamily: {

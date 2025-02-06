@@ -1642,6 +1642,20 @@ export const CASE_STUDIES: Record<CaseStudy['id'], CaseStudy> = {
       },
     ],
   },
+  d783: {
+    id: 'd783',
+    img: 'cover.png',
+    title: 'Lawrence the AI Assistant',
+    pageTitle: 'Products in the app',
+    sections: [],
+  },
+  o4ee: {
+    id: 'o4ee',
+    img: 'cover.png',
+    title: 'Legal services client platform',
+    pageTitle: 'Products in the app',
+    sections: [],
+  },
 };
 
 // “word” ’
