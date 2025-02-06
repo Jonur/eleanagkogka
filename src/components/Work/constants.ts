@@ -1,6 +1,16 @@
 import { CaseStudy } from 'src/types';
 
-export const CAST_STUDY_ORDER: CaseStudy['id'][] = ['d783', 'o4ee', 'WHR4', 'zLI1', 'Dv5M', 'Uzer', 'Vm6M', 'vpnm'];
+export const CAST_STUDY_ORDER: CaseStudy['id'][] = [
+  'd783',
+  'o4ee',
+  'p90p',
+  'WHR4',
+  'zLI1',
+  'Dv5M',
+  'Uzer',
+  'Vm6M',
+  'vpnm',
+];
 
 export const CASE_STUDIES: Record<CaseStudy['id'], CaseStudy> = {
   zLI1: {
@@ -2091,6 +2101,13 @@ export const CASE_STUDIES: Record<CaseStudy['id'], CaseStudy> = {
         ],
       },
     ],
+  },
+  p90p: {
+    id: 'p90p',
+    img: 'cover.png',
+    title: 'Lawyer platform',
+    pageTitle: 'Lawyer platform',
+    disabled: true,
   },
 };
 
